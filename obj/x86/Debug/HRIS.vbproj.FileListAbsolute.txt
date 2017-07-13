@@ -1,0 +1,933 @@
+E:\HRIS\New folder\HRMS\bin\Debug\HRMS.exe
+E:\HRIS\New folder\HRMS\bin\Debug\HRMS.pdb
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Data.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Sparkline.v13.1.Core.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\mysql.data.dll
+E:\HRIS\New folder\HRMS\bin\Debug\mysql.data.entity.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Data.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.xml
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRIS.vbprojResolveAssemblyReference.cache
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.infoReq.resources
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.Login.resources
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.MainApp.resources
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.Resources.resources
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.setting.resources
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRIS.vbproj.GenerateResource.Cache
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.exe.licenses
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.exe
+E:\HRIS\New folder\HRMS\obj\x86\Debug\HRMS.pdb
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.DemoReports.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.Charts.v13.1.Core.dll
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.xml
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\New folder\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.exe
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.pdb
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\HRMS.exe
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\HRMS.pdb
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Data.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.DemoReports.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Sparkline.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\mysql.data.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\mysql.data.entity.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Charts.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Data.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.Data.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.Printing.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.Utils.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraBars.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraCharts.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraEditors.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraLayout.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.Office.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRIS.vbprojResolveAssemblyReference.cache
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.infoReq.resources
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.Login.resources
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.MainApp.resources
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.Resources.resources
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.setting.resources
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRIS.vbproj.GenerateResource.Cache
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.exe.licenses
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.DemoData.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.DemoData.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Tutorials.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraNavBar.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraVerticalGrid.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraNavBar.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraVerticalGrid.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\HRMS.exe.config
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Core.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.BonusSkins.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.SpellChecker.v13.1.Core.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Win.Projects.v13.1.Design.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.UI.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraPivotGrid.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Extensions.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraSpellChecker.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.CodeParser.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\Microsoft.VisualStudio.CommandBars.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\stdole.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Wizard.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.Extensions.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.Extensions.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Extensions.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Xpo.v13.1.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.UI.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Extensions.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.SpellChecker.v13.1.Core.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.UI.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraPivotGrid.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Extensions.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraSpellChecker.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Wizard.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.Extensions.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Extensions.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Xpo.v13.1.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.UI.xml
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.Xpo.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.Xpo.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.Xpo.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.Xpo.v13.1.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\de\DevExpress.Utils.v13.1.UI.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\es\DevExpress.Utils.v13.1.UI.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ja\DevExpress.Utils.v13.1.UI.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\bin\Debug\ru\DevExpress.Utils.v13.1.UI.resources.dll
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.Notes.resources
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.SPForms.resources
+E:\HRIS\Experiment\New folder\HRMS\obj\x86\Debug\HRMS.RotasiMutasi.resources
+E:\New folder\New folder\HRMS\bin\Debug\HRMS.exe.config
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.exe
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.pdb
+E:\New folder\New folder\HRMS\bin\Debug\HRMS.exe
+E:\New folder\New folder\HRMS\bin\Debug\HRMS.pdb
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.BonusSkins.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Charts.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Data.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.DemoData.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.DemoData.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.DemoReports.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Sparkline.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.SpellChecker.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Tutorials.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Win.Projects.v13.1.Design.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.UI.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraNavBar.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraPivotGrid.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Extensions.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraSpellChecker.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraVerticalGrid.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\mysql.data.dll
+E:\New folder\New folder\HRMS\bin\Debug\mysql.data.entity.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.CodeParser.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\Microsoft.VisualStudio.CommandBars.dll
+E:\New folder\New folder\HRMS\bin\Debug\stdole.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Wizard.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.Extensions.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.Extensions.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Extensions.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Xpo.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.UI.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Extensions.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Data.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.SpellChecker.v13.1.Core.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.UI.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraNavBar.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraPivotGrid.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Core.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Extensions.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraSpellChecker.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraVerticalGrid.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Wizard.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.Extensions.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Extensions.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Xpo.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Utils.v13.1.UI.xml
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.Data.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.Data.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Data.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Data.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.Office.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.Office.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Office.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Office.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.PivotGrid.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.Printing.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.Printing.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Printing.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Printing.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.RichEdit.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.Utils.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.Utils.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Utils.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Utils.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraBars.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraBars.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraBars.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraBars.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraCharts.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraCharts.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraCharts.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraCharts.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraEditors.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraEditors.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraEditors.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraEditors.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraLayout.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraLayout.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraLayout.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraLayout.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraNavBar.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraPivotGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraPrinting.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraRichEdit.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraSpellChecker.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraTreeList.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.Xpo.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.Xpo.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Xpo.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Xpo.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.Utils.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.Utils.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Utils.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Utils.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRIS.vbprojResolveAssemblyReference.cache
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.infoReq.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Login.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.MainApp.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Resources.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Notes.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.RotasiMutasi.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.setting.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.SPForms.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRIS.vbproj.GenerateResource.Cache
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.exe.licenses
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.RotasiHistory.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.DemosiHistory.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Core.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Interop.Word.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.VBIDE.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRIS.vbproj.ResolveComReference.cache
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.NewRec.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.RecProcess.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.NewEmp.resources
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.DataAccess.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.DataAccess.v13.1.UI.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraWizard.v13.1.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraWizard.v13.1.xml
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.DataAccess.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.DataAccess.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.DataAccess.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.DataAccess.v13.1.UI.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\de\DevExpress.XtraWizard.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.XtraWizard.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.XtraWizard.v13.1.resources.dll
+E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.XtraWizard.v13.1.resources.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.NewSalary.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.PayrollCount.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Payments.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.PayrollSet.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Payslip.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Additional.resources
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.Pdf.v13.1.Core.dll
+E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraPdfViewer.v13.1.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.ClosePayroll.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Holiday.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.pdfviewer.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.BonusSkins.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Charts.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.CodeParser.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Data.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.DataAccess.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.DataAccess.v13.1.UI.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.DemoData.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.DemoData.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.DemoReports.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Pdf.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Sparkline.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.SpellChecker.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Tutorials.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Utils.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Utils.v13.1.UI.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Win.Projects.v13.1.Design.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Xpo.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.UI.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Wizard.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraNavBar.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraPdfViewer.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraPivotGrid.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Extensions.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraSpellChecker.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraVerticalGrid.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraWizard.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\mysql.data.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\mysql.data.entity.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\Microsoft.VisualStudio.CommandBars.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.Extensions.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.Extensions.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Extensions.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Extensions.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Data.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Office.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.PivotGrid.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Printing.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.RichEdit.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.SpellChecker.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Utils.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Utils.v13.1.UI.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Xpo.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraBars.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.UI.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraCharts.v13.1.Wizard.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraEditors.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraGrid.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraLayout.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraNavBar.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraPivotGrid.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraPrinting.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraRichEdit.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Extensions.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraSpellChecker.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraTreeList.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraVerticalGrid.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraWizard.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.Extensions.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraScheduler.v13.1.Reporting.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Extensions.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Data.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Data.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Data.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Data.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.DataAccess.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.DataAccess.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.DataAccess.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.DataAccess.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Office.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Office.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Office.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Office.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.PivotGrid.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.PivotGrid.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.PivotGrid.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.PivotGrid.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Printing.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Printing.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Printing.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Printing.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.RichEdit.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.RichEdit.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.RichEdit.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.RichEdit.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Utils.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Utils.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Utils.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Utils.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Utils.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Utils.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Utils.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Utils.v13.1.UI.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Xpo.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Xpo.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Xpo.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Xpo.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraBars.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraBars.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraBars.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraBars.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraCharts.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraCharts.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraCharts.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraCharts.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraEditors.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraEditors.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraEditors.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraEditors.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraLayout.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraLayout.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraLayout.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraLayout.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraNavBar.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraNavBar.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraNavBar.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraNavBar.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraPivotGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraPivotGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraPivotGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraPivotGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraPrinting.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraPrinting.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraPrinting.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraPrinting.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraRichEdit.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraRichEdit.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraRichEdit.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraRichEdit.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraVerticalGrid.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraWizard.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraWizard.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraWizard.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraWizard.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraRichEdit.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraScheduler.v13.1.Reporting.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.Extensions.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\Interop.VBIDE.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRIS.vbproj.ResolveComReference.cache
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Attendances.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ChangeData.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ChangeEmp.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ClosePayroll.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Lists.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Payments.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Login.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.MainApp.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Resources.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.NewEmp.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.NewRec.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.PayrollSet.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Payslip.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.pdfviewer.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.RecProcess.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.setting.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRIS.vbproj.GenerateResource.Cache
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.View.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.EasyTest.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Design.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Reports.Web.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Security.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Win.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Xpo.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Web.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Reports.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Persistent.Base.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Web.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxHtmlEditor.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxGauges.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraGauges.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxTreeList.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxPivotGrid.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxSpellChecker.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraGauges.v13.1.Presets.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.EasyTest.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Reports.Web.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Security.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Win.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraReports.v13.1.Web.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Reports.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Persistent.Base.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.ExpressApp.Web.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxHtmlEditor.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxGauges.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraGauges.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxTreeList.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxPivotGrid.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Web.ASPxSpellChecker.v13.1.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.ExpressApp.Reports.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.ExpressApp.Reports.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.ExpressApp.Reports.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.ExpressApp.Security.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.ExpressApp.Security.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.ExpressApp.Security.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.ExpressApp.Security.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.ExpressApp.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.ExpressApp.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.ExpressApp.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.ExpressApp.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.ExpressApp.Win.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.ExpressApp.Win.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.ExpressApp.Win.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.ExpressApp.Win.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraReports.v13.1.Web.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraReports.v13.1.Web.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraReports.v13.1.Web.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraReports.v13.1.Web.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.ExpressApp.Reports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.ExpressApp.Reports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.ExpressApp.Reports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.ExpressApp.Reports.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.ExpressApp.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.ExpressApp.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.ExpressApp.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.ExpressApp.Web.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Web.ASPxHtmlEditor.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Web.ASPxHtmlEditor.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Web.ASPxHtmlEditor.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Web.ASPxHtmlEditor.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraGauges.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraGauges.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraGauges.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraGauges.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Web.ASPxTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Web.ASPxTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Web.ASPxTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Web.ASPxTreeList.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Web.ASPxSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Web.ASPxSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Web.ASPxSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Web.ASPxSpellChecker.v13.1.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.XtraGauges.v13.1.Presets.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraGauges.v13.1.Presets.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraGauges.v13.1.Presets.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraGauges.v13.1.Presets.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.selectemp.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Analytical.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Form1.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\FlashControlV71.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ShowAtt.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutomaticUpdater.Design.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutomaticUpdater.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutomaticUpdater.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Circle.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.exe.config
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.exe.manifest
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.application
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.exe
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.pdb
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HR SYSTEM.exe.licenses
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HR SYSTEM.TrustInfo.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HR SYSTEM.exe.manifest
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HR SYSTEM.application
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HR SYSTEM.exe
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HR SYSTEM.pdb
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.OtherIncome.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Termination.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.StatusChange.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Warning.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.LeaveRequest.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.EmployeeDetails.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.CandidatesDetails.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.selectcand.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Images.v13.1.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Borongan.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.AspekKerja.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ModAK.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ModAKS.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Overtime_Hours.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Reports.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Criteria.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Tile_Control.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Approvement.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Customize.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Addskill.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Pending.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.NewUser.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Authorization.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Dashboard.v13.1.Core.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Dashboard.v13.1.Extensions.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Dashboard.v13.1.Win.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraGauges.v13.1.Win.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Dashboard.v13.1.Core.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.Dashboard.v13.1.Win.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\DevExpress.XtraGauges.v13.1.Win.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Dashboard.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Dashboard.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Dashboard.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Dashboard.v13.1.Core.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\DevExpress.Dashboard.v13.1.Win.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.Dashboard.v13.1.Win.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.Dashboard.v13.1.Win.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.Dashboard.v13.1.Win.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.MainClone.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutoUpdater.NET.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutoUpdater.NET.pdb
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutoUpdater.NET.xml
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\da\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\de\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\fr\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\it\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\nl\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\pl\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\sv\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\tr\AutoUpdater.NET.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.SuratDinas.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.AttendanceInput.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Form2.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Holiday.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Medical.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\fr\HR SYSTEM.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Login.fr.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\fr\HR SYSTEM.resources.dll
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRIS.vbprojResolveAssemblyReference.cache
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Documents.resources
