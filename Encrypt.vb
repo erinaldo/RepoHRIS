@@ -1,8 +1,8 @@
 ﻿Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
-
 Module Encrypt
+
     Public Function Encryptio(clearText As String) As String
         Dim EncryptionKey As String = "MAKV2SPBNI99212"
         Dim clearBytes As Byte() = Encoding.Unicode.GetBytes(clearText)

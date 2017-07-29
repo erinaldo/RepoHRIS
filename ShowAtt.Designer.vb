@@ -25,9 +25,9 @@ Partial Class ShowAtt
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ShowAtt))
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'DateTimePicker1
@@ -45,6 +45,16 @@ Partial Class ShowAtt
         Me.Label1.Size = New System.Drawing.Size(283, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Select the date you want to display the attendance record:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 56)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Label2"
+        Me.Label2.Visible = False
         '
         'SimpleButton3
         '
@@ -64,21 +74,11 @@ Partial Class ShowAtt
         Me.SimpleButton2.TabIndex = 3
         Me.SimpleButton2.Text = "OK"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 56)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Label2"
-        Me.Label2.Visible = False
-        '
         'ShowAtt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(305, 123)
+        Me.ClientSize = New System.Drawing.Size(289, 84)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton2)

@@ -92,7 +92,7 @@ Partial Class MainClone
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010
-        Me.RibbonControl1.Size = New System.Drawing.Size(990, 177)
+        Me.RibbonControl1.Size = New System.Drawing.Size(986, 177)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.BarJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Below
         '
@@ -340,6 +340,7 @@ Partial Class MainClone
         Me.RibbonPageGroup13.ItemLinks.Add(Me.BarButtonItem11)
         Me.RibbonPageGroup13.Name = "RibbonPageGroup13"
         Me.RibbonPageGroup13.Text = "                                              "
+        Me.RibbonPageGroup13.Visible = False
         '
         'RibbonPageGroup9
         '
@@ -387,7 +388,7 @@ Partial Class MainClone
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(990, 306)
+        Me.GridControl1.Size = New System.Drawing.Size(986, 381)
         Me.GridControl1.TabIndex = 1
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -745,7 +746,7 @@ Partial Class MainClone
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(990, 483)
+        Me.ClientSize = New System.Drawing.Size(986, 558)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.LabelControl2)
@@ -753,7 +754,6 @@ Partial Class MainClone
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainClone"
         Me.Ribbon = Me.RibbonControl1
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Applications"
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized

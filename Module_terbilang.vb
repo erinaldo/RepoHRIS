@@ -23,7 +23,7 @@
         End If
         teks = ""
         If (x >= 1.0E+15) Then
-            TERBILANG = "VALUE TOO HIGH"
+            TERBILANG = "VALUE ARE TOO HIGH"
             Exit Function
         End If
         For i = 4 To 1 Step -1
@@ -40,7 +40,7 @@
 
     Function ratusan(ByVal y As Double, ByVal flag As Boolean) As String
         Dim tmp As Double
-        Dim bilang As String
+        Dim bilang As String = ""
         Dim bag As String
         Dim j As Integer
         Dim angka(9)
@@ -56,7 +56,6 @@
         Dim posisi(2)
         posisi(1) = "PULUH "
         posisi(2) = "RATUS "
-        bilang = ""
         For j = 2 To 1 Step -1
             tmp = Int(y / (10 ^ j))
             If (tmp > 0) Then

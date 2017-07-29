@@ -1,44 +1,8 @@
-﻿Imports System.IO
-Imports DevExpress.Utils.Menu
+﻿Imports DevExpress.Utils.Menu
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class Attendances
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        'Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Sub loadhari()
         Dim sqlcommand As New MySqlCommand
@@ -253,8 +217,11 @@ Public Class Attendances
     End Sub
 
     Private Sub Attendances_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         autho()
         showovertime()
         GridView1.BestFitColumns()
@@ -534,16 +501,6 @@ Public Class Attendances
     '        Label13.Text = datatabl.Rows(0).Item(1).ToString
     '    End If
     'End Sub
-
-    Dim main As MainApp
-
-    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
-        Me.Close()
-        If main Is Nothing OrElse main.IsDisposed OrElse main.MinimizeBox Then
-            main = New MainApp
-        End If
-        main.Show()
-    End Sub
 
     Dim aspek As New AspekKerja
 

@@ -1,42 +1,5 @@
-﻿Imports System.IO
-
-Public Class ClosePayroll
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
+﻿Public Class ClosePayroll
     Dim tbl_par As New DataTable
-    Dim log As Login
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Sub loaddata()
         Dim sqlcommand As New MySqlCommand
@@ -67,8 +30,11 @@ Public Class ClosePayroll
     Dim list As New Lists
 
     Private Sub ClosePayroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         loaddata()
     End Sub
 
@@ -162,29 +128,73 @@ Public Class ClosePayroll
     'Dim tggl As String = CStr(jlhhk.ExecuteScalar)
     ''end
 
+    'Dim dt1 As Date
+    'Dim dt2 As Date
+    'Dim dt3 As TimeSpan
+    'Dim diff As Double
+    'Dim hasil As String
+
+    'Sub days()
+    '    Dim t As TimeSpan = DateTimePicker2.Value.Date - DateTimePicker1.Value.Date
+    '    Dim tmp As String
+    '    tmp = t.Days.ToString
+    '    Dim hasil As Integer
+    '    hasil = CInt(tmp)
+    '    Dim hasil2 As Integer = hasil + 1
+    '    TextEdit40.Text = hasil2.ToString
+    'End Sub
+
+    Sub latesdeduction(emp As String)
+        Dim query As MySqlCommand = SQLConnection.CreateCommand
+        query.CommandText = "select a.officelocation, count(minute(b.jamMulai)) from db_absensi b, db_pegawai a where b.tanggal between @date1 and @date2 and minute(b.jammulai) > 10 and a.employeecode = @emp and hour(b.jammulai) = 8 and a.employeecode = b.employeecode"
+        query.Parameters.AddWithValue("@date1", date1.Value.Date)
+        query.Parameters.AddWithValue("@date2", date2.Value.Date)
+        query.Parameters.AddWithValue("@emp", emp)
+        Dim tab As New DataTable
+        For index As Integer = 0 To tab.Rows.Count - 1
+            MsgBox(tab.Rows(index).Item(2).ToString())
+            tab.Rows(index).Item(1).ToString()
+        Next
+    End Sub
+
     Sub computecomponent(emp As String, tipe As String, office As String)
         'Try
         'find employeetype
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-            query.CommandText = "select employeetype from db_pegawai where employeecode = '" & emp & "'"
-            Dim emptype As String = CStr(query.ExecuteScalar)
-            ' end
+        query.CommandText = "select employeetype from db_pegawai where employeecode = '" & emp & "'"
+        Dim emptype As String = CStr(query.ExecuteScalar)
+        ' end
 
-            'find hk
-            query.CommandText = "select count(*) from db_absensi where tanggal between @date1 and @date2 and employeecode = '" & emp & "'"
+        'find hk
+        query.CommandText = "select count(*) from db_absensi where tanggal between @date1 and @date2 and employeecode = '" & emp & "'"
+        query.Parameters.Clear()
+        query.Parameters.AddWithValue("@date1", date1.Value.Date)
+        query.Parameters.AddWithValue("@date2", date2.Value.Date)
+        Dim hk As Integer = CInt(query.ExecuteScalar)
+        'end
+
+        query.CommandText = "select basicrate, allowance, incentives, mealrate, transport from db_payrolldata where employeecode ='" & emp & "'"
+        Dim table As New DataTable
+        table.Load(query.ExecuteReader)
+        For index As Integer = 0 To table.Rows.Count - 1
+            Dim gapok As Integer = CInt(Decrypt(CType(table.Rows(index).Item(0), String)))
+
+            query.CommandText = "select count(minute(b.jamMulai)) from db_absensi b, db_pegawai a where b.tanggal between @date1 and @date2 and minute(b.jammulai) > 10 and a.employeecode = @emp and hour(b.jammulai) = 8 and a.employeecode = b.employeecode"
             query.Parameters.Clear()
             query.Parameters.AddWithValue("@date1", date1.Value.Date)
             query.Parameters.AddWithValue("@date2", date2.Value.Date)
-            Dim hk As Integer = CInt(query.ExecuteScalar)
-            'end
-
-            query.CommandText = "select basicrate, allowance, incentives, mealrate, transport from db_payrolldata where employeecode ='" & emp & "'"
-            Dim table As New DataTable
-            table.Load(query.ExecuteReader)
-            For index As Integer = 0 To table.Rows.Count - 1
-                Dim gapok As Integer = CInt(Decrypt(CType(table.Rows(index).Item(0), String)))
+            query.Parameters.AddWithValue("@emp", emp)
+            Dim x As Integer = CInt(query.ExecuteScalar)
 
             If LCase(tipe) = "bulanan" Then
+                query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Lates', @total"
+                query.Parameters.Clear()
+                query.Parameters.AddWithValue("@types", "Bulanan")
+                query.Parameters.AddWithValue("@date", DateTimePicker1.Value.Date)
+                query.Parameters.AddWithValue("@emp", emp)
+                query.Parameters.AddWithValue("@total", "Total Telat = " & x & " Potongan = " & x * 7000 & "")
+                query.ExecuteNonQuery()
+
                 query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Gapok', @basicrate"
                 query.Parameters.Clear()
                 query.Parameters.AddWithValue("@types", "Bulanan")
@@ -258,6 +268,14 @@ Public Class ClosePayroll
                 query.ExecuteNonQuery()
 
             ElseIf LCase(tipe) = "borongan" Then
+                query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Lates', @total"
+                query.Parameters.Clear()
+                query.Parameters.AddWithValue("@types", "Borongan")
+                query.Parameters.AddWithValue("@date", DateTimePicker1.Value.Date)
+                query.Parameters.AddWithValue("@emp", emp)
+                query.Parameters.AddWithValue("@total", "Total Telat = " & x & " Potongan = " & x * 5000 & "")
+                query.ExecuteNonQuery()
+
                 query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Total Borongan',  sum(quantity) from db_borongan where employeecode = '" & emp & "'"
                 query.Parameters.Clear()
                 query.Parameters.AddWithValue("@types", "Borongan")
@@ -265,7 +283,7 @@ Public Class ClosePayroll
                 query.Parameters.AddWithValue("@emp", emp)
                 query.ExecuteNonQuery()
 
-                query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Total Gapok',  sum(calc_borongan(Quantity, Target, Target1, Target2, Target3, Amount, Amount1, Amount2, Amount3, Operators)) from db_borongan where Employeecode = @emp and tanggal between @d1 and @d2"
+                query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Total Gapok',  sum(calc_borongan(b.Quantity, a.periodic, b.Target, b.Target1, b.Target2, b.Target3, b.Amount, b.Amount1, b.Amount2, b.Amount3, b.Operators)) from db_calcbor a, db_borongan b where b.Employeecode = @emp and b.tanggal between @d1 and @d2 and a.tasks = b.tasks"
                 query.Parameters.Clear()
                 query.Parameters.AddWithValue("@types", "Borongan")
                 query.Parameters.AddWithValue("@date", DateTimePicker1.Value.Date)
@@ -324,6 +342,14 @@ Public Class ClosePayroll
                 query.ExecuteNonQuery()
 
             ElseIf LCase(tipe) = "harian" Then
+                query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Lates', @total"
+                query.Parameters.Clear()
+                query.Parameters.AddWithValue("@types", "Harian")
+                query.Parameters.AddWithValue("@date", DateTimePicker1.Value.Date)
+                query.Parameters.AddWithValue("@emp", emp)
+                query.Parameters.AddWithValue("@total", "Total Telat = " & x & " Potongan = " & x * 1000 & "")
+                query.ExecuteNonQuery()
+
                 query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Gapok', @basicrate"
                 query.Parameters.Clear()
                 query.Parameters.AddWithValue("@types", "Harian")
@@ -410,15 +436,12 @@ Public Class ClosePayroll
                 query.ExecuteNonQuery()
             End If
         Next
-            Dim sqlCommand As New MySqlCommand
-            sqlCommand.CommandText = "Select distinct employee_code, salary_component, salary_value, employee_type from payroll2"
-            sqlCommand.Connection = SQLConnection
-            Dim dt As New DataTable
-            dt.Load(sqlCommand.ExecuteReader)
-            lis.GridControl1.DataSource = dt
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
+        Dim sqlCommand As New MySqlCommand
+        sqlCommand.CommandText = "Select distinct employee_code, salary_component, salary_value, employee_type from payroll2"
+        sqlCommand.Connection = SQLConnection
+        Dim dt As New DataTable
+        dt.Load(sqlCommand.ExecuteReader)
+        lis.GridControl1.DataSource = dt
     End Sub
 
     Sub computingsalary(emp As String, office As String, tipe As String)
@@ -446,7 +469,6 @@ Public Class ClosePayroll
             Dim table As New DataTable
             table.Load(query.ExecuteReader)
             For index As Integer = 0 To table.Rows.Count - 1
-
                 query.CommandText = "insert into payroll2(pay_date, employee_code, employee_type, salary_component, salary_value) select @date, @emp, @types, 'Gapok', @basicrate" ' where EmployeeCode = @emp"
                 query.Parameters.Clear()
                 query.Parameters.AddWithValue("@types", tipe)
@@ -575,18 +597,13 @@ Public Class ClosePayroll
         End Try
     End Sub
 
-    Sub processthr()
-
-    End Sub
-
     Private Sub processpayroll()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        'query.CommandText = "truncate payroll2"
-        'query.ExecuteNonQuery()
         query.CommandText = "select officelocation from db_pegawai where employeecode = '" & txtempcode.Text & "'"
         Dim ofloc As String = CStr(query.ExecuteScalar)
         query.CommandText = "select employeetype from db_pegawai where employeecode ='" & txtempcode.Text & "'"
         Dim tipe As String = CStr(query.ExecuteScalar)
+
         If payrollcheck.Checked = True Then
             If radiochoose.Checked = True Then
                 computecomponent(txtempcode.Text, tipe, ofloc)
@@ -624,24 +641,14 @@ Public Class ClosePayroll
         If DateTimePicker1.Value.Date = pay Then
             MsgBox("The payment date have already processed", MsgBoxStyle.Information)
         Else
-            Timer1.Start()
+
+            Timer1.Enabled = True
             If lis Is Nothing OrElse lis.IsDisposed OrElse lis.MinimizeBox Then
                 lis.Close()
                 lis = New Lists
             End If
-            Timer1.Enabled = True
+            Timer1.Start()
         End If
-        'If radiochoose.Checked = True And txtname.Text = "" Then
-        '    MsgBox("Please insert the employee name you wanted to display")
-        'ElseIf date1.Value.Date > date2.Value.Date Then
-        '    MsgBox("Wrong Dates, please do check again")
-        'Else
-
-        'Close()
-        'checkloan()
-        'processpayroll()
-        'lis.Show()
-        'End If
     End Sub
 
     Private Sub radioloadall_CheckedChanged(sender As Object, e As EventArgs) Handles radioloadall.CheckedChanged
@@ -651,20 +658,27 @@ Public Class ClosePayroll
         End If
     End Sub
 
+    Friend Delegate Sub SetDataSourceDelegate(table As DataTable)
+
+    Private Sub setDataSource(table As DataTable)
+        If InvokeRequired Then
+            Invoke(New SetDataSourceDelegate(AddressOf setDataSource), table)
+        Else
+            lis.GridControl1.DataSource = table
+            ProgressBar1.Visible = False
+        End If
+    End Sub
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select pay_date from payroll2"
         Dim pay As Date = CDate(query.ExecuteScalar)
         If radiochoose.Checked = True And txtname.Text = "" Then
             Timer1.Enabled = False
-            MsgBox("Please insert the employee name you wanted to display")
+            MsgBox("Please insert the employee name you wanted to display", MsgBoxStyle.Exclamation)
         ElseIf date1.Value.Date > date2.Value.Date Then
-            MsgBox("Wrong Dates, please do check again")
+            MsgBox("Wrong Dates, please do check again", MsgBoxStyle.Information)
         Else
-            'If lis Is Nothing OrElse lis.IsDisposed OrElse lis.MinimizeBox Then
-            '    lis.Close()
-            '    lis = New Lists
-            'End If
             ProgressBar1.Visible = True
             If ProgressBar1.Value < 100 Then
                 ProgressBar1.Value += 10

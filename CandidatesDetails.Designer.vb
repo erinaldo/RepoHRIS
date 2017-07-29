@@ -54,6 +54,8 @@ Partial Class CandidatesDetails
         Me.Label26 = New System.Windows.Forms.Label()
         Me.ChartControl2 = New DevExpress.XtraCharts.ChartControl()
         Me.GroupControl8 = New DevExpress.XtraEditors.GroupControl()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
@@ -524,9 +526,11 @@ Partial Class CandidatesDetails
         '
         'GroupControl10
         '
+        Me.GroupControl10.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.GroupControl10.Appearance.Options.UseBackColor = True
         Me.GroupControl10.Controls.Add(Me.Label27)
         Me.GroupControl10.Controls.Add(Me.Label26)
-        Me.GroupControl10.Location = New System.Drawing.Point(527, 11)
+        Me.GroupControl10.Location = New System.Drawing.Point(531, 6)
         Me.GroupControl10.Name = "GroupControl10"
         Me.GroupControl10.Size = New System.Drawing.Size(79, 53)
         Me.GroupControl10.TabIndex = 102
@@ -578,11 +582,13 @@ Partial Class CandidatesDetails
         Me.ChartControl2.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1, Series2}
         SideBySideBarSeriesLabel1.LineVisible = True
         Me.ChartControl2.SeriesTemplate.Label = SideBySideBarSeriesLabel1
-        Me.ChartControl2.Size = New System.Drawing.Size(612, 405)
+        Me.ChartControl2.Size = New System.Drawing.Size(611, 403)
         Me.ChartControl2.TabIndex = 46
         '
         'GroupControl8
         '
+        Me.GroupControl8.Controls.Add(Me.Label38)
+        Me.GroupControl8.Controls.Add(Me.TextBox11)
         Me.GroupControl8.Controls.Add(Me.SimpleButton6)
         Me.GroupControl8.Controls.Add(Me.SimpleButton5)
         Me.GroupControl8.Controls.Add(Me.SimpleButton3)
@@ -606,12 +612,29 @@ Partial Class CandidatesDetails
         Me.GroupControl8.Size = New System.Drawing.Size(290, 405)
         Me.GroupControl8.TabIndex = 91
         '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(6, 157)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(50, 13)
+        Me.Label38.TabIndex = 105
+        Me.Label38.Text = "Average "
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(91, 155)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
+        Me.TextBox11.Size = New System.Drawing.Size(143, 20)
+        Me.TextBox11.TabIndex = 104
+        '
         'SimpleButton6
         '
         Me.SimpleButton6.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SimpleButton6.Appearance.Options.UseFont = True
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"), System.Drawing.Image)
-        Me.SimpleButton6.Location = New System.Drawing.Point(8, 310)
+        Me.SimpleButton6.Location = New System.Drawing.Point(8, 338)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(226, 49)
         Me.SimpleButton6.TabIndex = 103
@@ -625,7 +648,7 @@ Partial Class CandidatesDetails
         Me.SimpleButton5.Appearance.Options.UseForeColor = True
         Me.SimpleButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
-        Me.SimpleButton5.Location = New System.Drawing.Point(8, 260)
+        Me.SimpleButton5.Location = New System.Drawing.Point(8, 286)
         Me.SimpleButton5.Name = "SimpleButton5"
         Me.SimpleButton5.Size = New System.Drawing.Size(226, 44)
         Me.SimpleButton5.TabIndex = 102
@@ -634,7 +657,7 @@ Partial Class CandidatesDetails
         'SimpleButton3
         '
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(103, 210)
+        Me.SimpleButton3.Location = New System.Drawing.Point(91, 230)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(62, 23)
         Me.SimpleButton3.TabIndex = 91
@@ -643,7 +666,7 @@ Partial Class CandidatesDetails
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(169, 210)
+        Me.SimpleButton2.Location = New System.Drawing.Point(159, 230)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(65, 23)
         Me.SimpleButton2.TabIndex = 101
@@ -652,7 +675,7 @@ Partial Class CandidatesDetails
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(189, 153)
+        Me.Label25.Location = New System.Drawing.Point(240, 161)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(45, 13)
         Me.Label25.TabIndex = 91
@@ -662,14 +685,14 @@ Partial Class CandidatesDetails
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(239, 184)
+        Me.SimpleButton1.Location = New System.Drawing.Point(239, 199)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(24, 20)
         Me.SimpleButton1.TabIndex = 100
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(91, 184)
+        Me.TextBox10.Location = New System.Drawing.Point(91, 199)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.ReadOnly = True
         Me.TextBox10.Size = New System.Drawing.Size(143, 20)
@@ -678,7 +701,7 @@ Partial Class CandidatesDetails
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(4, 186)
+        Me.Label24.Location = New System.Drawing.Point(3, 203)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(74, 13)
         Me.Label24.TabIndex = 91
@@ -695,7 +718,7 @@ Partial Class CandidatesDetails
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(5, 131)
+        Me.Label44.Location = New System.Drawing.Point(6, 131)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(52, 13)
         Me.Label44.TabIndex = 97
@@ -2552,4 +2575,6 @@ Partial Class CandidatesDetails
     Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl11 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents Label38 As Label
+    Friend WithEvents TextBox11 As TextBox
 End Class

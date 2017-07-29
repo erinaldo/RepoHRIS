@@ -1,47 +1,11 @@
-﻿Imports System.IO
-Imports DevExpress.Utils.Menu
-
+﻿Imports DevExpress.Utils.Menu
 Public Class Customize
-
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        'Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Private Sub Customize_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged

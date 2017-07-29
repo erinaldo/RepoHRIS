@@ -210,6 +210,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -259,12 +260,6 @@
       <DependentUpon>Addskill.vb</DependentUpon>
     </Compile>
     <Compile Include="Addskill.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Analytical.Designer.vb">
-      <DependentUpon>Analytical.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Analytical.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -322,18 +317,13 @@
     <Compile Include="ChangeEmp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Circle.Designer.vb">
-      <DependentUpon>Circle.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Circle.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ClosePayroll.Designer.vb">
       <DependentUpon>ClosePayroll.vb</DependentUpon>
     </Compile>
     <Compile Include="ClosePayroll.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConnectionString.vb" />
     <Compile Include="Criteria.Designer.vb">
       <DependentUpon>Criteria.vb</DependentUpon>
     </Compile>
@@ -371,6 +361,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Encrypt.vb" />
+    <Compile Include="Form.Designer.vb">
+      <DependentUpon>Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -411,12 +407,6 @@
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Login.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainApp.Designer.vb">
-      <DependentUpon>MainApp.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MainApp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainClone.Designer.vb">
@@ -544,6 +534,12 @@
     <Compile Include="ShowAtt.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StartPages.Designer.vb">
+      <DependentUpon>StartPages.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StartPages.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StatusChange.Designer.vb">
       <DependentUpon>StatusChange.vb</DependentUpon>
     </Compile>
@@ -562,10 +558,10 @@
     <Compile Include="Termination.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tile Control.Designer.vb">
-      <DependentUpon>Tile Control.vb</DependentUpon>
+    <Compile Include="Tiles.Designer.vb">
+      <DependentUpon>Tiles.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tile Control.vb">
+    <Compile Include="Tiles.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View.Designer.vb">
@@ -582,9 +578,6 @@
     </Compile>
     <EmbeddedResource Include="Addskill.resx">
       <DependentUpon>Addskill.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Analytical.resx">
-      <DependentUpon>Analytical.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Approvement.resx">
       <DependentUpon>Approvement.vb</DependentUpon>
@@ -613,9 +606,6 @@
     <EmbeddedResource Include="ChangeEmp.resx">
       <DependentUpon>ChangeEmp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Circle.resx">
-      <DependentUpon>Circle.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosePayroll.resx">
       <DependentUpon>ClosePayroll.vb</DependentUpon>
     </EmbeddedResource>
@@ -634,6 +624,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeDetails.resx">
       <DependentUpon>EmployeeDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form.resx">
+      <DependentUpon>Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -658,9 +651,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainApp.resx">
-      <DependentUpon>MainApp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainClone.resx">
       <DependentUpon>MainClone.vb</DependentUpon>
@@ -731,6 +721,9 @@
     <EmbeddedResource Include="ShowAtt.resx">
       <DependentUpon>ShowAtt.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StartPages.resx">
+      <DependentUpon>StartPages.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatusChange.resx">
       <DependentUpon>StatusChange.vb</DependentUpon>
     </EmbeddedResource>
@@ -740,8 +733,8 @@
     <EmbeddedResource Include="Termination.resx">
       <DependentUpon>Termination.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tile Control.resx">
-      <DependentUpon>Tile Control.vb</DependentUpon>
+    <EmbeddedResource Include="Tiles.resx">
+      <DependentUpon>Tiles.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.vb</DependentUpon>

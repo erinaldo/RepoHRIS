@@ -1,46 +1,11 @@
 ﻿Imports System.IO
-
 Public Class Documents
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ''Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Private Sub Documents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
     End Sub
 
     Private Sub txtchanges()
@@ -81,10 +46,10 @@ Public Class Documents
             Else
                 query.CommandText = "select suratteguran from db_document top limit 1"
             End If
-            ElseIf ComboBoxEdit1.Text = "Surat Peringatan" Then
-                query.CommandText = "select count(suratsp) from db_document"
-                Dim hsl As Integer = CInt(query.ExecuteScalar)
-                If hsl = 0 Then
+        ElseIf ComboBoxEdit1.Text = "Surat Peringatan" Then
+            query.CommandText = "select count(suratsp) from db_document"
+            Dim hsl As Integer = CInt(query.ExecuteScalar)
+            If hsl = 0 Then
                 Dim mess As String = CType(MsgBox("You have nothing to be view" & vbCrLf & "You want to upload the new one?", MsgBoxStyle.YesNo), String)
                 If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
                     Dim openfile As New OpenFileDialog
@@ -113,9 +78,9 @@ Public Class Documents
             Else
                 query.CommandText = "select suratsp from db_document top limit 1"
             End If
-            ElseIf ComboBoxEdit1.Text = "Surat Dinas" Then
-                query.CommandText = "select count(suratdinas) from db_document"
-                Dim hsl As Integer = CInt(query.ExecuteScalar)
+        ElseIf ComboBoxEdit1.Text = "Surat Dinas" Then
+            query.CommandText = "select count(suratdinas) from db_document"
+            Dim hsl As Integer = CInt(query.ExecuteScalar)
             If hsl = 0 Then
                 Dim mess As String = CType(MsgBox("You have nothing to view" & vbCrLf & "You want to upload the new one?", MsgBoxStyle.YesNo), String)
                 If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
@@ -145,12 +110,12 @@ Public Class Documents
                 query.CommandText = "select suratdinas from db_document top limit 1"
             End If
         End If
-            buffer = CType(query.ExecuteScalar(), Byte())
-            filepath = Path.GetTempFileName()
-            File.Move(filepath, Path.ChangeExtension(filepath, ".docx"))
-            filepath = Path.ChangeExtension(filepath, ".docx")
-            File.WriteAllBytes(filepath, buffer)
-            RichEditControl1.LoadDocument(filepath)
+        buffer = CType(query.ExecuteScalar(), Byte())
+        filepath = Path.GetTempFileName()
+        File.Move(filepath, Path.ChangeExtension(filepath, ".docx"))
+        filepath = Path.ChangeExtension(filepath, ".docx")
+        File.WriteAllBytes(filepath, buffer)
+        RichEditControl1.LoadDocument(filepath)
         'Catch ex As Exception
         '    MsgBox(ex.Message)
         'End Try

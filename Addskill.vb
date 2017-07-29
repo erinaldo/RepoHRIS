@@ -1,44 +1,4 @@
-﻿Imports System.IO
-Imports DevExpress.XtraGrid
-Imports DevExpress.XtraGrid.Views.Grid
-Imports DevExpress.Utils.Menu
-
-Public Class Addskill
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
+﻿Public Class Addskill
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Try
             Dim query As MySqlCommand = SQLConnection.CreateCommand
@@ -50,32 +10,22 @@ Public Class Addskill
     End Sub
 
     Private Sub Addskill_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Try
-            Dim query As MySqlCommand = SQLConnection.CreateCommand
-            query.CommandText = "select name from db_tmpname"
-            Dim quer1 As String = CType(query.ExecuteScalar, String)
-            txtname.Text = quer1.ToString
-            query.CommandText = "select employeecode from db_tmpname"
-            Dim quer2 As String = CType(query.ExecuteScalar, String)
-            txtidrecc.Text = quer2.ToString
-        Catch ex As Exception
-        End Try
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
     End Sub
-
-    Dim sel As New selectemp
 
     Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
         Timer1.Start()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "truncate db_tmpname"
         query.ExecuteNonQuery()
-        If sel Is Nothing OrElse sel.IsDisposed OrElse sel.MinimizeBox Then
-            sel.Close()
-            sel = selectemp
-        End If
-        sel.Show()
+        selectemp.Close()
+        With selectemp
+            .Show()
+        End With
     End Sub
 
     Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit1.EditValueChanged
@@ -90,7 +40,7 @@ Public Class Addskill
         Dim sk1 As String = CStr(sk.ExecuteScalar)
         If sk1 = "" Then
             If skill1.Text = "" OrElse skill2.Text = "" OrElse skill3.Text = "" OrElse skill4.Text = "" OrElse skill5.Text = "" OrElse txtidrecc.Text = "" Then
-                MsgBox("Please fill the required fields")
+                MsgBox("Please fill the required fields", MsgBoxStyle.Exclamation)
             Else
                 Try
                     str_carSql = "INSERT INTO db_skills " +
@@ -107,14 +57,14 @@ Public Class Addskill
                     sqlCommand.Parameters.AddWithValue("@skill5", skill5.Text)
                     sqlCommand.Parameters.AddWithValue("@interviewer", TextEdit1.Text)
                     sqlCommand.ExecuteNonQuery()
-                    MessageBox.Show("Data Succesfully Added!")
+                    MsgBox("Data Succesfully Added", MsgBoxStyle.Information)
                     Close()
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
             End If
         Else
-            MsgBox("The data already exists")
+            MsgBox("The data already exists", MsgBoxStyle.Information)
         End If
     End Sub
 

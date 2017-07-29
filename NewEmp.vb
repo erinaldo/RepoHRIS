@@ -1,42 +1,5 @@
 ﻿Imports System.IO
 Public Class NewEmp
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Function ImageToByte(ByVal pbImg As PictureBox) As Byte()
         If pbImg Is Nothing Then
             Return Nothing
@@ -567,8 +530,16 @@ Public Class NewEmp
     End Sub
 
     Private Sub NewEmp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
+        Dim sqlcommand As MySqlCommand = SQLConnection.CreateCommand
+        sqlcommand.CommandText = "update db_pegawai set photo = @photo"
+        Dim param As New MySqlParameter("@Photo", ImageToByte(pictureEdit))
+        sqlcommand.Parameters.Add(param)
+        sqlcommand.ExecuteNonQuery()
         changer()
         Reset()
         loaddata1()
@@ -577,7 +548,6 @@ Public Class NewEmp
         loadcomp()
         loadofloc()
         loadgroup()
-        loaddept()
         DateTimePicker2.Format = DateTimePickerFormat.Custom
         DateTimePicker2.CustomFormat = " "
         Label23.Text = "C:\pdffile\file.pdf"
@@ -586,7 +556,7 @@ Public Class NewEmp
 
     Sub loaddata1()
         Dim sqlcommand As MySqlCommand = SQLConnection.CreateCommand
-        sqlcommand.CommandText = "SELECT departmentname from db_departmentmbp"
+        sqlcommand.CommandText = "SELECT departmentname from db_departmentmbp where isenable = '1'"
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par2)
@@ -597,7 +567,7 @@ Public Class NewEmp
 
     Sub loaddata()
         Dim sqlcommand As MySqlCommand = SQLConnection.CreateCommand
-        sqlcommand.CommandText = "select groupname from db_groupmbp"
+        sqlcommand.CommandText = "select groupname from db_groupmbp where isenable = '1'"
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par1)
@@ -668,7 +638,7 @@ Public Class NewEmp
 
     Private Sub SimpleButton9_Click(sender As Object, e As EventArgs) Handles SimpleButton9.Click
         If txtnames.Text = "" OrElse txtgender.Text = "" OrElse txtidno.Text = "" OrElse txtrel.Text = "" OrElse txtblood.Text = "" OrElse txtposition.Text = "" OrElse txtcompcode.Text = "" OrElse txtadd.Text = "" Then
-            MsgBox("Please fill the required blank fields")
+            MsgBox("Please fill the required blank fields", MsgBoxStyle.Information)
         Else
             insertion()
             empbackup()

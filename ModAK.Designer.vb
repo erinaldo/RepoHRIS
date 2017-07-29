@@ -52,7 +52,7 @@ Partial Class ModAK
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(27, 12)
+        Me.LabelControl1.Location = New System.Drawing.Point(6, 5)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(32, 13)
         Me.LabelControl1.TabIndex = 0
@@ -60,7 +60,7 @@ Partial Class ModAK
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(141, 12)
+        Me.LabelControl2.Location = New System.Drawing.Point(171, 6)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(34, 13)
         Me.LabelControl2.TabIndex = 1
@@ -68,21 +68,21 @@ Partial Class ModAK
         '
         'TextEdit1
         '
-        Me.TextEdit1.Location = New System.Drawing.Point(26, 30)
+        Me.TextEdit1.Location = New System.Drawing.Point(4, 24)
         Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit1.Size = New System.Drawing.Size(159, 20)
         Me.TextEdit1.TabIndex = 2
         '
         'TextEdit2
         '
-        Me.TextEdit2.Location = New System.Drawing.Point(141, 29)
+        Me.TextEdit2.Location = New System.Drawing.Point(170, 24)
         Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Size = New System.Drawing.Size(496, 20)
+        Me.TextEdit2.Size = New System.Drawing.Size(492, 20)
         Me.TextEdit2.TabIndex = 3
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(28, 84)
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 51)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(656, 13)
         Me.LabelControl3.TabIndex = 4
@@ -91,7 +91,7 @@ Partial Class ModAK
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(26, 136)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 100)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.Size = New System.Drawing.Size(658, 167)
@@ -219,7 +219,7 @@ Partial Class ModAK
         '
         'CheckEdit1
         '
-        Me.CheckEdit1.Location = New System.Drawing.Point(183, 107)
+        Me.CheckEdit1.Location = New System.Drawing.Point(168, 73)
         Me.CheckEdit1.Name = "CheckEdit1"
         Me.CheckEdit1.Properties.Caption = "Disabled"
         Me.CheckEdit1.Size = New System.Drawing.Size(75, 19)
@@ -227,7 +227,7 @@ Partial Class ModAK
         '
         'CheckEdit2
         '
-        Me.CheckEdit2.Location = New System.Drawing.Point(250, 107)
+        Me.CheckEdit2.Location = New System.Drawing.Point(237, 73)
         Me.CheckEdit2.Name = "CheckEdit2"
         Me.CheckEdit2.Properties.Caption = "Calculate Premi Periodically"
         Me.CheckEdit2.Size = New System.Drawing.Size(157, 19)
@@ -237,7 +237,7 @@ Partial Class ModAK
         '
         Me.SimpleButton1.Enabled = False
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(599, 306)
+        Me.SimpleButton1.Location = New System.Drawing.Point(573, 273)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(85, 23)
         Me.SimpleButton1.TabIndex = 9
@@ -245,7 +245,7 @@ Partial Class ModAK
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(28, 109)
+        Me.LabelControl5.Location = New System.Drawing.Point(6, 77)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(44, 13)
         Me.LabelControl5.TabIndex = 12
@@ -253,7 +253,7 @@ Partial Class ModAK
         '
         'TextEdit3
         '
-        Me.TextEdit3.Location = New System.Drawing.Point(78, 107)
+        Me.TextEdit3.Location = New System.Drawing.Point(63, 72)
         Me.TextEdit3.Name = "TextEdit3"
         Me.TextEdit3.Size = New System.Drawing.Size(100, 20)
         Me.TextEdit3.TabIndex = 13
@@ -261,7 +261,7 @@ Partial Class ModAK
         'CheckEdit3
         '
         Me.CheckEdit3.Enabled = False
-        Me.CheckEdit3.Location = New System.Drawing.Point(24, 306)
+        Me.CheckEdit3.Location = New System.Drawing.Point(2, 273)
         Me.CheckEdit3.Name = "CheckEdit3"
         Me.CheckEdit3.Properties.Caption = "Add Target"
         Me.CheckEdit3.Size = New System.Drawing.Size(75, 19)
@@ -269,7 +269,7 @@ Partial Class ModAK
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(122, 309)
+        Me.LabelControl4.Location = New System.Drawing.Point(97, 275)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(49, 13)
         Me.LabelControl4.TabIndex = 15
@@ -278,7 +278,7 @@ Partial Class ModAK
         'TextEdit4
         '
         Me.TextEdit4.Enabled = False
-        Me.TextEdit4.Location = New System.Drawing.Point(179, 308)
+        Me.TextEdit4.Location = New System.Drawing.Point(151, 273)
         Me.TextEdit4.Name = "TextEdit4"
         Me.TextEdit4.Size = New System.Drawing.Size(100, 20)
         Me.TextEdit4.TabIndex = 16
@@ -286,7 +286,7 @@ Partial Class ModAK
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(636, 104)
+        Me.SimpleButton2.Location = New System.Drawing.Point(612, 71)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(48, 23)
         Me.SimpleButton2.TabIndex = 19
@@ -296,7 +296,7 @@ Partial Class ModAK
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(692, 336)
+        Me.ClientSize = New System.Drawing.Size(663, 306)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.TextEdit4)
         Me.Controls.Add(Me.LabelControl4)
@@ -314,9 +314,7 @@ Partial Class ModAK
         Me.Controls.Add(Me.LabelControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(708, 375)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(708, 375)
         Me.Name = "ModAK"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -25,6 +25,7 @@ Partial Class Overtime_Hours
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Overtime_Hours))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.textedit2 = New System.Windows.Forms.TextBox()
         Me.textedit1 = New System.Windows.Forms.TextBox()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
@@ -58,7 +59,6 @@ Partial Class Overtime_Hours
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
-        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +87,16 @@ Partial Class Overtime_Hours
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(480, 368)
         Me.GroupControl1.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(357, 43)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Label2"
+        Me.Label2.Visible = False
         '
         'textedit2
         '
@@ -481,16 +491,6 @@ Partial Class Overtime_Hours
         Me.XtraTabPage1.Name = "XtraTabPage1"
         Me.XtraTabPage1.Size = New System.Drawing.Size(482, 373)
         Me.XtraTabPage1.Text = "Overtime Hours"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(357, 43)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Label2"
-        Me.Label2.Visible = False
         '
         'Overtime_Hours
         '

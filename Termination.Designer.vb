@@ -37,10 +37,10 @@ Partial Class Termination
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.textbox1 = New DevExpress.XtraEditors.TextEdit()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.textbox4 = New DevExpress.XtraEditors.TextEdit()
-        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -56,9 +56,9 @@ Partial Class Termination
         Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -199,6 +199,16 @@ Partial Class Termination
         Me.GroupControl1.TabIndex = 14
         Me.GroupControl1.Text = "Details"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(690, 21)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(45, 13)
+        Me.Label10.TabIndex = 18
+        Me.Label10.Text = "Label10"
+        Me.Label10.Visible = False
+        '
         'textbox1
         '
         Me.textbox1.EditValue = "0"
@@ -222,15 +232,6 @@ Partial Class Termination
         Me.textbox4.Name = "textbox4"
         Me.textbox4.Size = New System.Drawing.Size(135, 20)
         Me.textbox4.TabIndex = 22
-        '
-        'SimpleButton3
-        '
-        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(686, 328)
-        Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(92, 24)
-        Me.SimpleButton3.TabIndex = 19
-        Me.SimpleButton3.Text = "Request"
         '
         'Label9
         '
@@ -347,6 +348,15 @@ Partial Class Termination
         'Timer2
         '
         '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(686, 328)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(92, 24)
+        Me.SimpleButton3.TabIndex = 19
+        Me.SimpleButton3.Text = "Request"
+        '
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
@@ -363,16 +373,6 @@ Partial Class Termination
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(26, 20)
         Me.SimpleButton1.TabIndex = 6
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(690, 21)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(45, 13)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "Label10"
-        Me.Label10.Visible = False
         '
         'Termination
         '

@@ -539,7 +539,7 @@ Partial Class EmployeeDetails
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(887, 409)
+        Me.TabPage8.Size = New System.Drawing.Size(890, 409)
         Me.TabPage8.TabIndex = 3
         Me.TabPage8.Text = "Skill and Benefits"
         Me.TabPage8.UseVisualStyleBackColor = True
@@ -806,7 +806,7 @@ Partial Class EmployeeDetails
         Me.GroupControl3.Controls.Add(Me.GridControl4)
         Me.GroupControl3.Location = New System.Drawing.Point(1, 3)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(883, 415)
+        Me.GroupControl3.Size = New System.Drawing.Size(889, 415)
         Me.GroupControl3.TabIndex = 0
         '
         'GridControl4
@@ -939,7 +939,7 @@ Partial Class EmployeeDetails
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(887, 409)
+        Me.TabPage7.Size = New System.Drawing.Size(890, 409)
         Me.TabPage7.TabIndex = 2
         Me.TabPage7.Text = "Working Experience"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1078,17 +1078,17 @@ Partial Class EmployeeDetails
         '
         'txtwork
         '
-        Me.txtwork.Location = New System.Drawing.Point(791, 25)
+        Me.txtwork.Location = New System.Drawing.Point(779, 25)
         Me.txtwork.Name = "txtwork"
         Me.txtwork.ReadOnly = True
-        Me.txtwork.Size = New System.Drawing.Size(114, 20)
+        Me.txtwork.Size = New System.Drawing.Size(121, 20)
         Me.txtwork.TabIndex = 75
         Me.txtwork.Text = "AUTO"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(788, 7)
+        Me.Label5.Location = New System.Drawing.Point(776, 7)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(96, 13)
         Me.Label5.TabIndex = 74
@@ -1541,7 +1541,7 @@ Partial Class EmployeeDetails
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(901, 434)
+        Me.TabPage3.Size = New System.Drawing.Size(897, 434)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Details and Photo"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1608,7 +1608,7 @@ Partial Class EmployeeDetails
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(3, 3)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(895, 428)
+        Me.GroupControl2.Size = New System.Drawing.Size(891, 428)
         Me.GroupControl2.TabIndex = 17
         '
         'TextEdit4
@@ -1765,7 +1765,7 @@ Partial Class EmployeeDetails
         Me.TabControl2.Location = New System.Drawing.Point(0, 54)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(909, 460)
+        Me.TabControl2.Size = New System.Drawing.Size(905, 460)
         Me.TabControl2.TabIndex = 63
         '
         'TabPage4
@@ -1774,7 +1774,7 @@ Partial Class EmployeeDetails
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(901, 434)
+        Me.TabPage4.Size = New System.Drawing.Size(897, 434)
         Me.TabPage4.TabIndex = 1
         Me.TabPage4.Text = "Advanced"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1788,7 +1788,7 @@ Partial Class EmployeeDetails
         Me.TabControl3.Location = New System.Drawing.Point(3, 3)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(895, 435)
+        Me.TabControl3.Size = New System.Drawing.Size(898, 435)
         Me.TabControl3.TabIndex = 49
         '
         'TabPage5
@@ -1797,7 +1797,7 @@ Partial Class EmployeeDetails
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(887, 409)
+        Me.TabPage5.Size = New System.Drawing.Size(890, 409)
         Me.TabPage5.TabIndex = 0
         Me.TabPage5.Text = "Education"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1809,7 +1809,7 @@ Partial Class EmployeeDetails
         Me.GroupControl1.Controls.Add(Me.LabelControl21)
         Me.GroupControl1.Location = New System.Drawing.Point(3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(879, 405)
+        Me.GroupControl1.Size = New System.Drawing.Size(884, 405)
         Me.GroupControl1.TabIndex = 49
         '
         'GridControl2
@@ -2078,7 +2078,7 @@ Partial Class EmployeeDetails
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(887, 409)
+        Me.TabPage6.Size = New System.Drawing.Size(890, 409)
         Me.TabPage6.TabIndex = 1
         Me.TabPage6.Text = "Family Members"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -2089,7 +2089,7 @@ Partial Class EmployeeDetails
         Me.TabPage9.Location = New System.Drawing.Point(4, 22)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(901, 434)
+        Me.TabPage9.Size = New System.Drawing.Size(897, 434)
         Me.TabPage9.TabIndex = 3
         Me.TabPage9.Text = "Warning Notice"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -2118,7 +2118,7 @@ Partial Class EmployeeDetails
         Me.TabPage10.Location = New System.Drawing.Point(4, 22)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(901, 434)
+        Me.TabPage10.Size = New System.Drawing.Size(897, 434)
         Me.TabPage10.TabIndex = 4
         Me.TabPage10.Text = "Status Change"
         Me.TabPage10.UseVisualStyleBackColor = True

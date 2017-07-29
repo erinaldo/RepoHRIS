@@ -26,6 +26,7 @@ Partial Class OtherIncome
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OtherIncome))
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
@@ -60,7 +61,6 @@ Partial Class OtherIncome
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,6 +104,16 @@ Partial Class OtherIncome
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(673, 278)
         Me.GroupControl1.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(552, 88)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Label3"
+        Me.Label3.Visible = False
         '
         'TextEdit1
         '
@@ -490,16 +500,6 @@ Partial Class OtherIncome
         Me.ImageCollection1.ImageStream = CType(resources.GetObject("ImageCollection1.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
         Me.ImageCollection1.InsertGalleryImage("clear_16x16.png", "images/actions/clear_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/clear_16x16.png"), 0)
         Me.ImageCollection1.Images.SetKeyName(0, "clear_16x16.png")
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(552, 88)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Label3"
-        Me.Label3.Visible = False
         '
         'OtherIncome
         '

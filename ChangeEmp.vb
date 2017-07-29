@@ -1,49 +1,5 @@
 ﻿Imports System.IO
-Imports DevExpress.Utils.Menu
-
 Public Class ChangeEmp
-
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        Try
-            Dim host As String
-            Dim id As String
-            Dim password As String
-            Dim db As String
-            If File.Exists("settinghost.txt") Then
-                host = File.ReadAllText("settinghost.txt")
-            Else
-                host = "localhost"
-            End If
-            If File.Exists("settingid.txt") Then
-                id = File.ReadAllText("settingid.txt")
-            Else
-                id = "root"
-            End If
-
-            If File.Exists("settingpass.txt") Then
-                password = File.ReadAllText("settingpass.txt")
-            Else
-                password = ""
-            End If
-
-            If File.Exists("settingdb.txt") Then
-                db = File.ReadAllText("settingdb.txt")
-            Else
-                db = "db_hris"
-            End If
-            connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
 
     Function ImageToByte(ByVal pbImg As PictureBox) As Byte()
         If pbImg Is Nothing Then
@@ -117,6 +73,8 @@ Public Class ChangeEmp
             npwp.Text = tbl_par33.Rows(index).Item(41).ToString
             TextEdit1.Text = tbl_par33.Rows(index).Item(44).ToString
             TextEdit2.Text = tbl_par33.Rows(index).Item(45).ToString
+            TextEdit5.Text = tbl_par33.Rows(index).Item(46).ToString
+            TextEdit6.Text = tbl_par33.Rows(index).Item(47).ToString
         Next
     End Sub
 
@@ -124,7 +82,7 @@ Public Class ChangeEmp
 
     Sub loaddata1()
         Dim sqlcommand As MySqlCommand = SQLConnection.CreateCommand
-        sqlcommand.CommandText = "SELECT departmentname from db_departmentmbp"
+        sqlcommand.CommandText = "SELECT departmentname from db_departmentmbp where isenable = '1'"
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par2)
@@ -135,7 +93,7 @@ Public Class ChangeEmp
 
     Sub loaddata()
         Dim sqlcommand As MySqlCommand = SQLConnection.CreateCommand
-        sqlcommand.CommandText = "select groupname from db_groupmbp"
+        sqlcommand.CommandText = "select groupname from db_groupmbp where isenable = '1'"
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par1)
@@ -143,6 +101,7 @@ Public Class ChangeEmp
             txtgroup.Properties.Items.Add(tbl_par1.Rows(index).Item(0).ToString())
         Next
     End Sub
+
     Dim tbl_par6, tbl_par3, tbl_par4, tbl_par5, tbl_par7 As New DataTable
 
     Sub loadjob()
@@ -202,8 +161,11 @@ Public Class ChangeEmp
     End Sub
 
     Private Sub ChangeEmp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Try
             Dim query As MySqlCommand = SQLConnection.CreateCommand
             query.CommandText = "select name from db_tmpname"
@@ -464,7 +426,8 @@ Public Class ChangeEmp
         sqlCommand.Parameters.AddWithValue("@undirecthead", TextEdit6.Text)
         sqlCommand.Connection = SQLConnection
         sqlCommand.ExecuteNonQuery()
-        '   MsgBox("Data Successfully Changed")
+        MsgBox("Data Successfully Changed", MsgBoxStyle.Information)
+        Close()
         'Catch ex As Exception
         '    MessageBox.Show(ex.Message)
         'End Try
@@ -502,166 +465,6 @@ Public Class ChangeEmp
     End Sub
 
     Dim act As String = ""
-
-    'Private Sub GridView3_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView3.FocusedRowChanged
-    '    Dim datatabl As New DataTable
-    '    Dim sqlcommand As New MySqlCommand
-    '    datatabl.Clear()
-    '    Dim param As String = ""
-    '    Try
-    '        param = "and NoId ='" + GridView3.GetFocusedRowCellValue("NoId").ToString() + "'"
-    '    Catch ex As Exception
-    '    End Try
-    '    If param > "" Then
-    '        act = "edit"
-    '    Else
-    '        act = "input"
-    '    End If
-    '    Try
-    '        sqlcommand.CommandText = "Select NoId, EmployeeCode, School, GraduatedYear, StudyField from db_education where 1 = 1 " + param.ToString()
-    '        sqlcommand.Connection = SQLConnection
-    '        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-    '        Dim cb As New MySqlCommandBuilder(adapter)
-    '        adapter.Fill(datatabl)
-    '    Catch ex As Exception
-    '    End Try
-    '    If datatabl.Rows.Count > 0 Then
-    '        Label29.Text = datatabl.Rows(0).Item(0).ToString
-    '        txtschoolname.Text = datatabl.Rows(0).Item(2).ToString
-    '        txtyears.Text = datatabl.Rows(0).Item(3).ToString
-    '        txtmajor.Text = datatabl.Rows(0).Item(4).ToString
-    '    End If
-    'End Sub
-
-    'Private Sub GridView2_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
-    '    Dim datatabl As New DataTable
-    '    Dim sqlcommand As New MySqlCommand
-    '    datatabl.Clear()
-    '    Dim param As String = ""
-    '    Try
-    '        param = "and NoId ='" + GridView2.GetFocusedRowCellValue("NoId").ToString() + "'"
-    '    Catch ex As Exception
-    '    End Try
-    '    If param > "" Then
-    '        act = "edit"
-    '    Else
-    '        act = "input"
-    '    End If
-    '    Try
-    '        sqlcommand.CommandText = "Select NoId, EmployeeCode, Certificates, Years, Reasons from db_certificates where 1 = 1 " + param.ToString()
-    '        sqlcommand.Connection = SQLConnection
-    '        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-    '        Dim cb As New MySqlCommandBuilder(adapter)
-    '        adapter.Fill(datatabl)
-    '    Catch ex As Exception
-    '    End Try
-    '    If datatabl.Rows.Count > 0 Then
-    '        Label29.Text = datatabl.Rows(0).Item(0).ToString
-    '        txtcertificate.Text = datatabl.Rows(0).Item(2).ToString
-    '        txtyear.Text = datatabl.Rows(0).Item(3).ToString
-    '        txtreason.Text = datatabl.Rows(0).Item(4).ToString
-    '    End If
-    'End Sub
-
-    'Private Sub GridView4_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView4.FocusedRowChanged
-    '    Dim datatabl As New DataTable
-    '    Dim sqlcommand As New MySqlCommand
-    '    datatabl.Clear()
-    '    Dim param As String = ""
-    '    Try
-    '        param = "and NoId ='" + GridView4.GetFocusedRowCellValue("NoId").ToString() + "'"
-    '    Catch ex As Exception
-    '    End Try
-    '    If param > "" Then
-    '        act = "edit"
-    '    Else
-    '        act = "input"
-    '    End If
-    '    Try
-    '        sqlcommand.CommandText = "Select NoId, EmployeeCode, MemberName, Relationship, Gender, Address, Occupation, PhoneNo from db_family where 1 = 1 " + param.ToString()
-    '        sqlcommand.Connection = SQLConnection
-    '        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-    '        Dim cb As New MySqlCommandBuilder(adapter)
-    '        adapter.Fill(datatabl)
-    '    Catch ex As Exception
-    '    End Try
-    '    If datatabl.Rows.Count > 0 Then
-    '        Label29.Text = datatabl.Rows(0).Item(0).ToString
-    '        txtmember.Text = datatabl.Rows(0).Item(2).ToString
-    '        txtrelation.Text = datatabl.Rows(0).Item(3).ToString
-    '        txtmemgender.Text = datatabl.Rows(0).Item(4).ToString
-    '        txtmemadd.Text = datatabl.Rows(0).Item(5).ToString
-    '        txtocc.Text = datatabl.Rows(0).Item(6).ToString
-    '        txtmemph.Text = datatabl.Rows(0).Item(7).ToString
-    '    End If
-    'End Sub
-
-    'Private Sub GridView5_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView5.FocusedRowChanged
-    '    Dim datatabl As New DataTable
-    '    Dim sqlcommand As New MySqlCommand
-    '    datatabl.Clear()
-    '    Dim param As String = ""
-    '    Try
-    '        param = "and NoId ='" + GridView5.GetFocusedRowCellValue("NoId").ToString() + "'"
-    '    Catch ex As Exception
-    '    End Try
-    '    If param > "" Then
-    '        act = "edit"
-    '    Else
-    '        act = "input"
-    '    End If
-    '    Try
-    '        sqlcommand.CommandText = "Select NoId, EmployeeCode, Position, Company, Manager, Address, Period, Until, BasicSalary, AdditionalSalary, TotalSalary, QuitReason from db_exp where 1 = 1 " + param.ToString()
-    '        sqlcommand.Connection = SQLConnection
-    '        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-    '        Dim cb As New MySqlCommandBuilder(adapter)
-    '        adapter.Fill(datatabl)
-    '    Catch ex As Exception
-    '    End Try
-    '    If datatabl.Rows.Count > 0 Then
-    '        Label29.Text = datatabl.Rows(0).Item(0).ToString
-    '        txtjobtitle.Text = datatabl.Rows(0).Item(2).ToString
-    '        txtcompanyname.Text = datatabl.Rows(0).Item(3).ToString
-    '        txtmanagername.Text = datatabl.Rows(0).Item(4).ToString
-    '        txtcompadd.Text = datatabl.Rows(0).Item(5).ToString
-    '        txtperiod.Text = datatabl.Rows(0).Item(6).ToString
-    '        txtuntil.Text = datatabl.Rows(0).Item(7).ToString
-    '        txtbasic.Text = datatabl.Rows(0).Item(8).ToString
-    '        txtaddi.Text = datatabl.Rows(0).Item(9).ToString
-    '        txttotalsa.Text = datatabl.Rows(0).Item(10).ToString
-    '        txtreasonquit.Text = datatabl.Rows(0).Item(11).ToString
-    '    End If
-    'End Sub
-
-    'Private Sub GridView6_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView6.FocusedRowChanged
-    '    Dim datatabl As New DataTable
-    '    Dim sqlcommand As New MySqlCommand
-    '    datatabl.Clear()
-    '    Dim param As String = ""
-    '    Try
-    '        param = "and NoId ='" + GridView6.GetFocusedRowCellValue("NoId").ToString() + "'"
-    '    Catch ex As Exception
-    '    End Try
-    '    If param > "" Then
-    '        act = "edit"
-    '    Else
-    '        act = "input"
-    '    End If
-    '    Try
-    '        sqlcommand.CommandText = "Select NoId, EmployeeCode, SkillName, SkillLevel, SkillDescription from db_empskill where 1 = 1 " + param.ToString()
-    '        sqlcommand.Connection = SQLConnection
-    '        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-    '        Dim cb As New MySqlCommandBuilder(adapter)
-    '        adapter.Fill(datatabl)
-    '    Catch ex As Exception
-    '    End Try
-    '    If datatabl.Rows.Count > 0 Then
-    '        Label29.Text = datatabl.Rows(0).Item(0).ToString
-    '        skillname.Text = datatabl.Rows(0).Item(2).ToString
-    '        skilllevel.Text = datatabl.Rows(0).Item(3).ToString
-    '        skilldesc.Text = datatabl.Rows(0).Item(4).ToString
-    '    End If
-    'End Sub
 
     Private Sub SimpleButton11_Click(sender As Object, e As EventArgs)
         txtschoolname.Text = ""
@@ -1510,11 +1313,6 @@ Public Class ChangeEmp
             .Label6.Text = Label37.Text
             .Show()
         End With
-        'If sel Is Nothing OrElse sel.IsDisposed OrElse sel.MinimizeBox Then
-        '    sel.Close()
-        '    sel = New selectemp
-        'End If
-        'sel.Show()
     End Sub
 
     Private Sub SimpleButton23_Click(sender As Object, e As EventArgs) Handles SimpleButton23.Click
@@ -1524,11 +1322,6 @@ Public Class ChangeEmp
             .Label6.Text = Label37.Text
             .Show()
         End With
-        'If sel Is Nothing OrElse sel.IsDisposed OrElse sel.MinimizeBox Then
-        '    sel.Close()
-        '    sel = New selectemp
-        'End If
-        'sel.Show()
     End Sub
 
     Private Sub ComboBoxEdit3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit3.SelectedIndexChanged
@@ -1692,7 +1485,6 @@ Public Class ChangeEmp
             If ComboBoxEdit11.SelectedItem Is tableben.Rows(index).Item(2).ToString Then
                 Label29.Text = tableben.Rows(index).Item(0).ToString
                 RichTextBox1.Text = tableben.Rows(index).Item(3).ToString
-                'TextEdit4.Text = tableben.Rows(index).Item(4).ToString
             End If
         Next
     End Sub

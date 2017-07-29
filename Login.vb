@@ -1,50 +1,6 @@
-﻿Imports System.ComponentModel
-Imports System.Globalization
-Imports System.IO
+﻿Imports System.IO
 Imports System.Security.Cryptography
-Imports System.Windows.Controls
-
 Public Class Login
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim host As String
-    Dim id As String
-    Dim password As String
-    Dim db As String
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.        
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
-    Dim main As New MainApp
-    Dim cir As New Circle
-
-    Dim bar As New ProgressBar
-    Dim tile As New Tile_Control
 
     Sub autoupdate()
         Do While True
@@ -64,7 +20,7 @@ Public Class Login
         Loop
     End Sub
 
-    Sub visiting()
+    Sub visiting() 'store last visit to track version of HRIS    
         Dim hostname As String = Net.Dns.GetHostName
         Dim ipadd As String = Net.Dns.GetHostEntry(hostname).AddressList(0).ToString
         Dim query As MySqlCommand = SQLConnection.CreateCommand
@@ -79,14 +35,8 @@ Public Class Login
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'AutomaticUpdater1.Show()
-        ''Me.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        'CheckForUpdatesToolStripMenuItem.PerformClick()
-        'SQLConnection.ConnectionString = connectionString
-        'SQLConnection.Open()
-        'AutomaticUpdater1.Show()
-        'Me.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        'CheckForUpdatesToolStripMenuItem.PerformClick()
+        AutomaticUpdater1.Show()
+        CheckForUpdatesToolStripMenuItem.PerformClick()
         '//Uncomment below line to see Russian version
 
         '  //AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("ru-RU");
@@ -104,31 +54,31 @@ Public Class Login
         ' AutoUpdater.Start("ftp://amos:t4m4g0@ftp1.makmurgroup.id/repo/hris/%file%")
     End Sub
 
-    Public Sub CheckForUpdates()
-        Try
-            Timer1.Enabled = False
-            ProgressBar1.Visible = True
-            WebBrowser1.Visible = False
-            Dim request As Net.HttpWebRequest = CType(Net.WebRequest.Create("https://dl.dropbox.com/s/f3hbcpzffkdg5y0/version.txt?dl=0"), Net.HttpWebRequest)
-            Dim response As Net.HttpWebResponse = CType(request.GetResponse(), Net.HttpWebResponse)
-            Dim sr As StreamReader = New StreamReader(response.GetResponseStream())
-            Dim newestversion As String = sr.ReadToEnd()
-            Dim currentversion As String = Application.ProductVersion
-            If newestversion.Contains(currentversion) Then
-                Timer1.Enabled = True
-            Else
-                Dim mess As String
-                mess = CType(MsgBox("There's a new update, Update ?", MsgBoxStyle.YesNo, "Information"), String)
-                If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
-                    WebBrowser1.Navigate("https://dl.dropbox.com/s/axtsp9oq8pez6u6/HRIS.exe?dl=0")
-                Else
-                    Timer1.Enabled = True
-                End If
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
+    'Public Sub CheckForUpdates()
+    '    Try
+    '        Timer1.Enabled = False
+    '        ProgressBar1.Visible = True
+    '        WebBrowser1.Visible = False
+    '        Dim request As Net.HttpWebRequest = CType(Net.WebRequest.Create("https://dl.dropbox.com/s/f3hbcpzffkdg5y0/version.txt?dl=0"), Net.HttpWebRequest)
+    '        Dim response As Net.HttpWebResponse = CType(request.GetResponse(), Net.HttpWebResponse)
+    '        Dim sr As StreamReader = New StreamReader(response.GetResponseStream())
+    '        Dim newestversion As String = sr.ReadToEnd()
+    '        Dim currentversion As String = Application.ProductVersion
+    '        If newestversion.Contains(currentversion) Then
+    '            Timer1.Enabled = True
+    '        Else
+    '            Dim mess As String
+    '            mess = CType(MsgBox("There's a new update, Update ?", MsgBoxStyle.YesNo, "Information"), String)
+    '            If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
+    '                WebBrowser1.Navigate("https://dl.dropbox.com/s/axtsp9oq8pez6u6/HRIS.exe?dl=0")
+    '            Else
+    '                Timer1.Enabled = True
+    '            End If
+    '        End If
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Sub
 
     Public Function Hash512(password As String, salt As String) As String
         Dim convertedToBytes As Byte() = System.Text.Encoding.UTF8.GetBytes(password & salt)
@@ -139,18 +89,14 @@ Public Class Login
     End Function
 
     Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
-        'SplashScreenManager.ShowForm(Me, GetType(WaitForm1), True, True, False)
-        'For i As Integer = 1 To 100
-        '    SplashScreenManager.Default.SetWaitFormDescription(i.ToString() & "%")
-        '    Thread.Sleep(25)
-        'Next i
-        'SplashScreenManager.CloseForm(False)
         If teUsername.Text = "" OrElse tePassword.Text = "" Then
             MsgBox("Username and pasword can't be empty", MsgBoxStyle.Exclamation)
         Else
-            SQLConnection.ConnectionString = connectionString
-            SQLConnection.Open()
-
+            SQLConnection.Close()
+            SQLConnection.ConnectionString = CONSTRING
+            If SQLConnection.State = ConnectionState.Closed Then
+                SQLConnection.Open()
+            End If
             Dim m5 As New MD5CryptoServiceProvider
             Dim bytestring() As Byte = System.Text.Encoding.ASCII.GetBytes(tePassword.Text)
             bytestring = m5.ComputeHash(bytestring)
@@ -175,38 +121,10 @@ Public Class Login
                     tePassword.Enabled = True
                 End If
             Catch ex As Exception
-                MsgBox(ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
-            SQLConnection.Close()
         End If
     End Sub
-
-    'Sub matching()
-    '    Dim m5 As New MD5CryptoServiceProvider
-    '    Dim bytestring() As Byte = System.Text.Encoding.ASCII.GetBytes(tePassword.Text)
-    '    bytestring = m5.ComputeHash(bytestring)
-    '    Dim finalstring As String = Nothing
-    '    For Each bt As Byte In bytestring
-    '        finalstring &= bt.ToString("x2")
-    '    Next
-    '    Dim query As MySqlCommand = SQLConnection.CreateCommand
-    '    query.CommandText = "select * from db_user where binary username = @user and binary password = @pa"
-    '    With query
-    '        .Parameters.AddWithValue("@user", teUsername.Text)
-    '        .Parameters.AddWithValue("@pa", finalstring.ToString)
-    '    End With
-    '    Dim tbl As New DataTable
-    '    Dim adapter As New MySqlDataAdapter(query.CommandText, SQLConnection)
-    '    Dim cb As New MySqlCommandBuilder(adapter)
-    '    adapter.Fill(tbl)
-    '    If tbl.Rows.Count > 0 Then
-    '        ProgressBar1.Visible = True
-    '        Timer1.Enabled = True
-    '        user()
-    '    Else
-    '        MsgBox("Username and password didn't match", MsgBoxStyle.Critical)
-    '    End If
-    'End Sub
 
     Private Sub tePassword_KeyDown(sender As Object, e As KeyEventArgs) Handles tePassword.KeyDown
         Dim m5 As New MD5CryptoServiceProvider
@@ -220,9 +138,11 @@ Public Class Login
             If teUsername.Text = "" OrElse tePassword.Text = "" Then
                 MsgBox("Username and password can't be empty", MsgBoxStyle.Exclamation)
             Else
-
-                SQLConnection.ConnectionString = connectionString
-                SQLConnection.Open()
+                SQLConnection.Close()
+                SQLConnection.ConnectionString = CONSTRING
+                If SQLConnection.State = ConnectionState.Closed Then
+                    SQLConnection.Open()
+                End If
                 Try
                     Dim tbl_par As New DataTable
                     Dim sqlCommand As New MySqlCommand
@@ -240,17 +160,18 @@ Public Class Login
                         tePassword.Enabled = True
                     End If
                 Catch ex As Exception
-                    MsgBox(ex.Message)
+                    MsgBox(ex.Message, MsgBoxStyle.Critical)
                 End Try
-                SQLConnection.Close()
             End If
         End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        'SendMessage(CInt(ProgressBar1.Handle), 1040, 3, 0)
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Dim m5 As New MD5CryptoServiceProvider
         Dim bytestring() As Byte = System.Text.Encoding.ASCII.GetBytes(tePassword.Text)
         bytestring = m5.ComputeHash(bytestring)
@@ -274,8 +195,7 @@ Public Class Login
                 adapter.Fill(tbl_par)
                 If tbl_par.Rows.Count > 0 Then
                     visiting()
-                    'lastvisits()
-                    With Tile_Control
+                    With Tiles
                         .TextBox1.Text = teUsername.Text
                         .Show()
                     End With
@@ -310,9 +230,8 @@ Public Class Login
                 Label1.Text = "Ready...."
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
-        SQLConnection.Close()
     End Sub
 
     Private Sub AutomaticUpdater1_ClosingAborted(sender As Object, e As EventArgs) Handles AutomaticUpdater1.ClosingAborted
@@ -337,8 +256,11 @@ Public Class Login
             If teUsername.Text = "" OrElse tePassword.Text = "" Then
                 MsgBox("Username and password can't be empty", MsgBoxStyle.Exclamation)
             Else
-                SQLConnection.ConnectionString = connectionString
-                SQLConnection.Open()
+                SQLConnection.Close()
+                SQLConnection.ConnectionString = CONSTRING
+                If SQLConnection.State = ConnectionState.Closed Then
+                    SQLConnection.Open()
+                End If
                 Try
                     Dim tbl_par As New DataTable
                     Dim sqlCommand As New MySqlCommand
@@ -356,9 +278,8 @@ Public Class Login
                         tePassword.Enabled = True
                     End If
                 Catch ex As Exception
-                    MsgBox(ex.Message)
+                    MsgBox(ex.Message, MsgBoxStyle.Critical)
                 End Try
-                SQLConnection.Close()
             End If
         End If
     End Sub
@@ -373,10 +294,7 @@ Public Class Login
         CheckForUpdatesToolStripMenuItem.PerformClick()
     End Sub
 
-    Private Sub ChangeLanguage(ByVal lang As String)
-        For Each c As Control In Controls
-            Dim resources As ComponentResourceManager = New ComponentResourceManager(GetType(Form1))
-            resources.ApplyResources(c, c.Name, New CultureInfo(lang))
-        Next c
+    Private Sub Login_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        StartPages.Close()
     End Sub
 End Class

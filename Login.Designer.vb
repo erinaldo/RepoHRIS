@@ -95,9 +95,9 @@ Partial Class Login
         'ProgressBar1
         '
         Me.ProgressBar1.BackColor = System.Drawing.Color.Black
-        Me.ProgressBar1.Location = New System.Drawing.Point(17, 106)
+        Me.ProgressBar1.Location = New System.Drawing.Point(16, 106)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(190, 24)
+        Me.ProgressBar1.Size = New System.Drawing.Size(191, 24)
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 81
         Me.ProgressBar1.Visible = False

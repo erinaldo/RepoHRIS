@@ -3,40 +3,6 @@ Imports DevExpress.Utils.Menu
 Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class OtherIncome
-    Dim connectionstring As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionstring = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     'Sub changer()
     '    Dim mnow As String = Month(Now).ToString
     '    Dim yearx As String = Format(Now, "yy").ToString
@@ -121,8 +87,11 @@ Public Class OtherIncome
     End Sub
 
     Private Sub OtherIncome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionstring
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         changer()
         txtperiod.Format = DateTimePickerFormat.Custom
         txtperiod.CustomFormat = "MMMM yyyy"

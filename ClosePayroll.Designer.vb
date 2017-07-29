@@ -180,6 +180,7 @@ Partial Class ClosePayroll
         Me.thrcheck.Size = New System.Drawing.Size(94, 19)
         Me.thrcheck.StyleController = Me.LayoutControl8
         Me.thrcheck.TabIndex = 13
+        Me.thrcheck.Visible = False
         '
         'payrollcheck
         '

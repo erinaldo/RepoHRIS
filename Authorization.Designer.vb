@@ -104,6 +104,7 @@ Partial Class Authorization
         Me.LayoutControlItem25 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.LayoutControl6 = New DevExpress.XtraLayout.LayoutControl()
+        Me.CheckEdit48 = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit42 = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit41 = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit40 = New DevExpress.XtraEditors.CheckEdit()
@@ -139,7 +140,6 @@ Partial Class Authorization
         Me.LayoutControlItem40 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem41 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem42 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.CheckEdit48 = New DevExpress.XtraEditors.CheckEdit()
         Me.LayoutControlItem48 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -226,6 +226,7 @@ Partial Class Authorization
         Me.GroupBox6.SuspendLayout()
         CType(Me.LayoutControl6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl6.SuspendLayout()
+        CType(Me.CheckEdit48.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit42.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit41.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit40.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,7 +262,6 @@ Partial Class Authorization
         CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CheckEdit48.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem48, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -573,7 +573,7 @@ Partial Class Authorization
         '
         'CheckEdit18
         '
-        Me.CheckEdit18.Location = New System.Drawing.Point(12, 106)
+        Me.CheckEdit18.Location = New System.Drawing.Point(12, 127)
         Me.CheckEdit18.Name = "CheckEdit18"
         Me.CheckEdit18.Properties.Caption = "Warning Notice"
         Me.CheckEdit18.Size = New System.Drawing.Size(149, 19)
@@ -598,7 +598,7 @@ Partial Class Authorization
         '
         'CheckEdit46
         '
-        Me.CheckEdit46.Location = New System.Drawing.Point(12, 129)
+        Me.CheckEdit46.Location = New System.Drawing.Point(12, 150)
         Me.CheckEdit46.Name = "CheckEdit46"
         Me.CheckEdit46.Properties.Caption = "Surat Dinas"
         Me.CheckEdit46.Size = New System.Drawing.Size(149, 19)
@@ -607,7 +607,7 @@ Partial Class Authorization
         '
         'CheckEdit9
         '
-        Me.CheckEdit9.Location = New System.Drawing.Point(12, -9)
+        Me.CheckEdit9.Location = New System.Drawing.Point(12, 12)
         Me.CheckEdit9.Name = "CheckEdit9"
         Me.CheckEdit9.Properties.Caption = "Leave Request"
         Me.CheckEdit9.Size = New System.Drawing.Size(149, 19)
@@ -616,7 +616,7 @@ Partial Class Authorization
         '
         'CheckEdit13
         '
-        Me.CheckEdit13.Location = New System.Drawing.Point(12, 14)
+        Me.CheckEdit13.Location = New System.Drawing.Point(12, 35)
         Me.CheckEdit13.Name = "CheckEdit13"
         Me.CheckEdit13.Properties.Caption = "Loans"
         Me.CheckEdit13.Size = New System.Drawing.Size(149, 19)
@@ -625,7 +625,7 @@ Partial Class Authorization
         '
         'CheckEdit14
         '
-        Me.CheckEdit14.Location = New System.Drawing.Point(12, 37)
+        Me.CheckEdit14.Location = New System.Drawing.Point(12, 58)
         Me.CheckEdit14.Name = "CheckEdit14"
         Me.CheckEdit14.Properties.Caption = "Termination"
         Me.CheckEdit14.Size = New System.Drawing.Size(149, 19)
@@ -634,7 +634,7 @@ Partial Class Authorization
         '
         'CheckEdit15
         '
-        Me.CheckEdit15.Location = New System.Drawing.Point(12, 60)
+        Me.CheckEdit15.Location = New System.Drawing.Point(12, 81)
         Me.CheckEdit15.Name = "CheckEdit15"
         Me.CheckEdit15.Properties.Caption = "Status Change"
         Me.CheckEdit15.Size = New System.Drawing.Size(149, 19)
@@ -643,7 +643,7 @@ Partial Class Authorization
         '
         'CheckEdit16
         '
-        Me.CheckEdit16.Location = New System.Drawing.Point(12, 83)
+        Me.CheckEdit16.Location = New System.Drawing.Point(12, 104)
         Me.CheckEdit16.Name = "CheckEdit16"
         Me.CheckEdit16.Properties.Caption = "Other Income"
         Me.CheckEdit16.Size = New System.Drawing.Size(149, 19)
@@ -656,7 +656,7 @@ Partial Class Authorization
         Me.LayoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup4.GroupBordersVisible = False
         Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem15, Me.LayoutControlItem16, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.LayoutControlItem19, Me.LayoutControlItem14, Me.LayoutControlItem46})
-        Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, -21)
+        Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup4.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup4.Size = New System.Drawing.Size(173, 181)
         Me.LayoutControlGroup4.Text = "LayoutControlGroup2"
@@ -1263,6 +1263,15 @@ Partial Class Authorization
         Me.LayoutControl6.TabIndex = 0
         Me.LayoutControl6.Text = "LayoutControl6"
         '
+        'CheckEdit48
+        '
+        Me.CheckEdit48.Location = New System.Drawing.Point(12, 403)
+        Me.CheckEdit48.Name = "CheckEdit48"
+        Me.CheckEdit48.Properties.Caption = "Laporan Dinas"
+        Me.CheckEdit48.Size = New System.Drawing.Size(166, 19)
+        Me.CheckEdit48.StyleController = Me.LayoutControl6
+        Me.CheckEdit48.TabIndex = 31
+        '
         'CheckEdit42
         '
         Me.CheckEdit42.Location = New System.Drawing.Point(12, 380)
@@ -1632,15 +1641,6 @@ Partial Class Authorization
         Me.LayoutControlItem42.TextToControlDistance = 0
         Me.LayoutControlItem42.TextVisible = False
         '
-        'CheckEdit48
-        '
-        Me.CheckEdit48.Location = New System.Drawing.Point(12, 403)
-        Me.CheckEdit48.Name = "CheckEdit48"
-        Me.CheckEdit48.Properties.Caption = "Laporan Dinas"
-        Me.CheckEdit48.Size = New System.Drawing.Size(166, 19)
-        Me.CheckEdit48.StyleController = Me.LayoutControl6
-        Me.CheckEdit48.TabIndex = 31
-        '
         'LayoutControlItem48
         '
         Me.LayoutControlItem48.Control = Me.CheckEdit48
@@ -1761,6 +1761,7 @@ Partial Class Authorization
         Me.GroupBox6.ResumeLayout(False)
         CType(Me.LayoutControl6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl6.ResumeLayout(False)
+        CType(Me.CheckEdit48.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit42.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit41.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit40.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1796,7 +1797,6 @@ Partial Class Authorization
         CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CheckEdit48.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem48, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

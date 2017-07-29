@@ -1,42 +1,5 @@
 ﻿Imports System.IO
 Public Class Overtime_Hours
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        'Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Function ImageToByte(ByVal pbImg As PictureBox) As Byte()
         If pbImg Is Nothing Then
             Return Nothing
@@ -68,8 +31,11 @@ Public Class Overtime_Hours
     End Sub
 
     Private Sub Overtime_Hours_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         autofill()
     End Sub
 
@@ -92,11 +58,6 @@ Public Class Overtime_Hours
             .Label6.Text = Label2.Text
             .Show()
         End With
-        'If sel Is Nothing OrElse sel.IsDisposed OrElse sel.MinimizeBox Then
-        '    sel.Close()
-        '    sel = New selectemp
-        'End If
-        'sel.Show()
     End Sub
 
     Sub insertion()
@@ -106,16 +67,16 @@ Public Class Overtime_Hours
         dtb = DateTimePicker1.Value
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "update db_absensi set overtimehours = @oth, remarks = @remarks where tanggal = @tgl and employeecode = @emp"
-        query.Parameters.AddWithValue("@emp", TextEdit1.Text)
+        query.Parameters.AddWithValue("@emp", textedit1.Text)
         query.Parameters.AddWithValue("@oth", TextEdit3.Text)
         query.Parameters.AddWithValue("@tgl", dtb.ToString("yyyy-MM-dd"))
         query.Parameters.AddWithValue("@Remarks", RichTextBox1.Text)
         query.ExecuteNonQuery()
-        MsgBox("Overtime Hours Updated")
-        TextEdit1.Text = ""
+        MsgBox("Overtime Hours Updated", MsgBoxStyle.Information)
+        textedit1.Text = ""
         TextEdit3.Text = ""
         RichTextBox1.Text = ""
-        TextEdit2.Text = ""
+        textedit2.Text = ""
         DateTimePicker1.Value = Date.Now
     End Sub
 
@@ -135,7 +96,7 @@ Public Class Overtime_Hours
         Dim quer As Integer = CInt(query.ExecuteScalar)
         If textedit1.Text = "" OrElse textedit2.Text = "" OrElse TextEdit3.Text = "" Then
             MsgBox("Please fill the empty fields", MsgBoxStyle.Exclamation)
-        ElseIf CInt(TextEdit3.Text) > 15 Or CInt(TextEdit3.Text) < 1 Then
+        ElseIf CInt(TextEdit3.Text) >= 12 Or CInt(TextEdit3.Text) < 1 Then
             MsgBox("Inputted hours isn't valid", MsgBoxStyle.Exclamation)
         ElseIf quer = 0 Then
             Dim mess2 As String
@@ -162,11 +123,11 @@ Public Class Overtime_Hours
             Dim query As MySqlCommand = SQLConnection.CreateCommand
             query.CommandText = "select name from db_tmpname"
             Dim quer1 As String = CType(query.ExecuteScalar, String)
-            TextEdit2.Text = quer1.ToString
+            textedit2.Text = quer1.ToString
 
             query.CommandText = "select employeecode from db_tmpname"
             Dim quer2 As String = CType(query.ExecuteScalar, String)
-            TextEdit1.Text = quer2.ToString
+            textedit1.Text = quer2.ToString
         Catch ex As Exception
         End Try
     End Sub
@@ -182,7 +143,7 @@ Public Class Overtime_Hours
         query.Parameters.AddWithValue("@tgl", DateTimePicker2.Value.Date)
         query.Parameters.AddWithValue("@ec", Label1.Text)
         query.ExecuteNonQuery()
-        MsgBox("Modified")
+        MsgBox("Modified", MsgBoxStyle.Information)
         overtimelist()
     End Sub
 
@@ -240,4 +201,12 @@ Public Class Overtime_Hours
             e.Handled = True
         End If
     End Sub
+
+    Private Sub TextEdit3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextEdit3.KeyPress
+        Dim cas As Char = e.KeyChar
+        If Char.IsLetter(cas) Then
+            e.Handled = True
+        End If
+    End Sub
+
 End Class

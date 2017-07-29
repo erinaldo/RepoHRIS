@@ -32,12 +32,12 @@ Partial Class AttendanceInput
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
-        Me.SimpleButton22 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.TimeEdit1 = New DevExpress.XtraEditors.TimeEdit()
         Me.TimeEdit2 = New DevExpress.XtraEditors.TimeEdit()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton22 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,23 +107,6 @@ Partial Class AttendanceInput
         Me.TextEdit2.Size = New System.Drawing.Size(201, 20)
         Me.TextEdit2.TabIndex = 9
         '
-        'SimpleButton22
-        '
-        Me.SimpleButton22.Image = CType(resources.GetObject("SimpleButton22.Image"), System.Drawing.Image)
-        Me.SimpleButton22.Location = New System.Drawing.Point(274, 28)
-        Me.SimpleButton22.Name = "SimpleButton22"
-        Me.SimpleButton22.Size = New System.Drawing.Size(25, 20)
-        Me.SimpleButton22.TabIndex = 70
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(224, 129)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(75, 23)
-        Me.SimpleButton1.TabIndex = 71
-        Me.SimpleButton1.Text = "Save"
-        '
         'TimeEdit1
         '
         Me.TimeEdit1.EditValue = New Date(2017, 6, 14, 0, 0, 0, 0)
@@ -160,6 +143,23 @@ Partial Class AttendanceInput
         Me.Label3.TabIndex = 80
         Me.Label3.Text = "Label3"
         Me.Label3.Visible = False
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(224, 129)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(75, 23)
+        Me.SimpleButton1.TabIndex = 71
+        Me.SimpleButton1.Text = "Save"
+        '
+        'SimpleButton22
+        '
+        Me.SimpleButton22.Image = CType(resources.GetObject("SimpleButton22.Image"), System.Drawing.Image)
+        Me.SimpleButton22.Location = New System.Drawing.Point(274, 28)
+        Me.SimpleButton22.Name = "SimpleButton22"
+        Me.SimpleButton22.Size = New System.Drawing.Size(25, 20)
+        Me.SimpleButton22.TabIndex = 70
         '
         'AttendanceInput
         '

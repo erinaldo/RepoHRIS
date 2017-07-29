@@ -31,9 +31,9 @@ Partial Class Pending
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.txtinterviewdate = New System.Windows.Forms.DateTimePicker()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,14 +110,6 @@ Partial Class Pending
         Me.GroupControl2.TabIndex = 44
         Me.GroupControl2.Visible = False
         '
-        'SimpleButton3
-        '
-        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(168, 4)
-        Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(25, 23)
-        Me.SimpleButton3.TabIndex = 39
-        '
         'LabelControl2
         '
         Me.LabelControl2.Location = New System.Drawing.Point(52, 12)
@@ -132,6 +124,14 @@ Partial Class Pending
         Me.txtinterviewdate.Name = "txtinterviewdate"
         Me.txtinterviewdate.Size = New System.Drawing.Size(181, 20)
         Me.txtinterviewdate.TabIndex = 35
+        '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(168, 4)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(25, 23)
+        Me.SimpleButton3.TabIndex = 39
         '
         'SimpleButton4
         '

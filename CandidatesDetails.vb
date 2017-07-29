@@ -1,46 +1,12 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraCharts
-
 Public Class CandidatesDetails
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Private Sub CandidatesDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select idrec from db_tmpname where 1 = 1"
         Dim quer As String = CType(query.ExecuteScalar, String)
@@ -73,6 +39,21 @@ Public Class CandidatesDetails
             SimpleButton5.Enabled = False
             SimpleButton6.Enabled = False
         End If
+        avg()
+    End Sub
+
+    Sub avg()
+        Try
+            Dim a, b, c, d, e, f As Decimal
+            a = CDec(Convert.ToDouble(TextBox1.Text))
+            b = CDec(Convert.ToDouble(TextBox2.Text))
+            c = CDec(Convert.ToDouble(TextBox7.Text))
+            d = CDec(Convert.ToDouble(TextBox8.Text))
+            e = CDec(Convert.ToDouble(TextBox9.Text))
+            f = CDec(CDbl((a + b + c + d + e) / 5))
+            TextBox11.Text = f.ToString
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub grafik3()
@@ -267,7 +248,7 @@ Public Class CandidatesDetails
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         If TextBox10.Text = "" Then
-            MsgBox("Insert the name to compare with")
+            MsgBox("Insert the name to compare with", MsgBoxStyle.Information)
         Else
             grafik2()
             Label27.Text = TextBox10.Text.ToString

@@ -1,50 +1,11 @@
-﻿Imports System.IO
-
-Public Class Criteria
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        'Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
+﻿Public Class Criteria
     Private Sub Criteria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Try
-            'Dim query As MySqlCommand = SQLConnection.CreateCommand
-            'query.CommandText = "select status from db_tmpname"
-            'Dim quer2 As String = CType(query.ExecuteScalar, String)
-            'Label1.Text = quer2.ToString
             If Label1.Text = "Candidates List" Then
                 CheckEdit1.Text = "Id Recruitment"
             Else
@@ -100,31 +61,6 @@ Public Class Criteria
     Private Sub CheckEdit1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit1.CheckedChanged
         If CheckEdit1.Checked = True Then
             CheckEdit2.Checked = False
-            'If Label1.Text = "Candidates List" Then
-            '    If CheckEdit1.Checked = True Then
-            '        TextEdit1.Enabled = True
-            '        TextEdit1.Text = ""
-            '        SimpleButton1.Enabled = True
-            '        CheckEdit2.Checked = False
-            '        CheckEdit3.Checked = False
-            '        CheckEdit3.Enabled = False
-            '    Else
-            '        CheckEdit2.Enabled = True
-            '        TextEdit1.Enabled = False
-            '        SimpleButton1.Enabled = False
-            '        CheckEdit3.Enabled = True
-            '    End If
-            'Else
-            '    If CheckEdit1.Checked = True Then
-            '        TextEdit1.Enabled = True
-            '        TextEdit1.Text = ""
-            '        SimpleButton1.Enabled = True
-            '        CheckEdit2.Checked = False
-            '    Else
-            '        TextEdit1.Enabled = False
-            '        CheckEdit2.Enabled = False
-            '        SimpleButton1.Enabled = False
-            '    End If
         End If
     End Sub
 
@@ -155,13 +91,7 @@ Public Class Criteria
                 .Label6.Text = Label2.Text
                 .Show()
             End With
-            'If sel2 Is Nothing OrElse sel2.IsDisposed OrElse sel2.MinimizeBox Then
-            '    sel2.Close()
-            '    sel2 = New selectemp
-            'End If
-            'sel2.Show()
         Else
-            'CheckEdit1.Text = "Id Recruitment"
             If sel1 Is Nothing OrElse sel1.IsDisposed OrElse sel1.MinimizeBox Then
                 sel1.Close()
                 sel1 = New selectcand
@@ -217,22 +147,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@emp", emp)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -243,22 +165,14 @@ Public Class Criteria
         sqlcommand.Parameters.AddWithValue("@emp", emp)
         Dim dt As New DataTable
         dt.Load(sqlcommand.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -349,22 +263,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -376,22 +282,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -403,22 +301,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -428,22 +318,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@emp", emp)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -455,22 +337,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -482,22 +356,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -509,22 +375,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -536,22 +394,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -563,22 +413,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -590,22 +432,14 @@ Public Class Criteria
         query.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
-        'With Reports
-        '    .GridControl1.DataSource = dt
-        '    .GridControl1.UseEmbeddedNavigator = True
-        '    .Label3.Text = Label2.Text
-        '    '.Show()
-        'End With
         With Form2
             .GridView1.Columns.Clear()
-            '.CardView1.Columns.Clear()
             .LayoutView1.Columns.Clear()
             .GridControl1.DataSource = dt
             .GridControl2.DataSource = dt
             .GridControl1.UseEmbeddedNavigator = True
             .Label3.Text = Label2.Text
             .LabelControl2.Text = Label1.Text
-            '.Show()
         End With
     End Sub
 
@@ -725,22 +559,14 @@ Public Class Criteria
             query.Parameters.AddWithValue("@emp", emp)
             Dim dt As New DataTable
             dt.Load(query.ExecuteReader)
-            'With Reports
-            '    .GridControl1.DataSource = dt
-            '    .GridControl1.UseEmbeddedNavigator = True
-            '    .Label3.Text = Label2.Text
-            '    '.Show()
-            'End With
             With Form2
                 .GridView1.Columns.Clear()
-                '.CardView1.Columns.Clear()
                 .LayoutView1.Columns.Clear()
                 .GridControl1.DataSource = dt
                 .GridControl2.DataSource = dt
                 .GridControl1.UseEmbeddedNavigator = True
                 .Label3.Text = Label2.Text
                 .LabelControl2.Text = Label1.Text
-                '.Show()
             End With
         Catch ex As Exception
         End Try
@@ -757,13 +583,6 @@ Public Class Criteria
                 cmd.Parameters.AddWithValue("@date2", DateTimePicker2.Value.Date)
                 Dim dt As New DataTable
                 dt.Load(cmd.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
                     .GridControl1.DataSource = dt
@@ -771,7 +590,6 @@ Public Class Criteria
                     .GridControl1.UseEmbeddedNavigator = True
                     .Label3.Text = Label2.Text
                     .LabelControl2.Text = Label1.Text
-                    '.Show()
                 End With
             End If
         ElseIf Label1.Text = "Employee List" Then
@@ -805,23 +623,14 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(sqlcommand.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
                     .GridControl1.UseEmbeddedNavigator = True
                     .Label3.Text = Label2.Text
                     .LabelControl2.Text = Label1.Text
-                    '.Show()
                 End With
             End If
         ElseIf Label1.Text = "Attendance List" Then
@@ -876,23 +685,14 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
                     .GridControl1.UseEmbeddedNavigator = True
                     .Label3.Text = Label2.Text
                     .LabelControl2.Text = Label1.Text
-                    '.Show()
                 End With
             End If
         ElseIf Label1.Text = "Overtime List" Then
@@ -939,16 +739,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1001,16 +793,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1065,16 +849,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1129,16 +905,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1193,16 +961,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1243,16 +1003,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1307,16 +1059,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1371,16 +1115,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1396,8 +1132,6 @@ Public Class Criteria
                 latesin(TextEdit1.Text)
             Else
                 Dim query As MySqlCommand = SQLConnection.CreateCommand
-                query.CommandText = "select user from db_temp"
-                Dim querr As String = CStr(query.ExecuteScalar)
                 query.CommandText = "select kim3 from db_user where username = '" & Label2.Text & "'"
                 Dim kim3 As String = CStr(query.ExecuteScalar)
                 query.CommandText = "select kim4 from db_user where username= '" & Label2.Text & "'"
@@ -1435,16 +1169,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1499,16 +1225,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1524,8 +1242,6 @@ Public Class Criteria
                 terminate(TextEdit1.Text)
             Else
                 Dim query As MySqlCommand = SQLConnection.CreateCommand
-                query.CommandText = "select user from db_temp"
-                Dim querr As String = CStr(query.ExecuteScalar)
                 query.CommandText = "select kim3 from db_user where username = '" & Label2.Text & "'"
                 Dim kim3 As String = CStr(query.ExecuteScalar)
                 query.CommandText = "select kim4 from db_user where username= '" & Label2.Text & "'"
@@ -1563,16 +1279,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1693,16 +1401,8 @@ Public Class Criteria
                 End If
                 Dim dt As New DataTable
                 dt.Load(query.ExecuteReader)
-                'With Reports
-                '    .GridControl1.DataSource = dt
-                '    .GridControl1.UseEmbeddedNavigator = True
-                '    .Label3.Text = Label2.Text
-                '    .LabelControl2.Text = Label1.Text
-                '    '.Show()
-                'End With
                 With Form2
                     .GridView1.Columns.Clear()
-                    '.CardView1.Columns.Clear()
                     .LayoutView1.Columns.Clear()
                     .GridControl1.DataSource = dt
                     .GridControl2.DataSource = dt
@@ -1790,9 +1490,7 @@ Public Class Criteria
 
     Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
         Timer3.Start()
-       Timer3.Enabled = True
-        'proceed()
-        'Close()
+        Timer3.Enabled = True
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
@@ -1806,7 +1504,6 @@ Public Class Criteria
         If ProgressBar1.Value = 40 Then
             proceed()
         ElseIf ProgressBar1.Value = 100 Then
-            'Reports.Show()
             Form2.Show()
             Close()
         End If

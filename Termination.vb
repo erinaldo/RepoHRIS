@@ -1,39 +1,6 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraEditors
 Public Class Termination
-    Dim connectionstring As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionstring = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Private Sub CheckEdit1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit1.CheckedChanged
         If CheckEdit1.Checked = True Then
@@ -162,8 +129,11 @@ Public Class Termination
     End Sub
 
     Private Sub Termination_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionstring
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select employeecode from db_tmpname where 1 = 1"
         Dim quer As String = CType(query.ExecuteScalar, String)
@@ -241,11 +211,6 @@ Public Class Termination
             .Label6.Text = Label10.Text
             .Show()
         End With
-        'If sel Is Nothing OrElse sel.IsDisposed OrElse sel.MinimizeBox Then
-        '    sel.Close()
-        '    sel = New selectemp
-        'End If
-        'sel.Show()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click

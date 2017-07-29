@@ -1342,7 +1342,7 @@ Partial Class ChangeEmp
         Me.GroupControl1.Controls.Add(Me.LabelControl18)
         Me.GroupControl1.Location = New System.Drawing.Point(3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(879, 405)
+        Me.GroupControl1.Size = New System.Drawing.Size(884, 405)
         Me.GroupControl1.TabIndex = 49
         '
         'ComboBoxEdit4
@@ -1922,7 +1922,7 @@ Partial Class ChangeEmp
         Me.GroupControl3.Controls.Add(Me.LabelControl25)
         Me.GroupControl3.Location = New System.Drawing.Point(1, 3)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(878, 415)
+        Me.GroupControl3.Size = New System.Drawing.Size(886, 415)
         Me.GroupControl3.TabIndex = 0
         '
         'ComboBoxEdit5
@@ -2268,7 +2268,7 @@ Partial Class ChangeEmp
         Me.GroupControl4.Controls.Add(Me.LabelControl31)
         Me.GroupControl4.Location = New System.Drawing.Point(3, 4)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(876, 410)
+        Me.GroupControl4.Size = New System.Drawing.Size(884, 410)
         Me.GroupControl4.TabIndex = 0
         '
         'ComboBoxEdit8

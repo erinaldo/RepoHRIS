@@ -1,44 +1,10 @@
-﻿Imports System.IO
-Public Class ModAKS
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        'Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
+﻿Public Class ModAKS
     Private Sub ModAKS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         act = "input"
         'showtarget()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
@@ -63,7 +29,7 @@ Public Class ModAKS
             query.Parameters.AddWithValue("@disabled", CheckEdit1.Checked)
             query.Parameters.AddWithValue("@Periodic", CheckEdit2.Checked)
             query.ExecuteNonQuery()
-            MsgBox("Updation Succesful")
+            MsgBox("Updation Succesful", MsgBoxStyle.Information)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -139,9 +105,9 @@ Public Class ModAKS
             cmmd.Parameters.AddWithValue("@Name", TextEdit2.Text)
             cmmd.ExecuteNonQuery()
             If act = "input" Then
-                MsgBox("Data succesfully added")
+                MsgBox("Data succesfully added", MsgBoxStyle.Information)
             ElseIf act = "edit" Then
-                MsgBox("Data changed")
+                MsgBox("Data changed", MsgBoxStyle.Information)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -170,7 +136,7 @@ Public Class ModAKS
             Dim cb As New MySqlCommandBuilder(adapter)
             adapter.Fill(datatabl)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Information)
         End Try
         If datatabl.Rows.Count > -1 Then
             TextEdit4.Text = datatabl.Rows(0).Item(1).ToString
@@ -191,6 +157,12 @@ Public Class ModAKS
         Else
             TextEdit4.Enabled = False
             SimpleButton1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub CheckEdit2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit2.CheckedChanged
+        If CheckEdit2.Checked = True Then
+            CheckEdit3.Checked = False
         End If
     End Sub
 End Class

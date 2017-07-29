@@ -1,44 +1,8 @@
-﻿Imports System.IO
-Imports DevExpress.XtraEditors
+﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class Holiday
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Private Sub holidays()
         GridControl6.RefreshDataSource()
@@ -79,7 +43,6 @@ Public Class Holiday
         Dim d2 As Date = date2.Value.Date
 #Disable Warning BC42016 ' Implicit conversion
         For j As Integer = 1 To DateDiff("d", d1, d2)
-#Enable Warning BC42016 ' Implicit conversion
             d1 = d1.AddDays(1)
             str_carsql = "INSERT INTO db_holiday " +
                             "(tgl, StartDate, EndDate, TotalDays, Reason) " +
@@ -97,7 +60,7 @@ Public Class Holiday
         Next
         updateovertime()
         updatesunday()
-        MsgBox("Holiday added")
+        MsgBox("Holiday added", MsgBoxStyle.Information)
     End Sub
 
     Sub updatesunday()
@@ -145,8 +108,11 @@ Public Class Holiday
     End Sub
 
     Private Sub Holiday_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         days()
     End Sub
 

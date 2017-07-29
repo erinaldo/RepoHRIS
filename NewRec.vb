@@ -1,41 +1,5 @@
 ﻿Imports System.IO
-
 Public Class NewRec
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Function ImageToByte(ByVal pbImg As PictureBox) As Byte()
         If pbImg Is Nothing Then
             Return Nothing
@@ -111,9 +75,7 @@ Public Class NewRec
             ElseIf CheckEdit3.Checked = False Then
                 cmmd.Parameters.AddWithValue("@interviewdate", Nothing)
             End If
-            'cmmd.Parameters.AddWithValue("@InterviewDate", dta)
             cmmd.Parameters.AddWithValue("@InterviewDates", Nothing)
-
             Dim sqlquery As MySqlCommand = SQLConnection.CreateCommand
             Dim finfo As New FileInfo(Label38.Text)
             Dim numBytes As Long = finfo.Length
@@ -158,7 +120,6 @@ Public Class NewRec
             cmmd.Parameters.AddWithValue("@PrivateEmail", txtwemail.Text)
             cmmd.Parameters.AddWithValue("@ChangeBy", Label40.Text)
             cmmd.Parameters.AddWithValue("@ChangeDates", Date.Now)
-            ' SavePdf()
             cmmd.ExecuteNonQuery()
             MsgBox("Saved")
             cleartxt()
@@ -174,7 +135,6 @@ Public Class NewRec
         txtgend.Enabled = True
         txtrel.Enabled = True
         txtphoneno.Enabled = True
-        'txtidno.Enabled = False
         txtcandreason.Enabled = True
         TextEdit7.Enabled = True
         TextBox5.Enabled = True
@@ -280,8 +240,6 @@ Public Class NewRec
         RichTextBox9.Text = ""
     End Sub
 
-    Dim main As MainApp
-
     Dim tbl_par As New DataTable
 
     Sub changer()
@@ -324,8 +282,11 @@ Public Class NewRec
     End Sub
 
     Private Sub NewEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         txtapplieddate.Format = DateTimePickerFormat.Custom
         txtapplieddate.CustomFormat = "yyyy-MM-dd"
         DateTimePicker2.Format = DateTimePickerFormat.Custom
@@ -336,7 +297,7 @@ Public Class NewRec
 
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         ' cleartxt()
-        reset()
+        Reset()
         barJudul.Caption = "Add Recruitment"
     End Sub
 
@@ -358,41 +319,16 @@ Public Class NewRec
     Private Sub BarButtonItem2_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
         cleartxt()
         barJudul.Caption = "Change Data"
-        reset()
+        Reset()
     End Sub
 
     Dim openfd As New OpenFileDialog
 
     Private Sub btnCV_Click(sender As Object, e As EventArgs)
-        'Try
-        '    Dim fs As FileStream
-        '    fs = New FileStream(sfile, FileMode.Open, FileAccess.Read)
-
-        '    Dim docByte As Byte() = New Byte(fs.Length - 1) {}
-
-        '    fs.Read(docByte, 0, System.Convert.ToInt32(fs.Length))
-
-        '    fs.Close()
-        '    'Insert statement for sql query
-        '    Dim sqltxt As String
-        '    sqltxt = "insert into db_recruitment values('" & txtcv.Text & "',@fdoc)"
-
-        '    'store doc as Binary value using SQLParameter
-        '    Dim docfile As New MySqlParameter
-        '    docfile.MySqlDbType = MySqlDbType.Binary
-        '    docfile.ParameterName = "fdoc"
-        '    docfile.Value = docByte
-        '    Dim sqlcmd = New MySqlCommand(sqltxt, SQLConnection)
-        '    sqlcmd.Parameters.Add(docfile)
-        '    sqlcmd.ExecuteNonQuery()
-        '    MsgBox("Data Saved Successfully")
-        'Catch ex As Exception
-        'End Try
         openfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer)
         openfd.Title = "Open a CV File"
         openfd.Filter = "Word Files|*.docx|Text Files|*.txt"
         openfd.ShowDialog()
-        'txtcv.Text = openfd.FileName
     End Sub
 
     Private Sub OpenPreviewWindows()
@@ -921,7 +857,7 @@ Public Class NewRec
             query.CommandText = "select name from db_tmpname"
             Dim quer1 As String = CType(query.ExecuteScalar, String)
             txtrecby.Text = quer1.ToString
-        Catch ex As exception
+        Catch ex As Exception
         End Try
     End Sub
 

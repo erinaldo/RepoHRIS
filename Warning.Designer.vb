@@ -57,6 +57,10 @@ Partial Class Warning
         Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -64,6 +68,8 @@ Partial Class Warning
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBox2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.textbox4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -227,9 +233,11 @@ Partial Class Warning
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(6, 414)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 13)
+        Me.Label6.Size = New System.Drawing.Size(564, 13)
         Me.Label6.TabIndex = 15
-        Me.Label6.Text = "Penalty"
+        Me.Label6.Text = "Penalty -------------------------------------------------------------------------" &
+    "--------------------------------------------------------------------------------" &
+    "--------------------"
         '
         'CheckEdit1
         '
@@ -242,7 +250,7 @@ Partial Class Warning
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(353, 433)
+        Me.Label7.Location = New System.Drawing.Point(108, 461)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(49, 13)
         Me.Label7.TabIndex = 18
@@ -313,9 +321,9 @@ Partial Class Warning
         'textbox4
         '
         Me.textbox4.Enabled = False
-        Me.textbox4.Location = New System.Drawing.Point(408, 430)
+        Me.textbox4.Location = New System.Drawing.Point(163, 459)
         Me.textbox4.Name = "textbox4"
-        Me.textbox4.Size = New System.Drawing.Size(161, 20)
+        Me.textbox4.Size = New System.Drawing.Size(325, 20)
         Me.textbox4.TabIndex = 32
         '
         'Label8
@@ -341,7 +349,7 @@ Partial Class Warning
         '
         Me.SimpleButton5.Enabled = False
         Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
-        Me.SimpleButton5.Location = New System.Drawing.Point(155, 457)
+        Me.SimpleButton5.Location = New System.Drawing.Point(5, 457)
         Me.SimpleButton5.Name = "SimpleButton5"
         Me.SimpleButton5.Size = New System.Drawing.Size(144, 23)
         Me.SimpleButton5.TabIndex = 26
@@ -367,11 +375,49 @@ Partial Class Warning
         Me.SimpleButton1.Size = New System.Drawing.Size(26, 20)
         Me.SimpleButton1.TabIndex = 8
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(352, 434)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(34, 13)
+        Me.Label9.TabIndex = 34
+        Me.Label9.Text = "Until :"
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Enabled = False
+        Me.DateTimePicker3.Location = New System.Drawing.Point(386, 431)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(183, 20)
+        Me.DateTimePicker3.TabIndex = 35
+        '
+        'CheckEdit2
+        '
+        Me.CheckEdit2.Location = New System.Drawing.Point(59, 461)
+        Me.CheckEdit2.Name = "CheckEdit2"
+        Me.CheckEdit2.Properties.Caption = "Divide it ?"
+        Me.CheckEdit2.Size = New System.Drawing.Size(62, 19)
+        Me.CheckEdit2.TabIndex = 36
+        Me.CheckEdit2.Visible = False
+        '
+        'TextEdit1
+        '
+        Me.TextEdit1.Location = New System.Drawing.Point(10, 458)
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(69, 20)
+        Me.TextEdit1.TabIndex = 37
+        Me.TextEdit1.Visible = False
+        '
         'Warning
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(578, 483)
+        Me.Controls.Add(Me.TextEdit1)
+        Me.Controls.Add(Me.CheckEdit2)
+        Me.Controls.Add(Me.DateTimePicker3)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.textbox4)
         Me.Controls.Add(Me.RadioButton2)
@@ -413,6 +459,8 @@ Partial Class Warning
         CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComboBox2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.textbox4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -451,4 +499,8 @@ Partial Class Warning
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents textbox4 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents CheckEdit2 As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
 End Class

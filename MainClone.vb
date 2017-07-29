@@ -6,39 +6,6 @@ Imports DevExpress.XtraEditors
 Imports DevExpress.XtraBars.Alerter
 
 Public Class MainClone
-    Dim connectionString1 As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString1 = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Sub autho()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select leveluser from db_user where binary username = @user"
@@ -158,9 +125,9 @@ Public Class MainClone
 
     Sub updateottype()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "update db_absensi set overtimetype = 'Holiday Type' where isholiday = '1'"
+        query.CommandText = "update db_absensi set overtimetype = 'Holiday' where isholiday = '1'"
         query.ExecuteNonQuery()
-        query.CommandText = "update db_absensi set overtimetype = 'Regular Type' where isholiday = '0'"
+        query.CommandText = "update db_absensi set overtimetype = 'Regular' where isholiday = '0'"
         query.ExecuteNonQuery()
     End Sub
 
@@ -268,33 +235,6 @@ Public Class MainClone
         End If
     End Sub
 
-    'Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
-    '    BarJudul.Caption = "Module Recruitment"
-    '    loadDataReq()
-    '    GridView1.Columns("Blacklist").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending
-    'End Sub
-
-    'Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
-    '    BarJudul.Caption = "Module Employee"
-    '    loadDataReq()
-    'End Sub
-
-    'Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
-    '    Payments.Close()
-    '    With Payments
-    '        .Label7.Text = LabelControl2.Text
-    '        .Show()
-    '    End With
-    'End Sub
-
-    'Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
-    '    ShowAtt.Close()
-    '    With ShowAtt
-    '        .Label2.Text = LabelControl2.Text
-    '        .Show()
-    '    End With
-    'End Sub
-
     Private Sub BarButtonItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
         Dim pesan As String
         pesan = CType(MsgBox("Log Off Application?", MsgBoxStyle.YesNo, "Information"), String)
@@ -390,7 +330,9 @@ Public Class MainClone
                             End If
                         Catch ex As Exception
                         End Try
-                        Dim actualcode As String = ynow & "-" & mnow & "-" & Strings.Right("0000" & tmp, 5)
+                        '1611-0010
+                        'Dim actualcode As String = ynow & "-" & mnow & "-" & Strings.Right("0000" & tmp, 5)
+                        Dim actualcode As String = ynow & mnow & "-" & Strings.Right("0000" & tmp, 5)
                         Dim sqlCommand As MySqlCommand = SQLConnection.CreateCommand
                         Try
                             sqlCommand.CommandText = "INSERT INTO db_pegawai (FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, status, CompanyCode, EmployeeCode, OfficeLocation, PhoneNumber, WorkDate, ChangeDate, NickName, Weight, Height, BloodType, RecommendedBy)" +
@@ -549,62 +491,7 @@ Public Class MainClone
     End Sub
 
     Private Sub GridView1_PopupMenuShowing(sender As Object, e As PopupMenuShowingEventArgs)
-        'Dim view As GridView = CType(sender, GridView)
-        'If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
-        '    Dim rowHandle As Integer = e.HitInfo.RowHandle
-        '    e.Menu.Items.Clear()
-        '    Dim item As DXMenuItem = CreateMergingEnabledMenuItem(view, rowHandle)
-        '    item.BeginGroup = True
-        '    e.Menu.Items.Add(item)
-        'End If
-        'Dim query As MySqlCommand = SQLConnection.CreateCommand
-        'query.CommandText = "select status from db_recruitment where idrec = '" & SimpleButton2.Text & "'"
-        'Dim quer As String = CStr(query.ExecuteScalar)
-        'query.CommandText = "select fullname from db_pegawai where EmployeeCode = '" & SimpleButton2.Text & "'"
-        'Dim quer2 As String = CStr(query.ExecuteScalar)
-        'If BarJudul.Caption = "Module Recruitment" Then
-        '    If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
-        '        If quer = "Pending" Then
-        '            e.Menu.Items.Add(New DXMenuItem("Add Candidates", New EventHandler(AddressOf Button4_Click), GetImage1))
-        '            e.Menu.Items.Add(New DXMenuItem("View Candidates", New EventHandler(AddressOf Button6_Click), GetImage2))
-        '            e.Menu.Items.Add(New DXMenuItem("Change status to be In Progress", New EventHandler(AddressOf Button13_Click), GetImage3()))
-        '            e.Menu.Items.Add(New DXMenuItem("Modify...", New EventHandler(AddressOf Button9_Click), GetImage8))
-        '            e.Menu.Items.Add(New DXMenuItem("Refresh..", New EventHandler(AddressOf btnSegarkan_Click), GetImage9))
-        '            e.Menu.Items.Add(New DXMenuItem("Delete..", New EventHandler(AddressOf btnHapus_Click), getimage13))
-        '        ElseIf quer = "In Progress" Then
-        '            e.Menu.Items.Add(New DXMenuItem("Add Candidates", New EventHandler(AddressOf Button4_Click), GetImage1))
-        '            e.Menu.Items.Add(New DXMenuItem("View Candidates", New EventHandler(AddressOf Button6_Click), GetImage2))
-        '            e.Menu.Items.Add(New DXMenuItem("Add Skills", New EventHandler(AddressOf Button11_Click), GetImage12))
-        '            e.Menu.Items.Add(New DXMenuItem("Modify...", New EventHandler(AddressOf Button9_Click), GetImage8))
-        '            e.Menu.Items.Add(New DXMenuItem("Refresh..", New EventHandler(AddressOf btnSegarkan_Click), GetImage9))
-        '            e.Menu.Items.Add(New DXMenuItem("Delete..", New EventHandler(AddressOf btnHapus_Click), getimage13))
-        '        ElseIf quer = "Rejected" Then
-        '            e.Menu.Items.Add(New DXMenuItem("Add Candidates", New EventHandler(AddressOf Button4_Click), GetImage1))
-        '            e.Menu.Items.Add(New DXMenuItem("View Candidates", New EventHandler(AddressOf Button6_Click), GetImage2))
-        '            e.Menu.Items.Add(New DXMenuItem("Modify...", New EventHandler(AddressOf Button9_Click), GetImage8))
-        '            e.Menu.Items.Add(New DXMenuItem("Refresh..", New EventHandler(AddressOf btnSegarkan_Click), GetImage9))
-        '            e.Menu.Items.Add(New DXMenuItem("Delete..", New EventHandler(AddressOf btnHapus_Click), getimage13))
-        '        ElseIf quer = "Processed" Then
-        '            e.Menu.Items.Add(New DXMenuItem("Add Candidates", New EventHandler(AddressOf Button4_Click), GetImage1))
-        '            e.Menu.Items.Add(New DXMenuItem("View Candidates", New EventHandler(AddressOf Button6_Click), GetImage2))
-        '            e.Menu.Items.Add(New DXMenuItem("Refresh..", New EventHandler(AddressOf btnSegarkan_Click), GetImage9))
-        '            e.Menu.Items.Add(New DXMenuItem("Delete..", New EventHandler(AddressOf btnHapus_Click), getimage13))
-        '        End If
-        '    End If
-        'ElseIf BarJudul.Caption = "Module Employee" Then
-        '    If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
-        '        Dim submenu As New DXSubMenuItem("rows")
-        '        e.Menu.Items.Add(New DXMenuItem("Import Accepted Candidates From Recruitment", New EventHandler(AddressOf btnImport_Click), GetImage5))
-        '        e.Menu.Items.Add(New DXMenuItem("Add Employee", New EventHandler(AddressOf Button3_Click), GetImage1))
-        '        e.Menu.Items.Add(New DXMenuItem("View Employee", New EventHandler(AddressOf Button1_Click), GetImage2))
-        '        e.Menu.Items.Add(New DXMenuItem("Status Change", New EventHandler(AddressOf SimpleButton5_Click), GetImage6))
-        '        e.Menu.Items.Add(New DXMenuItem("Termination", New EventHandler(AddressOf SimpleButton6_Click), GetImage7))
-        '        e.Menu.Items.Add(New DXMenuItem("Warning Notice", New EventHandler(AddressOf SimpleButton4_Click), GetImage4))
-        '        e.Menu.Items.Add(New DXMenuItem("Modify...", New EventHandler(AddressOf Button8_Click), GetImage8))
-        '        e.Menu.Items.Add(New DXMenuItem("Refresh..", New EventHandler(AddressOf btnSegarkan_Click), GetImage9))
-        '        e.Menu.Items.Add(New DXMenuItem("Terminate This Employee ?", New EventHandler(AddressOf SimpleButton2_Click_1), GetImage))
-        '    End If
-        'End If
+
     End Sub
 
     Public Function DeleteReq() As Boolean
@@ -739,8 +626,6 @@ Public Class MainClone
         Return ImageCollection1.Images(13)
     End Function
 
-    'Private Sub GridView1_FocusedRowChanged(sender As Object, e As FocusedRowChangedEventArgs)
-    'End Sub
     Dim change As New ChangeData
 
     Private Sub Button5_Click(sender As Object, e As EventArgs)
@@ -906,11 +791,6 @@ Public Class MainClone
                 .Label8.Text = LabelControl2.Text
                 .Show()
             End With
-            'If warn Is Nothing OrElse warn.IsDisposed OrElse warn.MinimizeBox Then
-            '    warn.Close()
-            '    warn = New Warning
-            'End If
-            'warn.Show()
         Else
             MsgBox("Forbidden Access", MsgBoxStyle.Exclamation, "DENIED")
         End If
@@ -937,11 +817,6 @@ Public Class MainClone
                 .Label16.Text = LabelControl2.Text
                 .Show()
             End With
-            'If status Is Nothing OrElse status.IsDisposed OrElse status.MinimizeBox Then
-            '    status.Close()
-            '    status = New StatusChange
-            'End If
-            'status.Show()
         Else
             MsgBox("Forbidden Access", MsgBoxStyle.Exclamation, "DENIED")
         End If
@@ -968,11 +843,6 @@ Public Class MainClone
                 .Label10.Text = LabelControl2.Text
                 .Show()
             End With
-            'If term Is Nothing OrElse term.IsDisposed OrElse term.MinimizeBox Then
-            '    term.Close()
-            '    term = New Termination
-            'End If
-            'term.Show()
         Else
             MsgBox("Forbidden Access", MsgBoxStyle.Exclamation, "DENIED")
         End If
@@ -1111,86 +981,7 @@ Public Class MainClone
         End Try
     End Function
 
-    'Private Sub GridView1_RowStyle(sender As Object, e As RowStyleEventArgs)
-    '    Dim view As GridView = TryCast(sender, GridView)
-    '    e.Appearance.BackColor = Color.FloralWhite
-    'End Sub
-
-    'Private Sub GridView1_RowCellStyle(sender As Object, e As RowCellStyleEventArgs)
-    '    'If processed(GridView1, e.RowHandle) Then
-    '    '    e.Appearance.BackColor = Color.FloralWhite
-    '    '    e.Appearance.ForeColor = Color.Black
-    '    'End If
-    '    'Dim View As GridView = CType(sender, GridView)
-    '    'If e.Column.FieldName = "Status" Or e.Column.FieldName = "Status" Then
-    '    '    Dim category As String = View.GetRowCellDisplayText(e.RowHandle, View.Columns("Status"))
-    '    '    If category = "Rejected" Then
-    '    '        e.Appearance.BackColor = Color.LightCyan
-    '    '        e.Appearance.BackColor2 = Color.Red
-    '    '    ElseIf category = "Active" Then
-    '    '        e.Appearance.BackColor = Color.DeepSkyBlue
-    '    '        e.Appearance.BackColor2 = Color.LightCyan
-    '    '    ElseIf category = "InProgress" Then
-    '    '        e.Appearance.BackColor = Color.LightGreen
-    '    '        e.Appearance.BackColor2 = Color.White
-    '    '    ElseIf category = "Permanent" Then
-    '    '        e.Appearance.BackColor = Color.LightBlue
-    '    '        e.Appearance.BackColor = Color.Cyan
-    '    '    ElseIf category = "Pending" Then
-    '    '        e.Appearance.BackColor = Color.LightSeaGreen
-    '    '        e.Appearance.BackColor2 = Color.LightGreen
-    '    '    ElseIf category = "In Progress" Then
-    '    '        e.Appearance.BackColor = Color.Cornsilk
-    '    '        e.Appearance.BackColor2 = Color.Cyan
-    '    '    End If
-    '    'ElseIf e.Column.FieldName = "EmployeeCode" Then
-    '    '    e.Appearance.BackColor = Color.Yellow
-    '    '    e.Appearance.BackColor2 = Color.LightYellow
-    '    'ElseIf e.Column.FieldName = "IdRec" Then
-    '    '    e.Appearance.BackColor = Color.Yellow
-    '    '    e.Appearance.BackColor2 = Color.LightYellow
-    '    'ElseIf e.Column.FieldName = "Blacklist" Then
-    '    '    Dim cek As Boolean = CBool(e.CellValue)
-    '    '    If cek = True Then
-    '    '        e.Appearance.BackColor = Color.Red
-    '    '        e.Appearance.BorderColor = Color.Magenta
-    '    '    Else
-    '    '        e.Appearance.BackColor = Color.Wheat
-    '    '    End If
-    '    'End If
-    'End Sub
-
     Dim addsk As New Addskill
-
-    'Private Sub Button11_Click(sender As Object, e As EventArgs)
-    '    'Dim query As MySqlCommand = SQLConnection.CreateCommand
-    '    'query.CommandText = "select viewprog from db_user where username = '" & LabelControl2.Text & "'"
-    '    'Dim quer2 As String = CStr(query.ExecuteScalar)
-    '    'If quer2 = "True" Then
-    '    '    query.CommandText = "select count(idrec) from db_skills where idrec = '" & SimpleButton2.Text & "'"
-    '    '    Dim quer As Integer = CInt(query.ExecuteScalar)
-    '    '    If quer = 1 Then
-    '    '        MsgBox("data already exists")
-    '    '    Else
-    '    '        query.CommandText = "truncate db_tmpname"
-    '    '        query.ExecuteNonQuery()
-    '    '        query.CommandText = "insert into db_tmpname " +
-    '    '                            "(EmployeeCode, Name)" +
-    '    '                            "values (@employeecode, @Name)"
-    '    '        query.Parameters.Clear()
-    '    '        query.Parameters.AddWithValue("@EmployeeCode", SimpleButton2.Text)
-    '    '        query.Parameters.AddWithValue("@Name", Button5.Text)
-    '    '        query.ExecuteNonQuery()
-    '    '        If addsk Is Nothing OrElse addsk.IsDisposed OrElse addsk.MinimizeBox Then
-    '    '            addsk.Close()
-    '    '            addsk = New Addskill
-    '    '        End If
-    '    '        addsk.Show()
-    '    '    End If
-    '    'Else
-    '    '    MsgBox("Forbidden Access", MsgBoxStyle.Exclamation, "DENIED")
-    '    'End If
-    'End Sub
 
     Dim pen As New Pending
 
@@ -1218,23 +1009,9 @@ Public Class MainClone
         End If
     End Sub
 
-    'Private Sub MainClone_FormClosing(sender As Object, e As FormClosingEventArgs)
-    '    'WindowState = FormWindowState.Minimized
-    '    'Me.Hide()
-    '    'loadDataReq()
-    '    'e.Cancel = True
-    'End Sub
-
     Private Sub AlertControl1_BeforeFormShow(sender As Object, e As AlertFormEventArgs)
         e.AlertForm.OpacityLevel = 1
     End Sub
-
-    'Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
-    '    SuratDinas.Close()
-    '    With SuratDinas
-    '        .Show()
-    '    End With
-    'End Sub
 
     Private Sub BarButtonItem8_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem8.ItemClick
         Dim pesan As String
@@ -1254,9 +1031,10 @@ Public Class MainClone
             End Try
         End If
         SQLConnection.Close()
-            Close()
-            Login.Close()
-            Application.Exit()
+        Close()
+        Login.Close()
+        StartPages.Close()
+        Application.Exit()
     End Sub
 
     Private Sub BarButtonItem1_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
@@ -1310,8 +1088,8 @@ Public Class MainClone
     End Sub
 
     Private Sub BarButtonItem7_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem7.ItemClick
-        Tile_Control.Close()
-        With Tile_Control
+        Tiles.Close()
+        With Tiles
             .TextBox1.Text = LabelControl2.Text
             .Show()
         End With
@@ -1335,8 +1113,11 @@ Public Class MainClone
     End Sub
 
     Private Sub MainClone_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString1
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         autho()
         mainauthopage5()
         mainpageautho()
@@ -1394,22 +1175,14 @@ Public Class MainClone
             query.CommandText = "select count(idrec) from db_skills where idrec = '" & SimpleButton2.Text & "'"
             Dim quer As Integer = CInt(query.ExecuteScalar)
             If quer = 1 Then
-                MsgBox("data already exists")
+                MsgBox("data already exists", MsgBoxStyle.Information)
             Else
-                query.CommandText = "truncate db_tmpname"
-                query.ExecuteNonQuery()
-                query.CommandText = "insert into db_tmpname " +
-                                    "(EmployeeCode, Name)" +
-                                    "values (@employeecode, @Name)"
-                query.Parameters.Clear()
-                query.Parameters.AddWithValue("@EmployeeCode", SimpleButton2.Text)
-                query.Parameters.AddWithValue("@Name", Button5.Text)
-                query.ExecuteNonQuery()
-                If addsk Is Nothing OrElse addsk.IsDisposed OrElse addsk.MinimizeBox Then
-                    addsk.Close()
-                    addsk = New Addskill
-                End If
-                addsk.Show()
+                Addskill.Close()
+                With Addskill
+                    .txtname.Text = Button5.Text
+                    .txtidrecc.Text = SimpleButton2.Text
+                    .Show()
+                End With
             End If
         Else
             MsgBox("Forbidden Access", MsgBoxStyle.Exclamation, "DENIED")
@@ -1483,7 +1256,7 @@ Public Class MainClone
     End Sub
 
     Private Sub MainClone_FormClosing_1(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        WindowState = FormWindowState.Minimized
+        'WindowState = FormWindowState.Minimized
         Me.Hide()
         loadDataReq()
         e.Cancel = True
@@ -1593,7 +1366,7 @@ Public Class MainClone
                 delsal.CommandText = "delete from db_payrolldata where EmployeeCode = '" & SimpleButton2.Text & "'"
                 delsal.ExecuteNonQuery()
             Catch ex As Exception
-                MsgBox(ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
         End If
     End Sub

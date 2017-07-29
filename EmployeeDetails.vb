@@ -1,46 +1,12 @@
 ﻿Imports System.IO
-
 Public Class EmployeeDetails
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Private Sub EmployeeDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select employeecode from db_tmpname where 1 = 1"
         Dim quer As String = CType(query.ExecuteScalar, String)
@@ -50,7 +16,6 @@ Public Class EmployeeDetails
         chng()
         loadcert()
         loadschool()
-        'loadwarn()
         loaddummy()
         loadexp()
         loadskill()
@@ -122,9 +87,9 @@ Public Class EmployeeDetails
             oldtable.Rows(indeks).Item(1),
             oldtable.Rows(indeks).Item(2),
             oldtable.Rows(indeks).Item(3),
-            Decrypt(CType(oldtable.Rows(indeks).Item(6), String)),
             oldtable.Rows(indeks).Item(5),
-            oldtable.Rows(indeks).Item(4))
+            oldtable.Rows(indeks).Item(4),
+            Decrypt(CType(oldtable.Rows(indeks).Item(6), String)))
         Next
         GridControl1.DataSource = tbl_baru
         GridView1.BestFitColumns()

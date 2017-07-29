@@ -109,6 +109,8 @@ Partial Class Lists
         '
         'SimpleButton1
         '
+        Me.SimpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.SimpleButton1.Appearance.Options.UseBackColor = True
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
         Me.SimpleButton1.Location = New System.Drawing.Point(490, 13)
         Me.SimpleButton1.Name = "SimpleButton1"

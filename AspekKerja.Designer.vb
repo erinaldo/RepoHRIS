@@ -38,10 +38,10 @@ Partial Class AspekKerja
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(2, 5)
+        Me.GridControl1.Location = New System.Drawing.Point(2, 6)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(679, 294)
+        Me.GridControl1.Size = New System.Drawing.Size(679, 293)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '

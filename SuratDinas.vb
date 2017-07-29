@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports DevExpress.XtraGrid.Views.Grid
+﻿Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraRichEdit.API.Native
 Imports DevExpress.XtraRichEdit
@@ -7,61 +6,66 @@ Imports DevExpress.XtraPrinting
 Imports DevExpress.XtraGrid
 
 Public Class SuratDinas
-    Dim connectionstring As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim act As String = "input"
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionstring = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
+    Public Overridable Property PageVisible As Boolean
+    Dim act As String = ""
 
     Private Sub SuratDinas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionstring
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         'changer()
         combo()
         Timer2.Start()
+        XtraTabPage4.PageVisible = False
+        XtraTabPage2.PageVisible = False
+        act = "input"
+        clearance()
+        'SimpleButton3.Text = "Request"
+        TextEdit1.Visible = True
+        ComboBoxEdit2.Visible = False
+        XtraTabControl2.Enabled = True
+        changer()
+        TextEdit45.Properties.DisplayFormat.FormatType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        TextEdit45.Properties.DisplayFormat.FormatString = "n"
+        TextEdit45.Properties.Mask.EditMask = "n"
+        TextEdit45.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        TextEdit45.Properties.Mask.UseMaskAsDisplayFormat = True
     End Sub
 
     Sub viewtravel()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select MemoNo, TravelDates, TimeTravel, Descript as Description, MobilDinas, Bus, KeretaApi, Pesawat, Hotel, Mess, Others from db_detailsppd where memono = '" & ComboBoxEdit1.Text & "'"
+        query.CommandText = "select TravelDates, TimeTravel as Jam, Descript, MobilDinas, Bus, KeretaApi, Pesawat, Hotel, Mess, Others from db_detailsppd where memono = '" & ComboBoxEdit1.Text & "' and expenses = ''"
         Dim tab As New DataTable
+        tab.Load(query.ExecuteReader)
         GridControl3.DataSource = tab
+        GridView3.BestFitColumns()
+        Dim gridView As GridView = CType(GridControl3.FocusedView, GridView)
+        gridView.SortInfo.ClearAndAddRange(New GridColumnSortInfo() {
+            New GridColumnSortInfo(gridView.Columns("TravelDates"), DevExpress.Data.ColumnSortOrder.Ascending)}, 0)
     End Sub
 
     Sub viewcosts()
-        Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select Expenses, Costs, Description from db_detailsppd where memono '" & ComboBoxEdit1.Text & "'"
-        Dim tab As New DataTable
-        GridControl4.DataSource = tab
+        Try
+            Dim query As MySqlCommand = SQLConnection.CreateCommand
+            query.CommandText = "select MemoNo, Expenses, Costs, Description from db_detailsppd where memono ='" & ComboBoxEdit1.Text & "' and timetravel = ''"
+            Dim tab As New DataTable
+            tab.Load(query.ExecuteReader)
+            GridControl5.DataSource = tab
+            Dim item As GridGroupSummaryItem = New GridGroupSummaryItem()
+            item.FieldName = "Costs"
+            item.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            item.DisplayFormat = "Total n2"
+            item.ShowInGroupColumnFooter = GridView5.Columns("Costs")
+            GridView5.GroupSummary.Add(item)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        'Dim query As MySqlCommand = SQLConnection.CreateCommand
+        'query.CommandText = "select Expenses, Costs, Description from db_detailsppd where memono '" & ComboBoxEdit1.Text & "'"
+        'Dim tab As New DataTable
+        'GridControl4.DataSource = tab
     End Sub
 
     Sub counttotal()
@@ -87,6 +91,16 @@ Public Class SuratDinas
 
     Sub days()
         Dim t As TimeSpan = DateTimePicker2.Value.Date - DateTimePicker1.Value.Date
+        Dim tmp As String
+        tmp = t.Days.ToString
+        Dim hasil As Integer
+        hasil = CInt(tmp)
+        Dim hasil2 As Integer = hasil + 1
+        TextEdit40.Text = hasil2.ToString
+    End Sub
+
+    Sub days2()
+        Dim t As TimeSpan = DateTimePicker7.Value.Date - DateTimePicker8.Value.Date
         Dim tmp As String
         tmp = t.Days.ToString
         Dim hasil As Integer
@@ -394,10 +408,10 @@ Public Class SuratDinas
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         'insertion()
-        If TextEdit1.Enabled = False And TextEdit2.Text IsNot "" And TextEdit3.Text IsNot "" And TextEdit4.Text IsNot "" And TextEdit6.Text IsNot "" And TextEdit7.Text IsNot "" Then
-            newinsert()
-            SimpleButton3.Enabled = False
-        End If
+        'If TextEdit1.Enabled = False And TextEdit2.Text IsNot "" And TextEdit3.Text IsNot "" And TextEdit4.Text IsNot "" And TextEdit6.Text IsNot "" And TextEdit7.Text IsNot "" Then
+        newinsert()
+        '   SimpleButton3.Enabled = False
+        'End If
         'updation()
     End Sub
 
@@ -442,6 +456,23 @@ Public Class SuratDinas
 
     ', TravelDates, JamWaktu, Descript, MobilDinas, Bus, KeretaApi, PesawatTerbang, Hotel, Mess, Others, PremiumLiter, SolarLiter, UangSaku, brpmalam, biayamalam, biayatransportasi, biayalainlain, approvedby
     ', @TravelDates, @JamWaktu, @Descript, @MobilDinas, @Bus, @KeretaApi, @PesawatTerbang, @Hotel, @Mess, @Others, @PremiumLiter, @SolarLiter, @UangSaku, @brpmalam, @biayamalam, @biayatransportasi, @biayalainlain, @approvedby
+    Sub viewsppd()
+        Dim query As MySqlCommand = SQLConnection.CreateCommand
+        query.CommandText = "select EmployeeCode, FullName, IssuesDates, Department, FromDates, ToDates, DestinationCity, Agenda from db_sppd where memono = '" & ComboBoxEdit1.Text & "'"
+        Dim tab As New DataTable
+        tab.Load(query.ExecuteReader)
+        For index As Integer = 0 To tab.Rows.Count - 1
+            DateTimePicker6.Value = CDate(tab.Rows(index).Item(2).ToString)
+            TextEdit43.Text = tab.Rows(index).Item(0).ToString
+            TextEdit42.Text = tab.Rows(index).Item(1).ToString
+            TextEdit41.Text = tab.Rows(index).Item(3).ToString
+            DateTimePicker8.Value = CDate(tab.Rows(index).Item(4).ToString)
+            DateTimePicker7.Value = CDate(tab.Rows(index).Item(5).ToString)
+            TextEdit39.Text = tab.Rows(index).Item(6).ToString
+            TextEdit38.Text = tab.Rows(index).Item(7).ToString
+        Next
+    End Sub
+
     Sub newinsert()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         Dim dta, dtb, dtc, dtd As New DateTime
@@ -458,7 +489,7 @@ Public Class SuratDinas
         DateTimePicker4.CustomFormat = "yyyy-MM-dd"
         dtd = DateTimePicker4.Value
         query.CommandText = "insert into db_sppd (MemoNo, EmployeeCode, FullName, IssuesDates, Department, FromDates, ToDates, DestinationCity, Agenda)" +
-                                        "Values (@MemoNo, @EmployeeCode, @FullName, @IssuesDates, @Department, @FromDates, @ToDates, @DestinationCity, @Agenda)"
+                                        " values (@MemoNo, @EmployeeCode, @FullName, @IssuesDates, @Department, @FromDates, @ToDates, @DestinationCity, @Agenda)"
         query.Parameters.AddWithValue("@MemoNo", TextEdit1.Text)
         query.Parameters.AddWithValue("@EmployeeCode", TextEdit2.Text)
         query.Parameters.AddWithValue("@FullName", TextEdit3.Text)
@@ -477,15 +508,16 @@ Public Class SuratDinas
         DateTimePicker3.Enabled = False
         MsgBox("Requested!", MsgBoxStyle.Information)
         fucn()
+        Close()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Try
             Dim query As MySqlCommand = SQLConnection.CreateCommand
-            query.CommandText = "select name from db_tmpname"
+            query.CommandText = "Select name from db_tmpname"
             Dim quer1 As String = CType(query.ExecuteScalar, String)
             TextEdit3.Text = quer1.ToString
-            query.CommandText = "select employeecode from db_tmpname"
+            query.CommandText = "Select employeecode from db_tmpname"
             Dim quer2 As String = CType(query.ExecuteScalar, String)
             TextEdit2.Text = quer2.ToString
         Catch ex As Exception
@@ -509,7 +541,7 @@ Public Class SuratDinas
     Private Sub TextEdit2_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit2.EditValueChanged
         Timer1.Stop()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select department from db_pegawai where employeecode = '" & TextEdit2.Text & "'"
+        query.CommandText = "Select department from db_pegawai where employeecode = '" & TextEdit2.Text & "'"
         TextEdit4.Text = CStr(query.ExecuteScalar)
     End Sub
 
@@ -518,6 +550,10 @@ Public Class SuratDinas
     End Sub
 
     Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+        If DateTimePicker2.Value.Date < DateTimePicker1.Value.Date Then
+            MsgBox("To dates can't be less than from date", MsgBoxStyle.Exclamation, "Wrong Dates")
+            DateTimePicker2.Value = DateTimePicker1.Value
+        End If
         days()
     End Sub
 
@@ -832,11 +868,11 @@ Public Class SuratDinas
     Sub insertcost()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "insert into db_detailsppd (Memono, Expenses, Costs, Description) values (@MemoNo, @expenses, @costs, @description)"
-        If RadioButton1.Checked = True Then
-            query.Parameters.AddWithValue("@memono", TextEdit1.Text)
-        ElseIf RadioButton2.Checked = True Then
-            query.Parameters.AddWithValue("@memono", ComboBoxEdit2.Text)
-        End If
+        'If RadioButton1.Checked = True Then
+        query.Parameters.AddWithValue("@memono", TextEdit1.Text)
+        'ElseIf RadioButton2.Checked = True Then
+        '    query.Parameters.AddWithValue("@memono", ComboBoxEdit2.Text)
+        'End If
         '  query.Parameters.AddWithValue("@memono", TextEdit1.Text)
         If ComboBoxEdit3.Text = "Lain-lain" Then
             query.Parameters.AddWithValue("@expenses", TextEdit44.Text)
@@ -851,11 +887,11 @@ Public Class SuratDinas
     Sub showcosts()
         Try
             Dim query As MySqlCommand = SQLConnection.CreateCommand
-            If RadioButton1.Checked = True Then
-                query.CommandText = "select MemoNo, Expenses, Costs, Description from db_detailsppd where memono ='" & TextEdit1.Text & "' and timetravel = ''"
-            ElseIf RadioButton2.Checked = True Then
-                query.CommandText = "select MemoNo, Expenses, Costs, Description from db_detailsppd where memono ='" & ComboBoxEdit2.Text & "' and timetravel = ''"
-            End If
+            'If RadioButton1.Checked = True Then
+            query.CommandText = "select MemoNo, Expenses, Costs, Description from db_detailsppd where memono ='" & TextEdit1.Text & "' and timetravel = ''"
+            'ElseIf RadioButton2.Checked = True Then
+            '    query.CommandText = "select MemoNo, Expenses, Costs, Description from db_detailsppd where memono ='" & ComboBoxEdit2.Text & "' and timetravel = ''"
+            'End If
             Dim tab As New DataTable
             tab.Load(query.ExecuteReader)
             GridControl4.DataSource = tab
@@ -876,7 +912,27 @@ Public Class SuratDinas
     End Sub
 
     Private Sub ComboBoxEdit1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.SelectedIndexChanged
+        viewsppd()
         viewtravel()
         viewcosts()
+        days()
+    End Sub
+
+    Private Sub DateTimePicker4_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker4.ValueChanged
+        If DateTimePicker4.Value.Date < DateTimePicker1.Value.Date OrElse DateTimePicker4.Value.Date > DateTimePicker2.Value.Date Then
+            MsgBox("You only allowed to choose the date between range date you chosen before", MsgBoxStyle.Information)
+            DateTimePicker4.Value = DateTimePicker2.Value
+        End If
+    End Sub
+
+    Private Sub TextEdit45_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextEdit45.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub DateTimePicker9_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker9.ValueChanged
+
     End Sub
 End Class

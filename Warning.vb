@@ -3,43 +3,9 @@ Imports DevExpress.Data
 Imports DevExpress.XtraPrinting
 Imports DevExpress.XtraRichEdit
 Imports DevExpress.XtraRichEdit.API.Native
-'Imports word = Microsoft.Office.Interop.Word
 Imports DevExpress.XtraEditors
 
 Public Class Warning
-    Dim connectionstring As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionstring = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Sub changer()
         Dim maxid As Integer
@@ -119,18 +85,21 @@ Public Class Warning
             Try
                 File.Delete(CType(sFilePath, String))
             Catch ex As DirectoryNotFoundException
-                msgbox(ex)
+                MsgBox(ex)
             End Try
         End Using
     End Sub
 
     Sub save()
-        Dim dtb, dtr As DateTime
+        Dim dtb, dtr, dts As DateTime
         DateTimePicker1.Format = DateTimePickerFormat.Custom
         DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         DateTimePicker2.Format = DateTimePickerFormat.Custom
         DateTimePicker2.CustomFormat = "yyyy-MM-dd"
+        DateTimePicker3.Format = DateTimePickerFormat.Custom
+        DateTimePicker3.CustomFormat = "yyyy-MM-dd"
         dtr = DateTimePicker2.Value
+        dts = DateTimePicker3.Value
         dtb = DateTimePicker1.Value
         Dim ltype As String = ""
         If RadioButton1.Checked = True Then
@@ -140,8 +109,8 @@ Public Class Warning
         End If
         Dim cmd As MySqlCommand = SQLConnection.CreateCommand
         cmd.CommandText = "insert into db_warning" +
-                          "(Memono, tgl, FullName, Employeecode, WarningLevel, OffenseType, DescriptionOfInfraction, Plan, Consequences, IsPenalty, PaymentDate, Amount, LetterType)" +
-                          "values(@Memono, @tgl, @names, @ec, @warninglevel, @offensetype, @descriptionofinfraction, @plan, @consequences, @ispenalty, @paymentdate, @amount, @LetterType)"
+                          "(Memono, tgl, FullName, Employeecode, WarningLevel, OffenseType, DescriptionOfInfraction, Plan, Consequences, IsPenalty, PaymentDate, Amount, LetterType, EndPaymentDate)" +
+                          "values(@Memono, @tgl, @names, @ec, @warninglevel, @offensetype, @descriptionofinfraction, @plan, @consequences, @ispenalty, @paymentdate, @amount, @LetterType, @EndpaymentDate)"
         cmd.Parameters.AddWithValue("@Memono", txtmemo.Text)
         cmd.Parameters.AddWithValue("@tgl", dtb.ToString("yyyy-MM-dd"))
         cmd.Parameters.AddWithValue("@names", TextBox3.Text)
@@ -155,6 +124,7 @@ Public Class Warning
         cmd.Parameters.AddWithValue("@paymentdate", dtr.ToString("yyyy-MM-dd"))
         cmd.Parameters.AddWithValue("@amount", Encryptio(textbox4.Text.Trim))
         cmd.Parameters.AddWithValue("@LetterType", ltype)
+        cmd.Parameters.AddWithValue("@EndPaymentDate", dts.ToString("yyyy-MM-dd"))
         cmd.ExecuteNonQuery()
     End Sub
 
@@ -192,8 +162,11 @@ Public Class Warning
     End Sub
 
     Private Sub Warning_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionstring
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select employeecode from db_tmpname where 1 = 1"
         Dim quer As String = CType(query.ExecuteScalar, String)
@@ -210,10 +183,14 @@ Public Class Warning
     Private Sub CheckEdit1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit1.CheckedChanged
         If CheckEdit1.Checked = True Then
             DateTimePicker2.Enabled = True
+            DateTimePicker3.Enabled = True
             textbox4.Enabled = True
+            CheckEdit2.Enabled = True
         Else
             DateTimePicker2.Enabled = False
             textbox4.Enabled = False
+            DateTimePicker3.Enabled = False
+            CheckEdit2.Enabled = False
         End If
     End Sub
 
@@ -433,7 +410,8 @@ Public Class Warning
         Dim dept As String = CStr(query.ExecuteScalar)
         query.CommandText = "select companycode from db_pegawai where employeecode = '" & TextBox2.Text & "'"
         Dim kompeni As String = CStr(query.ExecuteScalar)
-        Dim ynow As String = Format(Now, "yyyy-MMMM-dd").ToString
+        'Dim ynow As String = Format(Now, "yyyy-MMMM-dd").ToString
+        Dim ynow As String = Format(Now, "dd-MM-yyyy").ToString
         Dim level As String
         If ComboBox1.Text = "Level 1" Then
             level = "1"
@@ -512,7 +490,7 @@ Public Class Warning
         Dim dept As String = CStr(query.ExecuteScalar)
         query.CommandText = "select companycode from db_pegawai where employeecode = '" & TextBox2.Text & "'"
         Dim kompeni As String = CStr(query.ExecuteScalar)
-        Dim ynow As String = Format(Now, "yyyy-MMMM-dd").ToString
+        Dim ynow As String = Format(Now, "dd-MM-yyyy").ToString
         Try
             'document extraction part
             Dim filepath As String
@@ -581,7 +559,7 @@ Public Class Warning
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         If TextBox2.Text = "" OrElse TextBox3.Text = "" OrElse ComboBox1.Text = "" Then
-            MsgBox("Please fill the empty fields or select the radio button type")
+            MsgBox("Please fill the empty fields or select the radio button type", MsgBoxStyle.Information)
         Else
             If RadioButton1.Checked = True Then
                 teguran()
@@ -603,25 +581,24 @@ Public Class Warning
                 sp()
                 save()
                 savesp()
-                    TextBox3.Text = ""
-                    TextBox2.Text = ""
-                    txtmemo.Text = ""
-                    ComboBox1.Text = ""
-                    ComboBox2.Text = ""
-                    RichTextBox1.Text = ""
-                    CheckEdit1.Checked = False
-                    RichTextBox2.Text = ""
-                    textbox4.Text = ""
-                    RichTextBox3.Text = ""
-                    changer()
-                    Close()
-                Else
-                    Exit Sub
-                End If
+                TextBox3.Text = ""
+                TextBox2.Text = ""
+                txtmemo.Text = ""
+                ComboBox1.Text = ""
+                ComboBox2.Text = ""
+                RichTextBox1.Text = ""
+                CheckEdit1.Checked = False
+                RichTextBox2.Text = ""
+                textbox4.Text = ""
+                RichTextBox3.Text = ""
+                changer()
+                Close()
+            Else
+                Exit Sub
             End If
+        End If
         If RadioButton1.Checked = True Then
             SimpleButton4.Enabled = True
-
         End If
     End Sub
 
@@ -646,5 +623,33 @@ Public Class Warning
         If RadioButton2.Checked = True Then
             LabelControl1.Text = "sp.pdf"
         End If
+    End Sub
+
+    Private Sub CheckEdit2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit2.CheckedChanged
+        If CheckEdit2.Checked = True Then
+            Try
+                Dim d1 As Date = DateTimePicker2.Value.Date
+                Dim d2 As Date = DateTimePicker3.Value.Date
+                Dim j As Integer = DateDiff("M", d1, d2) + 1
+                Dim a As Integer = Convert.ToInt32(textbox4.Text.Replace(",", " "))
+                Dim k As Integer = Convert.ToInt16(TextEdit1.Text)
+                MsgBox(k)
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+            'TextEdit1.Text = CType((a / j), String)
+        End If
+    End Sub
+
+    Private Sub textbox4_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles textbox4.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) = True Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub textbox4_EditValueChanged(sender As Object, e As EventArgs) Handles textbox4.EditValueChanged
+        CheckEdit2.Enabled = True
+        TextEdit1.Text = textbox4.Text.Replace("," & ".00", "")
     End Sub
 End Class

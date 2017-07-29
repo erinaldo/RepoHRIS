@@ -25,6 +25,7 @@ Partial Class Borongan
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Borongan))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.textedit2 = New System.Windows.Forms.TextBox()
         Me.textedit1 = New System.Windows.Forms.TextBox()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
@@ -69,7 +70,6 @@ Partial Class Borongan
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +111,16 @@ Partial Class Borongan
         Me.GroupControl1.Size = New System.Drawing.Size(567, 432)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "Items"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(485, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Label2"
+        Me.Label2.Visible = False
         '
         'textedit2
         '
@@ -496,16 +506,6 @@ Partial Class Borongan
         Me.GridView1.OptionsFind.AlwaysVisible = True
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.PaintStyleName = "Office2003"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(485, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Label2"
-        Me.Label2.Visible = False
         '
         'Borongan
         '

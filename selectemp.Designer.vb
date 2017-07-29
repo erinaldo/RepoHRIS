@@ -291,6 +291,7 @@ Partial Class selectemp
         Me.Label6.Size = New System.Drawing.Size(39, 13)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Label6"
+        Me.Label6.Visible = False
         '
         'selectemp
         '

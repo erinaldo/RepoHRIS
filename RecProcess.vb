@@ -366,15 +366,11 @@ Public Class RecProcess
         End If
     End Sub
 
-    Dim anly As New Analytical
 
     Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
-        If anly Is Nothing OrElse anly.IsDisposed OrElse anly.MinimizeBox Then
-            anly.Close()
-            anly = New Analytical
-        End If
-        anly.Show()
+
     End Sub
+
     Dim dt1 As Date
     Dim dt2 As Date
     Dim dt3 As TimeSpan

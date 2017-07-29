@@ -34,7 +34,6 @@ Partial Class StatusChange
         Me.CheckEdit4 = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit3 = New DevExpress.XtraEditors.CheckEdit()
         Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -55,6 +54,7 @@ Partial Class StatusChange
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.ComboBoxEdit10 = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -75,8 +75,8 @@ Partial Class StatusChange
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.Label16 = New System.Windows.Forms.Label()
         GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         CType(GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         GroupControl3.SuspendLayout()
@@ -213,15 +213,6 @@ Partial Class StatusChange
         Me.CheckEdit2.Properties.Caption = "Do not include this employee in payroll process"
         Me.CheckEdit2.Size = New System.Drawing.Size(253, 19)
         Me.CheckEdit2.TabIndex = 10
-        '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(271, 229)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(26, 20)
-        Me.SimpleButton2.TabIndex = 26
-        Me.SimpleButton2.Visible = False
         '
         'TextBox3
         '
@@ -416,6 +407,16 @@ Partial Class StatusChange
         Me.GroupControl1.TabIndex = 9
         Me.GroupControl1.Text = "Job"
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(579, 95)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(45, 13)
+        Me.Label16.TabIndex = 21
+        Me.Label16.Text = "Label16"
+        Me.Label16.Visible = False
+        '
         'ComboBoxEdit10
         '
         Me.ComboBoxEdit10.Location = New System.Drawing.Point(385, 84)
@@ -588,6 +589,15 @@ Partial Class StatusChange
         Me.SimpleButton3.TabIndex = 12
         Me.SimpleButton3.Text = "Request"
         '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
+        Me.SimpleButton2.Location = New System.Drawing.Point(271, 229)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(26, 20)
+        Me.SimpleButton2.TabIndex = 26
+        Me.SimpleButton2.Visible = False
+        '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
@@ -595,16 +605,6 @@ Partial Class StatusChange
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(26, 20)
         Me.SimpleButton1.TabIndex = 7
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(579, 95)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(45, 13)
-        Me.Label16.TabIndex = 21
-        Me.Label16.Text = "Label16"
-        Me.Label16.Visible = False
         '
         'StatusChange
         '

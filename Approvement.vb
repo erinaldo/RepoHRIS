@@ -1,46 +1,11 @@
-﻿Imports System.IO
-Imports DevExpress.Utils.Menu
-
+﻿Imports DevExpress.Utils.Menu
 Public Class Approvement
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        'Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Private Sub Approvement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         autho()
         SimpleButton5.Enabled = False
         SimpleButton7.Enabled = False
@@ -132,7 +97,7 @@ Public Class Approvement
 
     Sub terminate()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select MemoNo, EmployeeCode, FullName, tgl as Dates, JobTitle, Status, Allowance, AllowanceTax, PaymentDate, Reason, ApprovedBy, ApprovedStatus from db_terminate where employeecode = '" & ComboBoxEdit1.Text & "'"
+        query.CommandText = "select MemoNo, EmployeeCode, FullName, tgl as Dates, JobTitle, Status, Allowance, AllowanceTax, PaymentDate, Reason, ApprovedBy, ApprovedStatus from db_terminate where ApprovedStatus = 'Requested' and employeecode = '" & ComboBoxEdit1.Text & "'"
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
         GridControl1.DataSource = dt
@@ -143,13 +108,73 @@ Public Class Approvement
 
     Sub leaves()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select MemoNo, EmployeeCode, FullName, tgl as Dates, Reason, StartDate, EndDate, TotalDays, Ket as Reason, ApprovedBy, ApprovedStatus from db_attrec where employeecode = '" & ComboBoxEdit1.Text & "'"
+        query.CommandText = "select MemoNo, EmployeeCode, FullName, tgl as Dates, Reason, StartDate, EndDate, TotalDays, Ket as Reason, ApprovedBy, ApprovedStatus from db_attrec where approvedstatus = 'Requested' and  employeecode = '" & ComboBoxEdit1.Text & "'"
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
         GridControl1.DataSource = dt
         GridView1.BestFitColumns()
         GridControl1.UseEmbeddedNavigator = True
         GridView1.MoveLastVisible()
+    End Sub
+
+    '    Sub Process()
+    '        Dim dtb, dtr As DateTime
+    '        date1.Format = DateTimePickerFormat.Custom
+    '        date1.CustomFormat = "yyyy-MM-dd"
+    '        dtb = date1.Value
+    '        date2.Format = DateTimePickerFormat.Custom
+    '        date2.CustomFormat = "yyyy-MM-dd"
+    '        dtr = date2.Value
+    '        Dim sqlcommand As New MySqlCommand
+    '        Dim str_carsql As String
+    '        Dim d1 As Date = date1.Value.Date
+    '        d1 = d1.AddDays(-1)
+    '        Dim d2 As Date = date2.Value.Date
+    '#Disable Warning BC42016 ' Implicit conversion
+    '        For j As Integer = 1 To DateDiff("d", d1, d2)
+    '            d1 = d1.AddDays(1)
+    '            str_carsql = "INSERT INTO db_holiday " +
+    '                            "(tgl, StartDate, EndDate, TotalDays, Reason) " +
+    '                                    " Values (@tgl, @StartDate, @EndDate, @TotalDays, @Reason)"
+    '            sqlcommand.Connection = SQLConnection
+    '            sqlcommand.CommandText = str_carsql
+    '            sqlcommand.Parameters.Clear()
+    '            sqlcommand.Parameters.AddWithValue("@tgl", d1.ToString("yyyy-MM-dd"))
+    '            sqlcommand.Parameters.AddWithValue("@StartDate", dtb.ToString("yyyy-MM-dd"))
+    '            sqlcommand.Parameters.AddWithValue("@EndDate", dtr.ToString("yyyy-MM-dd"))
+    '            sqlcommand.Parameters.AddWithValue("@TotalDays", txtdays.Text)
+    '            sqlcommand.Parameters.AddWithValue("@Reason", textreason.Text)
+    '            sqlcommand.Connection = SQLConnection
+    '            sqlcommand.ExecuteNonQuery()
+    '        Next
+    '        updateovertime()
+    '        updatesunday()
+    '        MsgBox("Holiday added", MsgBoxStyle.Information)
+    '    End Sub
+
+    Sub updatesleaves()
+        Dim query As MySqlCommand = SQLConnection.CreateCommand
+        query.CommandText = "select startdate, enddate, fullname from db_attrec where memono = '" & Label1.Text & "'"
+        Dim tab As New DataTable
+        tab.Load(query.ExecuteReader)
+        For index As Integer = 0 To tab.Rows.Count - 1
+            Dim startdate As Date = CDate(tab.Rows(index).Item(0).ToString)
+            Dim enddate As Date = CDate(tab.Rows(index).Item(1).ToString)
+#Disable Warning BC42016 ' Implicit conversion
+            For j As Integer = 1 To DateDiff("d", startdate, enddate)
+                startdate = startdate.AddDays(1)
+                query.CommandText = "insert into db_absensi (EmployeeCode, Fullname, Tanggal, JamMulai, JamSelesai, remarks) values (@ec, @fullname, @tgl, @sd, @ed, @remarks)"
+                query.Parameters.Clear()
+                query.Parameters.AddWithValue("@ec", ComboBoxEdit1.Text)
+                query.Parameters.AddWithValue("@fullname", tab.Rows(index).Item(2).ToString)
+                query.Parameters.AddWithValue("@tgl", startdate.ToString("yyyy-MM-dd"))
+                query.Parameters.AddWithValue("@sd", Now.ToString("hh:mm:ss"))
+                query.Parameters.AddWithValue("@ed", Now.ToString("hh:mm:ss"))
+                query.Parameters.AddWithValue("@remarks", "CUTI")
+                query.ExecuteNonQuery()
+                MsgBox("Added", MsgBoxStyle.Information)
+            Next
+        Next
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
@@ -170,9 +195,6 @@ Public Class Approvement
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         LabelControl5.Text = "Leave Request"
         empcode()
-        'TextBox3.Text = ""
-        'TextBox4.Text = ""
-        ''GridView1.Columns.Clear()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select count(*) from db_attrec where approvedstatus = 'Requested'"
         Dim quer As Integer = CInt(query.ExecuteScalar)
@@ -221,12 +243,12 @@ Public Class Approvement
 
     Sub updateterminate()
         Dim cmd As MySqlCommand = SQLConnection.CreateCommand
-        cmd.CommandText = "update db_pegawai set status = 'Terminated' where employeecode = '" & TextBox3.Text & "'"
+        cmd.CommandText = "update db_pegawai set status = 'Terminated' where employeecode = '" & ComboBoxEdit1.Text & "'"
         cmd.ExecuteNonQuery()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select idnumber from db_pegawai where employeecode = '" & TextBox3.Text & "'"
+        query.CommandText = "select idnumber from db_pegawai where employeecode = '" & ComboBoxEdit1.Text & "'"
         Dim hsl As String = CStr(query.ExecuteScalar)
-        query.CommandText = "select blacklist from db_terminate where employeecode = '" & TextBox3.Text & "'"
+        query.CommandText = "select blacklist from db_terminate where employeecode = '" & ComboBoxEdit1.Text & "'"
         Dim bl As Integer = CInt(query.ExecuteScalar)
         query.CommandText = "update db_recruitment set blacklist = @check where idnumber = @id"
         query.Parameters.AddWithValue("@id", hsl.ToString)
@@ -261,6 +283,7 @@ Public Class Approvement
             query.ExecuteNonQuery()
             MsgBox("Approved")
             leaves()
+            'updatesleaves()
         ElseIf LabelControl5.Text = "Loans" Then
             query.CommandText = "update db_loan set status = 'Approved',  reason = @purpose, ApprovedBy = @app where EmployeeCode = '" & ComboBoxEdit1.Text & "'"
             query.Parameters.AddWithValue("@app", Label2.Text)
@@ -411,18 +434,20 @@ Public Class Approvement
     End Sub
 
     Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
-        approvement()
-        Close()
+        If ComboBoxEdit1.Text = "" Then
+            MsgBox("The Combobox is still empty!", MsgBoxStyle.Critical)
+        Else
+            approvement()
+            Close()
+        End If
     End Sub
 
     Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click
-        'If TextBox1.Text = "" OrElse TextBox2.Text = "" Then
-        '    MsgBox("Fill Approvement field")
-        'Else
-        rejection()
-        '    TextBox1.Text = ""
-        '    TextBox2.Text = ""
-        'End If
+        If ComboBoxEdit1.Text = "" Then
+            MsgBox("The Combobox is still empty!", MsgBoxStyle.Critical)
+        Else
+            rejection()
+        End If
     End Sub
 
     Dim sch As New StatusChange
@@ -460,7 +485,7 @@ Public Class Approvement
 
     Sub loans()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select FullName, EmployeeCode, Dates, AmountOfLoan, FromMonths, PaymentPerMonth, CompletedOn, ApprovedBy, Status From db_loan where employeecode = '" & ComboBoxEdit1.Text & "'"
+        query.CommandText = "select FullName, EmployeeCode, Dates, AmountOfLoan, FromMonths, PaymentPerMonth, CompletedOn, ApprovedBy, Status From db_loan where status = 'Requested' and employeecode = '" & ComboBoxEdit1.Text & "'"
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
         GridControl1.DataSource = dt
@@ -471,7 +496,7 @@ Public Class Approvement
 
     Sub others()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "select a.MemoNo, a.EmployeeCode, b.FullName, a.Tanggal as Dates, a.Period, a.Until, a.Amount, as1 as Sebagai, a.Reason, a.ApprovedBy, a.Status  from db_addition a, db_pegawai b where a.EmployeeCode = b.EmployeeCode and a.employeecode = '" & ComboBoxEdit1.Text & "'"
+        query.CommandText = "select a.MemoNo, a.EmployeeCode, b.FullName, a.Tanggal as Dates, a.Period, a.Until, a.Amount, as1 as Sebagai, a.Reason, a.ApprovedBy, a.Status  from db_addition a, db_pegawai b where a.status = 'Requested' and a.EmployeeCode = b.EmployeeCode and a.employeecode = '" & ComboBoxEdit1.Text & "'"
         Dim dt As New DataTable
         dt.Load(query.ExecuteReader)
         GridControl1.DataSource = dt

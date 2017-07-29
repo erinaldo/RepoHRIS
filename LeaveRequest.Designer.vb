@@ -50,10 +50,10 @@ Partial Class LeaveRequest
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -290,6 +290,28 @@ Partial Class LeaveRequest
         'Timer1
         '
         '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.SimpleButton1)
+        Me.GroupControl2.Controls.Add(Me.TextBox6)
+        Me.GroupControl2.Controls.Add(Me.TextBox5)
+        Me.GroupControl2.Controls.Add(Me.Label8)
+        Me.GroupControl2.Location = New System.Drawing.Point(368, 9)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(36, 22)
+        Me.GroupControl2.TabIndex = 19
+        Me.GroupControl2.Text = "GroupControl2"
+        Me.GroupControl2.Visible = False
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Enabled = False
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(15, 26)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(26, 20)
+        Me.SimpleButton1.TabIndex = 7
+        '
         'SimpleButton3
         '
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
@@ -306,28 +328,6 @@ Partial Class LeaveRequest
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(26, 20)
         Me.SimpleButton2.TabIndex = 10
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Enabled = False
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(15, 26)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(26, 20)
-        Me.SimpleButton1.TabIndex = 7
-        '
-        'GroupControl2
-        '
-        Me.GroupControl2.Controls.Add(Me.SimpleButton1)
-        Me.GroupControl2.Controls.Add(Me.TextBox6)
-        Me.GroupControl2.Controls.Add(Me.TextBox5)
-        Me.GroupControl2.Controls.Add(Me.Label8)
-        Me.GroupControl2.Location = New System.Drawing.Point(368, 9)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(36, 22)
-        Me.GroupControl2.TabIndex = 19
-        Me.GroupControl2.Text = "GroupControl2"
-        Me.GroupControl2.Visible = False
         '
         'LeaveRequest
         '

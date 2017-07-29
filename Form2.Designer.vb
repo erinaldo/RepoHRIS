@@ -126,7 +126,7 @@ Partial Class Form2
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(12, 834)
+        Me.LabelControl4.Location = New System.Drawing.Point(12, 387)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(66, 13)
         Me.LabelControl4.StyleController = Me.LayoutControl1
@@ -169,7 +169,7 @@ Partial Class Form2
         'SimpleButton8
         '
         Me.SimpleButton8.Image = CType(resources.GetObject("SimpleButton8.Image"), System.Drawing.Image)
-        Me.SimpleButton8.Location = New System.Drawing.Point(12, 768)
+        Me.SimpleButton8.Location = New System.Drawing.Point(12, 321)
         Me.SimpleButton8.Name = "SimpleButton8"
         Me.SimpleButton8.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton8.StyleController = Me.LayoutControl1
@@ -178,28 +178,28 @@ Partial Class Form2
         '
         'RadioButton2
         '
-        Me.RadioButton2.Location = New System.Drawing.Point(12, 25)
+        Me.RadioButton2.Location = New System.Drawing.Point(12, -422)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(181, 25)
         Me.RadioButton2.TabIndex = 28
-        Me.RadioButton2.Text = "Cardview"
+        Me.RadioButton2.Text = "Layout View"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'RadioButton1
         '
         Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(12, -4)
+        Me.RadioButton1.Location = New System.Drawing.Point(12, -451)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(181, 25)
         Me.RadioButton1.TabIndex = 4
         Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Gridview"
+        Me.RadioButton1.Text = "Grid View"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'SimpleButton19
         '
         Me.SimpleButton19.Image = CType(resources.GetObject("SimpleButton19.Image"), System.Drawing.Image)
-        Me.SimpleButton19.Location = New System.Drawing.Point(12, 726)
+        Me.SimpleButton19.Location = New System.Drawing.Point(12, 279)
         Me.SimpleButton19.Name = "SimpleButton19"
         Me.SimpleButton19.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton19.StyleController = Me.LayoutControl1
@@ -209,7 +209,7 @@ Partial Class Form2
         'SimpleButton29
         '
         Me.SimpleButton29.Image = CType(resources.GetObject("SimpleButton29.Image"), System.Drawing.Image)
-        Me.SimpleButton29.Location = New System.Drawing.Point(12, 684)
+        Me.SimpleButton29.Location = New System.Drawing.Point(12, 237)
         Me.SimpleButton29.Name = "SimpleButton29"
         Me.SimpleButton29.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton29.StyleController = Me.LayoutControl1
@@ -218,7 +218,7 @@ Partial Class Form2
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(12, 810)
+        Me.Label3.Location = New System.Drawing.Point(12, 363)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(181, 20)
         Me.Label3.TabIndex = 27
@@ -227,7 +227,7 @@ Partial Class Form2
         'SimpleButton6
         '
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"), System.Drawing.Image)
-        Me.SimpleButton6.Location = New System.Drawing.Point(12, 642)
+        Me.SimpleButton6.Location = New System.Drawing.Point(12, 195)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton6.StyleController = Me.LayoutControl1
@@ -237,7 +237,7 @@ Partial Class Form2
         'SimpleButton18
         '
         Me.SimpleButton18.Image = CType(resources.GetObject("SimpleButton18.Image"), System.Drawing.Image)
-        Me.SimpleButton18.Location = New System.Drawing.Point(12, 96)
+        Me.SimpleButton18.Location = New System.Drawing.Point(12, -351)
         Me.SimpleButton18.Name = "SimpleButton18"
         Me.SimpleButton18.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton18.StyleController = Me.LayoutControl1
@@ -247,7 +247,7 @@ Partial Class Form2
         'SimpleButton4
         '
         Me.SimpleButton4.Image = CType(resources.GetObject("SimpleButton4.Image"), System.Drawing.Image)
-        Me.SimpleButton4.Location = New System.Drawing.Point(12, 54)
+        Me.SimpleButton4.Location = New System.Drawing.Point(12, -393)
         Me.SimpleButton4.Name = "SimpleButton4"
         Me.SimpleButton4.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton4.StyleController = Me.LayoutControl1
@@ -257,7 +257,7 @@ Partial Class Form2
         'SimpleButton20
         '
         Me.SimpleButton20.Image = CType(resources.GetObject("SimpleButton20.Image"), System.Drawing.Image)
-        Me.SimpleButton20.Location = New System.Drawing.Point(12, 138)
+        Me.SimpleButton20.Location = New System.Drawing.Point(12, -309)
         Me.SimpleButton20.Name = "SimpleButton20"
         Me.SimpleButton20.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton20.StyleController = Me.LayoutControl1
@@ -267,7 +267,7 @@ Partial Class Form2
         'SimpleButton21
         '
         Me.SimpleButton21.Image = CType(resources.GetObject("SimpleButton21.Image"), System.Drawing.Image)
-        Me.SimpleButton21.Location = New System.Drawing.Point(12, 180)
+        Me.SimpleButton21.Location = New System.Drawing.Point(12, -267)
         Me.SimpleButton21.Name = "SimpleButton21"
         Me.SimpleButton21.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton21.StyleController = Me.LayoutControl1
@@ -277,7 +277,7 @@ Partial Class Form2
         'SimpleButton22
         '
         Me.SimpleButton22.Image = CType(resources.GetObject("SimpleButton22.Image"), System.Drawing.Image)
-        Me.SimpleButton22.Location = New System.Drawing.Point(12, 264)
+        Me.SimpleButton22.Location = New System.Drawing.Point(12, -183)
         Me.SimpleButton22.Name = "SimpleButton22"
         Me.SimpleButton22.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton22.StyleController = Me.LayoutControl1
@@ -287,7 +287,7 @@ Partial Class Form2
         'SimpleButton23
         '
         Me.SimpleButton23.Image = CType(resources.GetObject("SimpleButton23.Image"), System.Drawing.Image)
-        Me.SimpleButton23.Location = New System.Drawing.Point(12, 222)
+        Me.SimpleButton23.Location = New System.Drawing.Point(12, -225)
         Me.SimpleButton23.Name = "SimpleButton23"
         Me.SimpleButton23.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton23.StyleController = Me.LayoutControl1
@@ -297,7 +297,7 @@ Partial Class Form2
         'SimpleButton24
         '
         Me.SimpleButton24.Image = CType(resources.GetObject("SimpleButton24.Image"), System.Drawing.Image)
-        Me.SimpleButton24.Location = New System.Drawing.Point(12, 306)
+        Me.SimpleButton24.Location = New System.Drawing.Point(12, -141)
         Me.SimpleButton24.Name = "SimpleButton24"
         Me.SimpleButton24.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton24.StyleController = Me.LayoutControl1
@@ -307,7 +307,7 @@ Partial Class Form2
         'SimpleButton7
         '
         Me.SimpleButton7.Image = CType(resources.GetObject("SimpleButton7.Image"), System.Drawing.Image)
-        Me.SimpleButton7.Location = New System.Drawing.Point(12, 348)
+        Me.SimpleButton7.Location = New System.Drawing.Point(12, -99)
         Me.SimpleButton7.Name = "SimpleButton7"
         Me.SimpleButton7.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton7.StyleController = Me.LayoutControl1
@@ -317,7 +317,7 @@ Partial Class Form2
         'SimpleButton26
         '
         Me.SimpleButton26.Image = CType(resources.GetObject("SimpleButton26.Image"), System.Drawing.Image)
-        Me.SimpleButton26.Location = New System.Drawing.Point(12, 390)
+        Me.SimpleButton26.Location = New System.Drawing.Point(12, -57)
         Me.SimpleButton26.Name = "SimpleButton26"
         Me.SimpleButton26.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton26.StyleController = Me.LayoutControl1
@@ -327,7 +327,7 @@ Partial Class Form2
         'SimpleButton28
         '
         Me.SimpleButton28.Image = CType(resources.GetObject("SimpleButton28.Image"), System.Drawing.Image)
-        Me.SimpleButton28.Location = New System.Drawing.Point(12, 516)
+        Me.SimpleButton28.Location = New System.Drawing.Point(12, 69)
         Me.SimpleButton28.Name = "SimpleButton28"
         Me.SimpleButton28.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton28.StyleController = Me.LayoutControl1
@@ -337,7 +337,7 @@ Partial Class Form2
         'SimpleButton27
         '
         Me.SimpleButton27.Image = CType(resources.GetObject("SimpleButton27.Image"), System.Drawing.Image)
-        Me.SimpleButton27.Location = New System.Drawing.Point(12, 432)
+        Me.SimpleButton27.Location = New System.Drawing.Point(12, -15)
         Me.SimpleButton27.Name = "SimpleButton27"
         Me.SimpleButton27.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton27.StyleController = Me.LayoutControl1
@@ -347,7 +347,7 @@ Partial Class Form2
         'SimpleButton30
         '
         Me.SimpleButton30.Image = CType(resources.GetObject("SimpleButton30.Image"), System.Drawing.Image)
-        Me.SimpleButton30.Location = New System.Drawing.Point(12, 558)
+        Me.SimpleButton30.Location = New System.Drawing.Point(12, 111)
         Me.SimpleButton30.Name = "SimpleButton30"
         Me.SimpleButton30.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton30.StyleController = Me.LayoutControl1
@@ -357,7 +357,7 @@ Partial Class Form2
         'SimpleButton25
         '
         Me.SimpleButton25.Image = CType(resources.GetObject("SimpleButton25.Image"), System.Drawing.Image)
-        Me.SimpleButton25.Location = New System.Drawing.Point(12, 474)
+        Me.SimpleButton25.Location = New System.Drawing.Point(12, 27)
         Me.SimpleButton25.Name = "SimpleButton25"
         Me.SimpleButton25.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton25.StyleController = Me.LayoutControl1
@@ -367,7 +367,7 @@ Partial Class Form2
         'SimpleButton5
         '
         Me.SimpleButton5.Image = CType(resources.GetObject("SimpleButton5.Image"), System.Drawing.Image)
-        Me.SimpleButton5.Location = New System.Drawing.Point(12, 600)
+        Me.SimpleButton5.Location = New System.Drawing.Point(12, 153)
         Me.SimpleButton5.Name = "SimpleButton5"
         Me.SimpleButton5.Size = New System.Drawing.Size(181, 38)
         Me.SimpleButton5.StyleController = Me.LayoutControl1
@@ -380,7 +380,7 @@ Partial Class Form2
         Me.LayoutControlGroup5.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup5.GroupBordersVisible = False
         Me.LayoutControlGroup5.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem21, Me.LayoutControlItem20, Me.LayoutControlItem19, Me.LayoutControlItem18, Me.LayoutControlItem17, Me.LayoutControlItem16, Me.LayoutControlItem13, Me.LayoutControlItem14, Me.LayoutControlItem15, Me.LayoutControlItem12, Me.LayoutControlItem11, Me.LayoutControlItem10, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem7, Me.LayoutControlItem6, Me.LayoutControlItem5, Me.LayoutControlItem24, Me.LayoutControlItem23, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4})
-        Me.LayoutControlGroup5.Location = New System.Drawing.Point(0, -16)
+        Me.LayoutControlGroup5.Location = New System.Drawing.Point(0, -463)
         Me.LayoutControlGroup5.Name = "LayoutControlGroup5"
         Me.LayoutControlGroup5.Size = New System.Drawing.Size(205, 875)
         Me.LayoutControlGroup5.Text = "LayoutControlGroup5"
@@ -433,6 +433,7 @@ Partial Class Form2
         Me.LayoutControlItem18.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem18.TextToControlDistance = 0
         Me.LayoutControlItem18.TextVisible = False
+        Me.LayoutControlItem18.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem17
         '
@@ -679,7 +680,7 @@ Partial Class Form2
         Me.GridControl1.Location = New System.Drawing.Point(217, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(745, 429)
+        Me.GridControl1.Size = New System.Drawing.Size(747, 429)
         Me.GridControl1.TabIndex = 1
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -831,7 +832,7 @@ Partial Class Form2
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(964, 455)
+        Me.GroupControl1.Size = New System.Drawing.Size(966, 455)
         Me.GroupControl1.TabIndex = 3
         Me.GroupControl1.Text = " HRM Analysis Reports"
         '
@@ -857,7 +858,7 @@ Partial Class Form2
         Me.GridControl2.Location = New System.Drawing.Point(217, 24)
         Me.GridControl2.MainView = Me.LayoutView1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(745, 429)
+        Me.GridControl2.Size = New System.Drawing.Size(747, 429)
         Me.GridControl2.TabIndex = 4
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.LayoutView1})
         Me.GridControl2.Visible = False
@@ -977,7 +978,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 455)
+        Me.ClientSize = New System.Drawing.Size(966, 455)
         Me.Controls.Add(Me.GroupControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimizeBox = False

@@ -38,13 +38,10 @@ Partial Class selectcand
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
-        Me.RangeTrackBarControl1 = New DevExpress.XtraEditors.RangeTrackBarControl()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RangeTrackBarControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RangeTrackBarControl1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GridControl1
@@ -52,7 +49,7 @@ Partial Class selectcand
         Me.GridControl1.Location = New System.Drawing.Point(181, 32)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1079, 572)
+        Me.GridControl1.Size = New System.Drawing.Size(1079, 629)
         Me.GridControl1.TabIndex = 22
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -285,22 +282,11 @@ Partial Class selectcand
         Me.ImageCollection1.InsertGalleryImage("assignto_16x16.png", "images/people/assignto_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/people/assignto_16x16.png"), 0)
         Me.ImageCollection1.Images.SetKeyName(0, "assignto_16x16.png")
         '
-        'RangeTrackBarControl1
-        '
-        Me.RangeTrackBarControl1.EditValue = New DevExpress.XtraEditors.Repository.TrackBarRange(0, 0)
-        Me.RangeTrackBarControl1.Location = New System.Drawing.Point(181, 610)
-        Me.RangeTrackBarControl1.Name = "RangeTrackBarControl1"
-        Me.RangeTrackBarControl1.Properties.LabelAppearance.Options.UseTextOptions = True
-        Me.RangeTrackBarControl1.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.RangeTrackBarControl1.Size = New System.Drawing.Size(1073, 45)
-        Me.RangeTrackBarControl1.TabIndex = 31
-        '
         'selectcand
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1266, 662)
-        Me.Controls.Add(Me.RangeTrackBarControl1)
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.LabelControl2)
@@ -323,8 +309,6 @@ Partial Class selectcand
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RangeTrackBarControl1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RangeTrackBarControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -344,5 +328,4 @@ Partial Class selectcand
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents ImageCollection1 As DevExpress.Utils.ImageCollection
-    Friend WithEvents RangeTrackBarControl1 As DevExpress.XtraEditors.RangeTrackBarControl
 End Class

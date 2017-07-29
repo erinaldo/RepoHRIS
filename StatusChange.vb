@@ -1,40 +1,6 @@
 ﻿Imports System.IO
 
 Public Class StatusChange
-    Dim connectionstring As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionstring = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Private Sub CheckEdit2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit2.CheckedChanged
         If CheckEdit2.Checked = True Then
             CheckEdit3.Enabled = False
@@ -65,11 +31,6 @@ Public Class StatusChange
             .Label6.Text = Label16.Text
             .Show()
         End With
-        '    If sel Is Nothing OrElse sel.IsDisposed OrElse sel.MinimizeBox Then
-        '        sel.Close()
-        '        sel = New selectemp
-        '    End If
-        '    sel.Show()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -244,8 +205,11 @@ Public Class StatusChange
     End Sub
 
     Private Sub StatusChange_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionstring
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select employeecode from db_tmpname where 1 = 1"
         Dim quer As String = CType(query.ExecuteScalar, String)

@@ -1,53 +1,19 @@
-﻿Imports System.IO
-
+﻿Imports DevExpress.XtraEditors
 Public Class Authorization
-    Dim connectionstring As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionstring = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
-    End Sub
-
     Private Sub Authorization_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionstring
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         grid()
     End Sub
 
     Sub grid()
         Dim newtab As New DataTable
-        GridControl1.RefreshDataSource()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select Username from db_user"
         Dim adapter As New MySqlDataAdapter(query.CommandText, SQLConnection)
@@ -149,7 +115,7 @@ Public Class Authorization
         query.Parameters.AddWithValue("@sls", CheckEdit48.Checked)
         query.ExecuteNonQuery()
         Dim mess2 As String
-        mess2 = CType(MsgBox("Authorization Changed, The authorization will take effect after application restarted. You want to restart now ?", MsgBoxStyle.YesNo, "Information"), String)
+        mess2 = CType(XtraMessageBox.Show("Authorization Changed, The authorization will take effect after application restarted. You want to restart now ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question), String)
         If CType(mess2, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
             Login.Close()
             Application.Exit()
@@ -230,7 +196,7 @@ Public Class Authorization
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         If CheckEdit19.Checked = False And CheckEdit21.Checked = False And CheckEdit22.Checked = False Then
-            MsgBox("Please select at least one office location")
+            MsgBox("Please select at least one office location", MsgBoxStyle.Critical)
         Else
             updation()
         End If

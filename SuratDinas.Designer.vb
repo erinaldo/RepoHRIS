@@ -405,6 +405,7 @@ Partial Class SuratDinas
         Me.RadioButton1.TabIndex = 1
         Me.RadioButton1.Text = "Add SPPD"
         Me.RadioButton1.UseVisualStyleBackColor = False
+        Me.RadioButton1.Visible = False
         '
         'GroupControl1
         '
@@ -1457,9 +1458,9 @@ Partial Class SuratDinas
         Me.SimpleButton3.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SimpleButton3.Appearance.Options.UseFont = True
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(517, 143)
+        Me.SimpleButton3.Location = New System.Drawing.Point(546, 141)
         Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(125, 29)
+        Me.SimpleButton3.Size = New System.Drawing.Size(96, 29)
         Me.SimpleButton3.TabIndex = 1
         Me.SimpleButton3.Text = "Request"
         '
@@ -1621,6 +1622,7 @@ Partial Class SuratDinas
         Me.RadioButton2.TabIndex = 18
         Me.RadioButton2.Text = "EDIT SPPD"
         Me.RadioButton2.UseVisualStyleBackColor = False
+        Me.RadioButton2.Visible = False
         '
         'XtraTabPage6
         '
@@ -2146,6 +2148,7 @@ Partial Class SuratDinas
         Me.GridView5.Appearance.VertLine.Options.UseBackColor = True
         Me.GridView5.GridControl = Me.GridControl5
         Me.GridView5.Name = "GridView5"
+        Me.GridView5.OptionsBehavior.ReadOnly = True
         Me.GridView5.OptionsView.EnableAppearanceEvenRow = True
         Me.GridView5.OptionsView.EnableAppearanceOddRow = True
         Me.GridView5.PaintStyleName = "Flat"
@@ -2618,6 +2621,7 @@ Partial Class SuratDinas
         '
         Me.TextEdit38.Location = New System.Drawing.Point(116, 138)
         Me.TextEdit38.Name = "TextEdit38"
+        Me.TextEdit38.Properties.ReadOnly = True
         Me.TextEdit38.Size = New System.Drawing.Size(254, 20)
         Me.TextEdit38.TabIndex = 17
         '
@@ -2633,6 +2637,7 @@ Partial Class SuratDinas
         '
         Me.TextEdit39.Location = New System.Drawing.Point(116, 115)
         Me.TextEdit39.Name = "TextEdit39"
+        Me.TextEdit39.Properties.ReadOnly = True
         Me.TextEdit39.Size = New System.Drawing.Size(254, 20)
         Me.TextEdit39.TabIndex = 15
         '
@@ -2719,6 +2724,7 @@ Partial Class SuratDinas
         '
         Me.TextEdit41.Location = New System.Drawing.Point(116, 67)
         Me.TextEdit41.Name = "TextEdit41"
+        Me.TextEdit41.Properties.ReadOnly = True
         Me.TextEdit41.Size = New System.Drawing.Size(254, 20)
         Me.TextEdit41.TabIndex = 7
         '
@@ -2947,7 +2953,9 @@ Partial Class SuratDinas
         Me.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(675, 578)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(675, 578)
         Me.Name = "SuratDinas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Perjalanan Dinas"

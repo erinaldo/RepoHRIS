@@ -1,51 +1,16 @@
-﻿Imports System.IO
-Imports DevExpress.XtraGrid.Columns
+﻿Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
-
 Public Class Borongan
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        'Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Private Sub Borongan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         loaddata()
         fillcombo()
         machines()
-        'premilist()
         autofill()
         Dim gridView As GridView = CType(GridControl1.FocusedView, GridView)
         gridView.SortInfo.ClearAndAddRange(New GridColumnSortInfo() {
@@ -74,8 +39,6 @@ Public Class Borongan
         GridView1.BestFitColumns()
     End Sub
 
-    Dim sel As New selectemp
-
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         Timer1.Start()
         selectemp.Close()
@@ -83,11 +46,6 @@ Public Class Borongan
             .Label6.Text = Label2.Text
             .Show()
         End With
-        'If sel Is Nothing OrElse sel.IsDisposed OrElse sel.MinimizeBox Then
-        '    sel.Close()
-        '    sel = New selectemp
-        'End If
-        'sel.Show()
     End Sub
 
     Dim tbl_par1, tbl As New DataTable
@@ -188,9 +146,9 @@ Public Class Borongan
             queries.Parameters.AddWithValue("@remarks", RichTextBox1.Text)
             queries.Parameters.AddWithValue("@Operators", TextEdit3.Text)
             queries.ExecuteNonQuery()
-            MsgBox("Saved")
+            MsgBox("Saved", MsgBoxStyle.Information)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         End Try
         Dim query As MySqlCommand = SQLConnection.CreateCommand
         query.CommandText = "select quantity from db_targetbor where code = '" & ComboBoxEdit1.Text & "' and Goals = 'Target 2'"
@@ -222,7 +180,6 @@ Public Class Borongan
         query.Parameters.AddWithValue("@target4", quer3)
         query.Parameters.AddWithValue("@tasks", ComboBoxEdit1.Text)
         query.ExecuteNonQuery()
-
         textedit1.Text = ""
         textedit2.Text = ""
         ComboBoxEdit1.Text = ""
@@ -237,7 +194,7 @@ Public Class Borongan
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         If textedit1.Text = "" OrElse textedit2.Text = "" Then
-            MsgBox("Empty field need to fill")
+            MsgBox("Empty field need to fill", MsgBoxStyle.Information, "Required")
         Else
             saving()
         End If
@@ -281,7 +238,7 @@ Public Class Borongan
         query.Parameters.AddWithValue("@Amount", TextEdit6.Text)
         query.Parameters.AddWithValue("@id", Label1.Text)
         query.ExecuteNonQuery()
-        MsgBox("Changed")
+        MsgBox("Changed", MsgBoxStyle.Information, "Succes")
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged

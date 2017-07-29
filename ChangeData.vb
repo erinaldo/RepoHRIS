@@ -1,50 +1,5 @@
 ﻿Imports System.IO
-Imports DevExpress.Utils.Menu
-Imports DevExpress.XtraGrid.Views.Grid
-
 Public Class ChangeData
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        Application.EnableVisualStyles()
-        ' Add any initialization after the InitializeComponent() call.
-        Try
-            Dim host As String
-            Dim id As String
-            Dim password As String
-            Dim db As String
-            If File.Exists("settinghost.txt") Then
-                host = File.ReadAllText("settinghost.txt")
-            Else
-                host = "localhost"
-            End If
-            If File.Exists("settingid.txt") Then
-                id = File.ReadAllText("settingid.txt")
-            Else
-                id = "root"
-            End If
-
-            If File.Exists("settingpass.txt") Then
-                password = File.ReadAllText("settingpass.txt")
-            Else
-                password = ""
-            End If
-
-            If File.Exists("settingdb.txt") Then
-                db = File.ReadAllText("settingdb.txt")
-            Else
-                db = "db_hris"
-            End If
-            connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
     Private Function GetOpenFileDialog() As OpenFileDialog
         Dim openFileDialog As New OpenFileDialog
         openFileDialog.CheckPathExists = True
@@ -733,8 +688,11 @@ Public Class ChangeData
     End Sub
 
     Private Sub ChangeData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Try
             Dim query As MySqlCommand = SQLConnection.CreateCommand
             query.CommandText = "select name from db_tmpname"
@@ -788,7 +746,7 @@ Public Class ChangeData
     Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click
         If act = "input" Or act = "edit" Then
             If txtmajor.Text = "" OrElse txtyears.Text = "" Then
-                MsgBox("Please fill the required fields")
+                MsgBox("Please fill the required fields", MsgBoxStyle.Information)
             Else
                 school()
             End If

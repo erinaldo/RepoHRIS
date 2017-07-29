@@ -1,45 +1,10 @@
-﻿Imports System.IO
-Public Class AttendanceInput
-
-    Dim connectionstring As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
-    Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionstring = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
+﻿Public Class AttendanceInput
     Private Sub AttendanceInput_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionstring
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
     End Sub
 
     Sub insertion()
@@ -48,14 +13,15 @@ Public Class AttendanceInput
         DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         dta = DateTimePicker1.Value
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        query.CommandText = "insert into db_absensi (tanggal, employeecode, fullname, jammulai, jamselesai) values (@tgl, @ec, @fullname, @jammulai, @jamselesai)"
+        query.CommandText = "insert into db_absensi (tanggal, employeecode, fullname, jammulai, jamselesai, manualinput) values (@tgl, @ec, @fullname, @jammulai, @jamselesai, @manualinput)"
         query.Parameters.AddWithValue("@tgl", dta.ToString("yyyy-MM-dd"))
         query.Parameters.AddWithValue("@ec", TextEdit1.Text)
         query.Parameters.AddWithValue("@fullname", TextEdit2.Text)
         query.Parameters.AddWithValue("@jammulai", TimeEdit2.Time)
         query.Parameters.AddWithValue("@jamselesai", TimeEdit1.Time)
+        query.Parameters.AddWithValue("@manualinput", "1")
         query.ExecuteNonQuery()
-        MsgBox("Inserted")
+        MsgBox("Inserted", MsgBoxStyle.Information)
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -68,7 +34,7 @@ Public Class AttendanceInput
             insertion()
             Close()
         Else
-            MsgBox("data already exists")
+            MsgBox("Data already exists", MsgBoxStyle.Information)
         End If
     End Sub
 
@@ -82,7 +48,7 @@ Public Class AttendanceInput
             Dim quer2 As String = CType(query.ExecuteScalar, String)
             TextEdit1.Text = quer2.ToString
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message, MsgBoxStyle.Information)
         End Try
     End Sub
 

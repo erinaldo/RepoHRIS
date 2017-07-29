@@ -1,5 +1,5 @@
-﻿Imports System.Globalization
-Imports System.IO
+﻿Imports System.IO
+Imports System.Globalization
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports DevExpress
 Imports DevExpress.Utils.Menu
@@ -9,11 +9,7 @@ Imports DevExpress.XtraGrid.Views
 Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class Payments
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
     Dim tbl_par As New DataTable
-
     Sub loaddata()
         Dim sqlcommand As New MySqlCommand
         sqlcommand.CommandText = "select fullname, employeecode from db_pegawai a where a.employeecode not in (select b.employeecode from db_payrolldata b )"
@@ -73,7 +69,6 @@ Public Class Payments
         Dim newtab As New DataTable
         GridControl2.RefreshDataSource()
         Dim query As MySqlCommand = SQLConnection.CreateCommand
-        'query.CommandText = "select office"
         query.CommandText = "select a.EmployeeCode, a.FullName, a.BasicRate as BasicSalary from db_payrolldata a, db_pegawai b where a.employeecode = b.employeecode and b.officelocation = ''"
         Dim adapter As New MySqlDataAdapter(query.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
@@ -87,35 +82,6 @@ Public Class Payments
 
     Dim tbl_par3 As New DataTable
     Dim log As Login
-
-    Public Sub New()
-        InitializeComponent()
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
 
     Sub loanlists()
         tbl_par3.Columns.Clear()
@@ -192,7 +158,7 @@ Public Class Payments
             sqlCommand.Parameters.AddWithValue("@ChangeBy", Label7.Text)
             sqlCommand.Parameters.AddWithValue("@golongan", txtgol1.Text)
             sqlCommand.ExecuteNonQuery()
-            MessageBox.Show("Data Succesfully Added!")
+            MsgBox("Data Succesfully Added", MsgBoxStyle.Information)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -237,8 +203,6 @@ Public Class Payments
         End Try
     End Sub
 
-    Dim main As MainApp
-
     Public Sub updatechange()
         Dim sqlcommand As New MySqlCommand
         Try
@@ -262,6 +226,9 @@ Public Class Payments
                     ", Rapel = @Rapel" +
                     ", Loan = @Loan" +
                     ", Golongan = @Golongan" +
+                    ", MealTidakTetap = @MealTidakTetap" +
+                    ", TransportTidakTetap = @TransportTidakTetap" +
+                    ", Deductions = @Deductions" +
                     " WHERE EmployeeCode = @EmployeeCode"
             sqlcommand.Connection = SQLConnection
             sqlcommand.Parameters.AddWithValue("@FullName", txtname2.Text)
@@ -283,6 +250,9 @@ Public Class Payments
             sqlcommand.Parameters.AddWithValue("@Rapel", crapel1.Checked)
             sqlcommand.Parameters.AddWithValue("@Loan", cloan1.Checked)
             sqlcommand.Parameters.AddWithValue("@Golongan", txtgol1.Text)
+            sqlcommand.Parameters.AddWithValue("@MealTidakTetap", CheckEdit4.Checked)
+            sqlcommand.Parameters.AddWithValue("@TransportTidakTetap", CheckEdit5.Checked)
+            sqlcommand.Parameters.AddWithValue("@Deductions", TextEdit4.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             MessageBox.Show("Data Successfully Changed!")
@@ -383,7 +353,7 @@ Public Class Payments
                 cmd.CommandText = "select count(*) as numRows from db_loan where EmployeeCode = '" & txtempcode.Text & "' and issettle = '0'"
                 quer = CInt(cmd.ExecuteScalar)
             Catch ex As Exception
-                MsgBox("count" & ex.Message)
+                MsgBox("count " & ex.Message)
             End Try
             If quer = 0 Then
                 insertlists()
@@ -458,7 +428,6 @@ Public Class Payments
             sqlcommand.Connection = SQLConnection
             sqlcommand.Parameters.AddWithValue("EmployeeCode", txtempcode.Text)
             sqlcommand.Parameters.AddWithValue("@Rapel", "1")
-            sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -479,8 +448,8 @@ Public Class Payments
             Dim str_carSql As String
             Try
                 str_carSql = "INSERT INTO db_payrolldata " +
-                                "(FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan, Golongan) " +
-                                "values (@FullName, @EmployeeCode, @StatusWajibPajak, @MemilikiNpwp, @BasicRate, @Allowance, @Incentives, @MealRate, @Transport, @JaminanKesehatan, @Bpjs, @JaminanKecelakaanKerja, @JaminanKematian, @JaminanHariTua, @IuranPensiun, @BiayaJabatan, @Rapel, @Loan, @gol)"
+                                "(FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan, Golongan, MealTidakTetap, TransportTidakTetap, Deductions) " +
+                                "values (@FullName, @EmployeeCode, @StatusWajibPajak, @MemilikiNpwp, @BasicRate, @Allowance, @Incentives, @MealRate, @Transport, @JaminanKesehatan, @Bpjs, @JaminanKecelakaanKerja, @JaminanKematian, @JaminanHariTua, @IuranPensiun, @BiayaJabatan, @Rapel, @Loan, @gol, @MealTidakTetap, @TransportTidakTetap, @Deductions)"
                 sqlCommand.Connection = SQLConnection
                 sqlCommand.CommandText = str_carSql
                 sqlCommand.Parameters.AddWithValue("@FullName", txtname1.Text)
@@ -502,9 +471,12 @@ Public Class Payments
                 sqlCommand.Parameters.AddWithValue("@Rapel", crapel.Checked)
                 sqlCommand.Parameters.AddWithValue("@Loan", cloan.Checked)
                 sqlCommand.Parameters.AddWithValue("@gol", txtgol.Text)
+                sqlCommand.Parameters.AddWithValue("@MealTidakTetap", CheckEdit1.Checked)
+                sqlCommand.Parameters.AddWithValue("@TransportTidakTetap", CheckEdit3.Checked)
+                sqlCommand.Parameters.AddWithValue("@Deductions", Encryptio(TextEdit3.Text.Trim))
                 sqlCommand.Connection = SQLConnection
                 sqlCommand.ExecuteNonQuery()
-                MsgBox("Added", MsgBoxStyle.Information)
+                MsgBox("Added!", MsgBoxStyle.Information)
                 Return True
             Catch ex As Exception
                 Return False
@@ -528,7 +500,8 @@ Public Class Payments
         Dim cd As MySqlCommand = SQLConnection.CreateCommand
         Try
             Dim cmd = SQLConnection.CreateCommand()
-            cmd.CommandText = "(select cast(right(max(`db_hris`.`db_loan`.`MemoNo`),4) as signed) AS `last_num` from `db_hris`.`db_loan`)"
+            'cmd.CommandText = "(select cast(right(max(`db_hris`.`db_loan`.`MemoNo`),4) as signed) AS `last_num` from `db_hris`.`db_loan`)"
+            cmd.CommandText = "select last_num from loan_memo"
             lastn = DirectCast(cmd.ExecuteScalar(), Integer)
         Catch ex As Exception
         End Try
@@ -540,17 +513,17 @@ Public Class Payments
         End Try
         Try
             Dim cmd = SQLConnection.CreateCommand
-            cmd.CommandText = "Select MID(MemoNo, 8, 1) FROM db_loan where MemoNo = '" & lastcode & "'"
+            cmd.CommandText = "Select MID(MemoNo, 9, 1) FROM db_loan where MemoNo = '" & lastcode & "'"
             updmon = DirectCast(cmd.ExecuteScalar(), String)
             If CInt(updmon) <> CInt(mnow) Then
                 tmp = 1
             Else
                 tmp = lastn + 1
             End If
+            Dim actualcode As String = "Loan-" & ynow & "-" & mnow & "-" & Strings.Right("0000" & tmp, 5)
+            TextBox13.Text = actualcode.ToString
         Catch ex2 As Exception
         End Try
-        Dim actualcode As String = "Loan-" & ynow & "-" & mnow & "-" & Strings.Right("0000" & tmp, 5)
-        TextBox13.Text = actualcode.ToString
     End Sub
 
     Sub Process()
@@ -584,7 +557,7 @@ Public Class Payments
         Next
         updateovertime()
         updatesunday()
-        MsgBox("Holiday added")
+        MsgBox("Holiday added", MsgBoxStyle.Information)
     End Sub
 
     Sub updatesunday()
@@ -593,7 +566,7 @@ Public Class Payments
             query.CommandText = "update db_holiday set reason = 'Sunday OFF' where dayofweek(tgl) = 1"
             query.ExecuteNonQuery()
         Catch ex As Exception
-            MsgBox("OFF DAY " & ex.Message)
+            MsgBox("OFF DAY " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -603,7 +576,7 @@ Public Class Payments
             query.CommandText = "update db_absensi set isholiday = 1 where dayofweek(tanggal) = 1 or tanggal in (select tgl from db_holiday)"
             query.ExecuteNonQuery()
         Catch ex As Exception
-            MsgBox("Overtime Part " & ex.Message)
+            MsgBox("Overtime Part " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
@@ -973,13 +946,21 @@ Public Class Payments
         lcpayment.Properties.Mask.EditMask = "n"
         lcpayment.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         lcpayment.Properties.Mask.UseMaskAsDisplayFormat = True
+
+        TextEdit3.Properties.DisplayFormat.FormatType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        TextEdit3.Properties.DisplayFormat.FormatString = "n"
+        TextEdit3.Properties.Mask.EditMask = "n"
+        TextEdit3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        TextEdit3.Properties.Mask.UseMaskAsDisplayFormat = True
     End Sub
 
     Private Sub LoanForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         Dim table As New DataTable
-        'holidays()
         loaddata()
         loaddata1()
         loadloan()
@@ -1001,7 +982,6 @@ Public Class Payments
         showsalary()
         showotherincome()
         BarButtonItem3.PerformClick()
-        'XtraTabPage6.PageVisible = False
         currencyform()
         loanmemo()
     End Sub
@@ -1087,11 +1067,6 @@ Public Class Payments
 
     Private Sub txtname_SelectedIndexChanged(sender As Object, e As EventArgs)
         Timer1.Stop()
-        'For index As Integer = 0 To tbl_par2.Rows.Count - 1
-        '    If txtname.SelectedItem Is tbl_par2.Rows(index).Item(0).ToString Then
-        '        txtempcode.Text = tbl_par2.Rows(index).Item(1).ToString
-        '    End If
-        'Next
     End Sub
 
     Private Sub txtmonths_KeyPress(sender As Object, e As KeyPressEventArgs)
@@ -1306,7 +1281,7 @@ Public Class Payments
 
     Dim overtime As New Overtime_Hours
 
-    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
+    Private Sub BarButtonItem5_ItemClick(sender As Object, e As XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
         If overtime Is Nothing OrElse overtime.IsDisposed OrElse overtime.MinimizeBox Then
             overtime.Close()
             overtime = New Overtime_Hours
@@ -1325,7 +1300,7 @@ Public Class Payments
 
     Private Sub btnLookup_Click(sender As Object, e As EventArgs) Handles btnLookup.Click
         If txtloanname.Text = "" Then
-            MsgBox("Please insert the employee name")
+            MsgBox("Please insert the employee name", MsgBoxStyle.Exclamation)
         Else
             loadloanname()
         End If
@@ -1450,13 +1425,12 @@ Public Class Payments
     End Sub
 
     Sub updatedloan()
-        Dim conn As New MySqlConnection(connectionString)
-        Dim cmd As MySqlCommand = conn.CreateCommand
-        conn.Open()
+        Dim cmd As MySqlCommand = SQLConnection.CreateCommand
+        'conn.Open()
         cmd.CommandText = "update db_payrolldata set loan = 0 where employeecode = @emp"
         cmd.Parameters.AddWithValue("@emp", txtnameloan.Text)
         cmd.ExecuteNonQuery()
-        conn.Close()
+        'conn.Close()
     End Sub
 
     Private Sub txtnameloan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnameloan.SelectedIndexChanged
@@ -1519,8 +1493,6 @@ Public Class Payments
         Dim datatabl As New DataTable
         Dim sqlCommand As New MySqlCommand
         datatabl.Clear()
-        'Dim customCurrencyInfo As CultureInfo = CultureInfo.CreateSpecificCulture("id-ID")
-        'customCurrencyInfo.NumberFormat.CurrencyNegativePattern = 8
         Dim param As String = ""
         Try
             param = "and EmployeeCode='" + GridView4.GetFocusedRowCellValue("EmployeeCode").ToString() + "'"
@@ -1528,7 +1500,7 @@ Public Class Payments
             MsgBox(ex.Message)
         End Try
         Try
-            sqlCommand.CommandText = "SELECT FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan, Golongan from db_payrolldata WHERE 1= 1 " + param.ToString
+            sqlCommand.CommandText = "SELECT FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan, Golongan, MealTidakTetap, TransportTidakTetap, Deductions from db_payrolldata WHERE 1= 1 " + param.ToString
             sqlCommand.Connection = SQLConnection
             Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
             Dim cb As New MySqlCommandBuilder(adapter)
@@ -1561,6 +1533,9 @@ Public Class Payments
             crapel1.Checked = CBool(datatabl.Rows(0).Item(16).ToString)
             cloan1.Checked = CBool(datatabl.Rows(0).Item(17).ToString)
             txtgol1.Text = datatabl.Rows(0).Item(18).ToString
+            CheckEdit4.Checked = CBool(datatabl.Rows(0).Item(19).ToString)
+            CheckEdit5.Checked = CBool(datatabl.Rows(0).Item(20).ToString)
+            TextEdit4.Text = Decrypt(datatabl.Rows(0).Item(21).ToString)
         End If
     End Sub
 
@@ -1836,11 +1811,6 @@ Public Class Payments
             .Label2.Text = Label7.Text
             .Show()
         End With
-        'If bor Is Nothing OrElse bor.IsDisposed OrElse bor.MinimizeBox Then
-        '    bor.Close()
-        '    bor = New Borongan
-        'End If
-        'bor.Show()
     End Sub
 
     Public value11, value12, value3, value4, value5 As Long
@@ -1935,6 +1905,10 @@ Public Class Payments
         End If
     End Sub
 
+    Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
+
+    End Sub
+
     Private Sub GridView4_CustomColumnDisplayText(sender As Object, e As Base.CustomColumnDisplayTextEventArgs) Handles GridView4.CustomColumnDisplayText
         If e.Column.FieldName = "BasicSalary" Then
             e.Column.DisplayFormat.FormatType = Utils.FormatType.Numeric
@@ -1962,7 +1936,6 @@ Public Class Payments
     Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) Handles SimpleButton6.Click
         GridControl2.DataSource = Nothing
         GridControl4.DataSource = Nothing
-        'GridView4.Columns.Clear()
     End Sub
 
     Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click

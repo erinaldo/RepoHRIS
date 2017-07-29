@@ -2,42 +2,7 @@
 Imports word = Microsoft.Office.Interop.Word
 
 Public Class Payslip
-    Dim connectionString As String
-    Dim SQLConnection As MySqlConnection = New MySqlConnection
-    Dim oDt_sched As New DataTable()
     Dim tbl_par As New DataTable
-
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
-        Dim host As String
-        Dim id As String
-        Dim password As String
-        Dim db As String
-        If File.Exists("settinghost.txt") Then
-            host = File.ReadAllText("settinghost.txt")
-        Else
-            host = "localhost"
-        End If
-        If File.Exists("settingid.txt") Then
-            id = File.ReadAllText("settingid.txt")
-        Else
-            id = "root"
-        End If
-        If File.Exists("settingpass.txt") Then
-            password = File.ReadAllText("settingpass.txt")
-        Else
-            password = ""
-        End If
-        If File.Exists("settingdb.txt") Then
-            db = File.ReadAllText("settingdb.txt")
-        Else
-            db = "db_hris"
-        End If
-        connectionString = "Server=" + host + "; User Id=" + id + "; Password=" + password + "; Database=" + db + ""
-    End Sub
-
     Sub loaddata()
         Dim sqlcommand As New MySqlCommand
         sqlcommand.CommandText = "SELECT EmployeeCode, FullName From db_payrolldata"
@@ -72,8 +37,11 @@ Public Class Payslip
     End Sub
 
     Private Sub payrollslip()
-        SQLConnection = New MySqlConnection
-        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         SQLConnection.Open()
         Dim bs As MySqlCommand = SQLConnection.CreateCommand
         bs.CommandText = "select basicrate from db_payrolldata where EmployeeCode = '" & txtempcode.Text & "'"
@@ -127,7 +95,6 @@ Public Class Payslip
     End Sub
 
     Sub hasilslip(emp As String, office As String)
-        'Try
         Dim names As MySqlCommand = SQLConnection.CreateCommand
         names.CommandText = "select employeetype from db_pegawai where EmployeeCode = '" & emp & "'"
         Dim name As String = CStr(names.ExecuteScalar)
@@ -155,6 +122,7 @@ Public Class Payslip
         tab.Load(salary.ExecuteReader)
         For index As Integer = 0 To tab.Rows.Count - 1
             Dim a1, b1, c, d, e, f As Double
+            Dim x As Integer
             a1 = CDbl(Decrypt(tab.Rows(index).Item(0).ToString()))
             b1 = CDbl(Decrypt(tab.Rows(index).Item(1).ToString()))
             c = CDbl(Decrypt(tab.Rows(index).Item(2).ToString()))
@@ -162,7 +130,7 @@ Public Class Payslip
             e = CDbl(Decrypt(tab.Rows(index).Item(4).ToString()))
             f = a1 + b1 + c + d + e
             Dim realsalary As Integer = f
-            'Dim realsalary As Integer = CInt(salary.ExecuteScalar)
+
             Dim adp As New MySqlDataAdapter(q)
             Dim ds As New DataSet
             Dim income As Integer
@@ -181,6 +149,13 @@ Public Class Payslip
                 End If
             End If
             Dim fix As Integer = income - deduc
+            Dim query As MySqlCommand = SQLConnection.CreateCommand
+            query.CommandText = "select count(minute(b.jamMulai)) from db_absensi b, db_pegawai a where b.tanggal between @date1 and @date2 and minute(b.jammulai) > 10 and a.employeecode = @emp and hour(b.jammulai) = 8 and a.employeecode = b.employeecode"
+            query.Parameters.Clear()
+            query.Parameters.AddWithValue("@date1", txtperiod.Value.Date)
+            query.Parameters.AddWithValue("@date2", txtto.Value.Date)
+            query.Parameters.AddWithValue("@emp", emp)
+            x = CInt(query.ExecuteScalar)
             Try
                 Dim ovt As MySqlCommand = SQLConnection.CreateCommand
                 ovt.CommandText = "select sum(overtimehours) from db_absensi where employeecode = '" & emp & "'"
@@ -195,8 +170,8 @@ Public Class Payslip
 
                 Dim collect As MySqlCommand = SQLConnection.CreateCommand
                 collect.CommandText = "INSERT INTO db_temp " +
-                                        "(Dated, EmployeeCode, HK, Overtime, Deductions, FixedSalary, overtimerate) " +
-                                        " Values (@Dated, @EmployeeCode, @HK, @Overtime, @Deductions, @FixedSalary, @overtimerate)"
+                                        "(Dated, EmployeeCode, HK, Overtime, Deductions, FixedSalary, overtimerate, lates) " +
+                                        " Values (@Dated, @EmployeeCode, @HK, @Overtime, @Deductions, @FixedSalary, @overtimerate, @lates)"
                 collect.Parameters.AddWithValue("@Dated", Date.Now)
                 collect.Parameters.AddWithValue("@EmployeeCode", emp)
                 collect.Parameters.AddWithValue("@HK", hk)
@@ -204,31 +179,31 @@ Public Class Payslip
                 collect.Parameters.AddWithValue("@Deductions", deduc)
                 collect.Parameters.AddWithValue("@FixedSalary", fix)
                 collect.Parameters.AddWithValue("@overtimerate", hslovt)
+                collect.Parameters.AddWithValue("@lates", x)
                 collect.ExecuteNonQuery()
             Catch ex As Exception
                 'MsgBox(ex.Message)
             End Try
             Dim table As New DataTable
             Dim sqlCommand As MySqlCommand = SQLConnection.CreateCommand
-            sqlCommand.CommandText = "Select b.Dated as Dates, a.EmployeeCode, b.HK as JumlahHariKerja, a.FullName, @BasicRate as Salary, @MealRate as MealRate, @Allowance as Allowance, @Incentives as Incentives, @Transport as Transport, b.Overtime as OvertimeHours, b.Overtimerate as OvertimeMoney, b.Deductions, b.FixedSalary FROM db_payrolldata a, db_temp b where a.Employeecode = b.Employeecode"
+            sqlCommand.CommandText = "Select b.Dated as Dates, a.EmployeeCode, b.HK as JumlahHariKerja, a.FullName, @BasicRate as Salary, @MealRate as MealRate, @Allowance as Allowance, @Incentives as Incentives, @Transport as Transport, b.Overtime as OvertimeHours, b.Overtimerate as OvertimeMoney, b.Deductions, b.FixedSalary, b.Lates FROM db_payrolldata a, db_temp b where a.Employeecode = b.Employeecode"
             sqlCommand.Parameters.AddWithValue("@BasicRate", CInt(Decrypt(tab.Rows(index).Item(0).ToString())))
             sqlCommand.Parameters.AddWithValue("@MealRate", CInt(Decrypt(tab.Rows(index).Item(1).ToString())))
             sqlCommand.Parameters.AddWithValue("@Allowance", CInt(Decrypt(tab.Rows(index).Item(2).ToString())))
             sqlCommand.Parameters.AddWithValue("@Incentives", CInt(Decrypt(tab.Rows(index).Item(3).ToString())))
             sqlCommand.Parameters.AddWithValue("@Transport", CInt(Decrypt(tab.Rows(index).Item(4).ToString())))
-            'sqlCommand.Connection = SQLConnection
             Dim dt As New DataTable
             dt.Load(sqlCommand.ExecuteReader)
             viw.GridControl1.DataSource = dt
         Next
-        'Catch ex As Exception
-        '    MsgBox("Payslip " & ex.Message)
-        'End Try
     End Sub
 
     Private Sub Payslip_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
+        SQLConnection.Close()
+        SQLConnection.ConnectionString = CONSTRING
+        If SQLConnection.State = ConnectionState.Closed Then
+            SQLConnection.Open()
+        End If
         loaddata()
     End Sub
 

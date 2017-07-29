@@ -736,7 +736,6 @@ C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ClosePayroll.reso
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Lists.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Payments.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Login.resources
-C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.MainApp.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Resources.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.NewEmp.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.NewRec.resources
@@ -848,7 +847,6 @@ C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\es\DevExpress.XtraGauges.v
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ja\DevExpress.XtraGauges.v13.1.Presets.resources.dll
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\ru\DevExpress.XtraGauges.v13.1.Presets.resources.dll
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.selectemp.resources
-C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Analytical.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Form1.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\FlashControlV71.dll
@@ -857,7 +855,6 @@ C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ShowAtt.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutomaticUpdater.Design.dll
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutomaticUpdater.dll
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\AutomaticUpdater.xml
-C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Circle.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.exe.config
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.exe.manifest
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\HR SYSTEM.application
@@ -885,7 +882,6 @@ C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.ModAKS.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Overtime_Hours.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Reports.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Criteria.resources
-C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Tile_Control.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Approvement.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Customize.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Addskill.resources
@@ -929,5 +925,8 @@ C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Medical.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\bin\Debug\fr\HR SYSTEM.resources.dll
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Login.fr.resources
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\fr\HR SYSTEM.resources.dll
-C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRIS.vbprojResolveAssemblyReference.cache
 C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Documents.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.StartPages.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Form.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRMS.Tiles.resources
+C:\Users\IT-Steven\Desktop\HRIS-master\HRMS\obj\x86\Debug\HRIS.vbprojResolveAssemblyReference.cache
